@@ -1,0 +1,48 @@
+Game Jam Superstiton concepts
+
+Player Buffs
++health
++attack
++defense
+
+Boss Nerfs
+-lower defense
+-lower health
+-lower attack
+-immunity from some attacks
+-one shot
+
+Weapons/items
+-awesome sword
+-holy water
+	may/not be blessed by local priest
+-awesome armor
+	boots
+	helm
+	chestpiece
+-super long spear
+
+
+silly / pointless / dumb
+-change genders
+-do nothing
+-be naked
+-100 pushup/100 situps/100 squats/ 10k run
+-find inner peace
+-bring self to an inch of death
+
+
+
+Basic Quest outlines:
+Go to place. Do x y number of times
+x: 
+	stand still for y seconds
+	jump
+	run between 2 points
+	be underwater
+	
+y:
+	1/4/9/13/17 times
+	
+kill monster. bring back drop. drink brew
+
