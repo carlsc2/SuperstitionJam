@@ -7,19 +7,44 @@ using UnityEditor;
 
 public class SpriteRigController : MonoBehaviour {
 
-    //public SortingLayer rigSortingLayer;
+    [System.Serializable]
+    public class CosmeticSprite {
+
+        public string name;
+
+        public SpriteRenderer spriteRen;
+
+        public Sprite sprite;
+
+        public Vector2 offset;
+    }
 
     [System.Serializable]
     public class SpriteBoneBinding {
 
-        public Transform spriteBone;
+        public SpriteRigBoneHandler bone;
 
-        public SpriteRenderer spriteRen;
-        public Sprite sprite;
+        public List<CosmeticSprite> cosmeticsList;
 
 
+        public void ReloadBoneCosmetics() {
+            bone.DestroyAllCosmeticSprites();
+
+            foreach (CosmeticSprite cosSprite in cosmeticsList) {
+                cosSprite.spriteRen = bone.AddCosmeticSprite(cosSprite.sprite, cosSprite.offset, cosSprite.name);
+                
+            }
+        }
     }
 
+
+    //public SortingLayer rigSortingLayer;
+
+    public Color boneColor;
+    public float boneSize;
+
+    public Color jointColor;
+    public float jointSize;
 
 
     void Awake() {
@@ -37,6 +62,17 @@ public class SpriteRigController : MonoBehaviour {
 	
 	}
 
+    public void DestroyRigCosmetics() {
+
+    }
+
+    public void ReloadBoneCosmetics() {
+        foreach (SpriteBoneBinding binding in spriteBones) {
+
+            binding.ReloadBoneCosmetics();
+        }
+    }
+
     /*
     public void SetSortingLayer(SortingLayer layer) {
 
@@ -46,6 +82,10 @@ public class SpriteRigController : MonoBehaviour {
 
     }
     */
+
+    void OnDrawGizmos() {
+
+    }
 
 }
 
@@ -59,7 +99,29 @@ public class SpriteRigController_Editor : Editor {
     void OnEnable() {
         selfScript = (SpriteRigController)target;
     }
-    
+
+    public override void OnInspectorGUI() {
+        base.OnInspectorGUI();
+
+        /*
+        if (GUILayout.Button("Transferstuff")) {
+            foreach (SpriteRigController.SpriteBoneBinding binder in selfScript.spriteBones) {
+                
+            }
+        }
+        */
+
+        if (GUILayout.Button("Update Rig Cosmetics")) {
+            UpdateCosmeticRig();
+        }
+        
+    }
+
+    private void UpdateCosmeticRig() {
+
+        selfScript.ReloadBoneCosmetics();
+        
+    }
 
 }
 
