@@ -31,6 +31,7 @@ GameObject:
   - 114: {fileID: 11479246}
   - 114: {fileID: 11491420}
   - 61: {fileID: 6194764}
+  - 50: {fileID: 5026100}
   m_Layer: 0
   m_Name: PCTemp
   m_TagString: Player
@@ -86,13 +87,30 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
+  m_LocalPosition: {x: 1.801, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 416866}
   - {fileID: 439086}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &5026100
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143700}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!61 &6133010
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -170,8 +188,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
-  strength: 1
-  defense: 1
+  strength: 20
+  defense: 10
   speed: 0.075
   attackTime: 0.25
 --- !u!114 &11491420
