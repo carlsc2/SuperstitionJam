@@ -375,6 +375,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05970575ae0184b49acbf749125d25ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  daynightcurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0.2
+      outSlope: 0.2
+      tangentMode: 10
+    - time: 0.25
+      value: 0.05
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 10
+    - time: 0.5
+      value: 0.5
+      inSlope: 1.8
+      outSlope: 1.8
+      tangentMode: 10
+    - time: 0.75
+      value: 0.95
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 10
+    - time: 1
+      value: 1
+      inSlope: 0.20000005
+      outSlope: 0.20000005
+      tangentMode: 10
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1456429918
 GameObject:
   m_ObjectHideFlags: 0

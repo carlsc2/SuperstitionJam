@@ -5,7 +5,9 @@ public class movePlayerIcon : MonoBehaviour {
 
 	public float speed = 1.0F;
 
-	public static float timeofday = 0; //make time go between 0 and 100 where 0 is noon
+	public static float ticks_per_day = 400; // number of move ticks per day
+
+	public static float timeofday = 100; //make time go between 0 and ticks_per_day where 0 is noon
 
 
 	private RectTransform moveArea;
@@ -25,8 +27,7 @@ public class movePlayerIcon : MonoBehaviour {
 	void Update() {
 		//move up/down/left/right but constrain to map
 		Vector3 moveVec = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-		timeofday = (timeofday + (int)moveVec.sqrMagnitude) % 100;
-		print(timeofday);
+		timeofday = (timeofday + (int)moveVec.sqrMagnitude) % ticks_per_day;
 		transform.Translate(moveVec * speed);
 		ClampToMap();
 
