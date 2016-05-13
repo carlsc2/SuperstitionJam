@@ -5,9 +5,6 @@ public class movePlayerIcon : MonoBehaviour {
 
 	public float speed = 1.0F;
 
-	public static float timeofday = 0; //make time go between 0 and 100 where 0 is noon
-
-
 	private RectTransform moveArea;
 	private RectTransform playerIcon;
 
@@ -25,8 +22,7 @@ public class movePlayerIcon : MonoBehaviour {
 	void Update() {
 		//move up/down/left/right but constrain to map
 		Vector3 moveVec = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-		timeofday = (timeofday + (int)moveVec.sqrMagnitude) % 100;
-		print(timeofday);
+		TimeManager.pass_time((int)moveVec.sqrMagnitude);//elapse time based on distance moved
 		transform.Translate(moveVec * speed);
 		ClampToMap();
 
