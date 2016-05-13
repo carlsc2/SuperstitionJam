@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image))]
-public class dayNight : MonoBehaviour {
+public class dayNightUI : MonoBehaviour {
 
 	private Image img;
 
@@ -14,7 +14,7 @@ public class dayNight : MonoBehaviour {
 
 	void Update () {
 		Color tmp = img.color;
-		tmp.a = remap(movePlayerIcon.timeofday,0,movePlayerIcon.ticks_per_day,-1,1);
+		tmp.a = remap(TimeManager.timeofday,0, TimeManager.ticks_per_day,-1,1);
 		tmp.a = daynightcurve.Evaluate((tmp.a < 0) ? -tmp.a : tmp.a) * 0.75f;
 		img.color = tmp;
 
