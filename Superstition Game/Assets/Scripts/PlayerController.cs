@@ -3,19 +3,37 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-    MovementMotor mm; 
-
+    Pawn p;
 
 	void Start () 
     {
-        mm = GetComponent<MovementMotor>();
+        p = GetComponent<Pawn>();
 	}
 	
 	void Update () 
     {
-	    if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+	    if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
         {
-            mm.Move(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            p.Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        }
+        else
+        {
+            p.Idle();
+        }
+
+        if(Input.GetButtonDown("Attack"))
+        {
+            p.Attack();
+        }
+
+        if(Input.GetButtonDown("Defend"))
+        {
+            p.Defend();
+        }
+
+        if (Input.GetButtonUp("Defend"))
+        {
+            p.EndDefend();
         }
 	}
 }
