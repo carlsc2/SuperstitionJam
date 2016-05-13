@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -21,6 +22,8 @@ public class SpriteRigController : MonoBehaviour {
 
     [System.Serializable]
     public class SpriteBoneBinding {
+
+        public string name;
 
         public SpriteRigBoneHandler bone;
 
@@ -83,10 +86,22 @@ public class SpriteRigController : MonoBehaviour {
     }
     */
 
+        /*
     void OnDrawGizmos() {
-
+        DrawSkeleton_Gizmo();
     }
 
+    private void DrawSkeleton_Gizmo() {
+        foreach (SpriteBoneBinding binding in spriteBones) {
+            foreach (Transform child in binding.bone.transform) {
+                if (!binding.cosmeticsList.Where(x => x.spriteRen.transform).Contains(child)) {
+
+                }
+            }
+        }
+
+    }
+    */
 }
 
 #if UNITY_EDITOR
@@ -106,7 +121,6 @@ public class SpriteRigController_Editor : Editor {
         /*
         if (GUILayout.Button("Transferstuff")) {
             foreach (SpriteRigController.SpriteBoneBinding binder in selfScript.spriteBones) {
-                
             }
         }
         */
@@ -128,6 +142,15 @@ public class SpriteRigController_Editor : Editor {
 /*
 [CustomPropertyDrawer(typeof(SpriteRigController.SpriteBoneBinding))]
 public class SpriteBoneBinding_PropertyDrawer : PropertyDrawer {
+
+}
+*/
+
+/*
+[CustomPropertyDrawer(typeof(SpriteRigController.CosmeticSprite))]
+public class CosmeticSprite_PropertyDrawer : PropertyDrawer {
+
+
 
 }
 */
