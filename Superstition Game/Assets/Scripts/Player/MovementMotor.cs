@@ -5,6 +5,7 @@ public class MovementMotor : MonoBehaviour {
 
     CharacterStats stats;
     Rigidbody2D rb;
+    public WorldSize ws;
 
     void Start()
     {
@@ -12,15 +13,15 @@ public class MovementMotor : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
     }
 
-	public void Move(float horizontal, float vertical)
+    public void Move(float horizontal, float vertical)
     {
         Vector2 dir = new Vector2(horizontal, vertical).normalized * stats.speed;
         rb.MovePosition(rb.position + dir);
         
         //keep the player within the world boundaries
-        if (transform.position.x > WorldBoundaries.maxX)
+        if (transform.position.x > WorldBoundaries.maxX + WorldBoundaries.width * (ws.numScreens - 1))
         {
-            transform.position = new Vector2(WorldBoundaries.maxX, transform.position.y);
+            transform.position = new Vector2(WorldBoundaries.maxX + WorldBoundaries.width * (ws.numScreens - 1), transform.position.y);
         }
         else if (transform.position.x < WorldBoundaries.minX)
         {

@@ -10,8 +10,19 @@ public class movePlayerIcon : MonoBehaviour {
 
 	private locationIcon curloc; //current location
 
+	private static Vector2 current_position;
+	private bool first_set = false;
+
 	void Awake() {
 		playerIcon = transform as RectTransform;
+		if (!first_set) {
+			first_set = true;
+			current_position = playerIcon.position;
+		}
+		else {
+			playerIcon.position = current_position;
+		}
+		
 		RectTransform canvas = playerIcon;
 		while (canvas.parent != null && canvas.parent is RectTransform) {
 			canvas = canvas.parent as RectTransform;
@@ -25,6 +36,7 @@ public class movePlayerIcon : MonoBehaviour {
 		TimeManager.pass_time((int)moveVec.sqrMagnitude);//elapse time based on distance moved
 		transform.Translate(moveVec * speed);
 		ClampToMap();
+		current_position = transform.position;
 
 		if (curloc != null &&  Input.GetButton("Submit")) {
 			//enter current location
