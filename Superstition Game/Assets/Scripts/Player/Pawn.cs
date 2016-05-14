@@ -46,5 +46,13 @@ public class Pawn : MonoBehaviour {
 
         stats.ApplyDamage(damageAmount);
         rig.StartFlashRig(2, .2f);
+
+        if (stats.health <= 0.0f) {
+            KillPawn();
+        }
+    }
+
+    public virtual void KillPawn() {
+        Destroy(gameObject);
     }
 }
