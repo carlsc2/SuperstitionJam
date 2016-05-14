@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 
 public class ItemBase : MonoBehaviour {
-
+    [HideInInspector]
     public InventoryController owner;
 
     protected virtual void Awake() {
