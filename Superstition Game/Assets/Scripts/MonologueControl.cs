@@ -4,7 +4,7 @@ using System.Collections;
 
 
 
-public class MonologueControl : MonoBehaviour {
+public class MonologueControl : MonoBehaviour, Interactable {
 
 	public string[] idle_dialogue;
 	private int idix = 0;
@@ -12,7 +12,7 @@ public class MonologueControl : MonoBehaviour {
 	public string[] chat_dialogue;
 	private int cdix = 0;
 
-	public RectTransform chatbox;
+	private RectTransform chatbox;
 	private RectTransform canvas;
 	private Text txt;
 
@@ -21,22 +21,49 @@ public class MonologueControl : MonoBehaviour {
 	private IEnumerator chatroutine;
 
 	public bool is_speaking = false;
+	public bool is_chatting = false;
+	public bool is_idle = true;
+
+	public GameObject chatboxPrefab;
 
 	void Awake() {
-		canvas = chatbox;
-		while (canvas.parent != null && canvas.parent is RectTransform) {
-			canvas = canvas.parent as RectTransform;
-		}
+		//create a chatbox instance
+
+		canvas = GameObject.FindGameObjectWithTag("Canvas").transform as RectTransform;
+
+		chatbox = (Instantiate(chatboxPrefab) as GameObject).transform as RectTransform;
+		chatbox.SetParent(canvas,false);
 		txt = chatbox.GetComponentInChildren<Text>();
 
 		chat_height_offset = GetComponent<SpriteRenderer>().bounds.size.y / 2;
 
 	}
 
+	public void Interact(Transform t) {
+		is_chatting = true;
+		is_idle = false;
+		is_speaking = false;
+	}
+
 	void Update () {
 		if (!is_speaking) {
-			speak_words(idle_dialogue[idix]);
-			idix = (idix + 1) % idle_dialogue.Length;
+			if (is_idle) {
+				speak_words(idle_dialogue[idix]);
+				idix = (idix + 1) % idle_dialogue.Length;
+			}
+			else if (is_chatting) {
+				if(cdix < chat_dialogue.Length) {
+					speak_words(chat_dialogue[cdix]);
+					cdix = cdix + 1;
+				}
+				else {
+					is_chatting = false;
+					idix = 0;
+					is_idle = true;
+				}
+				
+			}
+			
 		}
 		
 	}
