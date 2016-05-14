@@ -33,7 +33,7 @@ public class MonologueControl_Quest : MonologueControl {
 		else if (QType == QuestType.FETCH)
 		{
 			Debug.Log(quest.Inventory.itemsInInventory.Count);
-			if (quest.Inventory.HasItemOfId(quest.QuestItem.id))
+			if (quest.Inventory.HasItemOfId(quest.QuestItem))
 			{
 				Debug.Log("in FETCH");
 

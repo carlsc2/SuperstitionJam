@@ -10,10 +10,11 @@ public class QuestBase : MonoBehaviour {
 
 	public string Description;
 
-	public ItemBase QuestItem;
-
+	public string QuestItem;
 
 	public InventoryController Inventory;
+
+    public GameObject Player;
 
 	virtual public void CheckConditions(string str){
 		try

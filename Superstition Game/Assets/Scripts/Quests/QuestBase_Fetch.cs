@@ -7,10 +7,8 @@ using UnityEditor;
 
 public class QuestBase_Fetch : QuestBase
 {
-    public GameObject Player;
-
-    public ItemBase RewardItem;
-   // public ItemBase QuestItem;
+  
+    public string RewardItem;
 
     void Start()
     {
@@ -20,8 +18,11 @@ public class QuestBase_Fetch : QuestBase
     override public void GiveReward()
     {
         print("GIVE ME THE THING");
-        Inventory.AddItemToInventory(RewardItem);
-        Inventory.RemoveFirstItemOfId(QuestItem.id);
+        GameObject reward = Resources.Load(RewardItem) as GameObject;
+        reward = (GameObject) GameObject.Instantiate(reward, Vector3.zero, Quaternion.identity);
+        reward.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        Inventory.AddItemToInventory(reward.GetComponent<ItemBase>());
+        Inventory.RemoveFirstItemOfId(QuestItem);
         currentState = QuestBase.State.TURNED_IN;
     }
 

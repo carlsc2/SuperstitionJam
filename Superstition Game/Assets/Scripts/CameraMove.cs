@@ -10,9 +10,10 @@ public class CameraMove : MonoBehaviour {
 	void Start () 
 	{
 		ws = FindObjectOfType<WorldSize>();
-        GetPlayer();
+		GetPlayer();
 
-        player = PlayerController.singleton.transform;
+		//player = PlayerController.singleton.transform;
+		player = GameObject.FindGameObjectWithTag("Player").transform;
 	}
 	
 	// Update is called once per frame
@@ -26,18 +27,18 @@ public class CameraMove : MonoBehaviour {
 			else if (transform.position.x > (9.35f + 20.48f * (ws.numScreens - 1)))
 				transform.position = new Vector3(9.35f + 20.48f * (ws.numScreens - 1), transform.position.y, transform.position.z);
 		}
-        else {
-            GetPlayer();
-        }
+		else {
+			GetPlayer();
+		}
 	}
 
-    private void GetPlayer () {
-        /*
-        Transform temp = GameObject.FindGameObjectWithTag("Player").transform;
+	private void GetPlayer () {
+		/*
+		Transform temp = GameObject.FindGameObjectWithTag("Player").transform;
 
-        if (temp != null) {
-            player = temp;
-        }
-        */
-    }
+		if (temp != null) {
+			player = temp;
+		}
+		*/
+	}
 }
