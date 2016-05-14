@@ -47,6 +47,7 @@ public class InventoryController : MonoBehaviour {
         if (offHandItem != null) {
             AddItemToInventory(offHandItem);
 
+            offHandItem.EnableItem();
             PullOutItem(offHandItem, Hand.Off);
         }
 	}
@@ -151,7 +152,7 @@ public class InventoryController : MonoBehaviour {
 
 
             case Hand.Off:
-                if (offHandItem = null) { break; }
+                if (offHandItem == null) { break; }
 
                 offHandItem.DisableItem();
                 offHandItem = null;

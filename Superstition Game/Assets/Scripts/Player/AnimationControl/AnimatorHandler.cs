@@ -37,5 +37,12 @@ public class AnimatorHandler : MonoBehaviour {
         GetHit();
     }
 
+    public virtual void RaiseShield() {
+        anim.SetBool("Block_Bool", true);
+    }
+
+    public virtual void LowerShield() {
+        anim.SetBool("Block_Bool", false);
+    }
 
 }

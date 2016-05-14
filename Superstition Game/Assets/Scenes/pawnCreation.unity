@@ -85,12 +85,6 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &277173432 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11468544, guid: 074401f6d3776934ca5012d7efad714d,
-    type: 2}
-  m_PrefabInternal: {fileID: 1858156790}
-  m_Script: {fileID: 11500000, guid: c3589e260ed15b147bf2be620db8bff5, type: 3}
 --- !u!1001 &591494999
 Prefab:
   m_ObjectHideFlags: 0
@@ -322,10 +316,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11436812, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
-      propertyPath: OnPawnDeath.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 496898, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
       propertyPath: m_LocalPosition.x
       value: 14.59974
@@ -358,6 +348,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11408058, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1334711916}
     - target: {fileID: 22413610, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -378,30 +372,6 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11436812, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
-      propertyPath: OnPawnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11436812, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
-      propertyPath: OnPawnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11436812, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
-      propertyPath: OnPawnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 277173432}
-    - target: {fileID: 11436812, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
-      propertyPath: OnPawnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TriggerDeath
-      objectReference: {fileID: 0}
-    - target: {fileID: 11436812, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
-      propertyPath: OnPawnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 11408058, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1334711916}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
   m_IsPrefabParent: 0
