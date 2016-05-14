@@ -48,6 +48,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &154630
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 437166}
+  - 114: {fileID: 11423062}
+  m_Layer: 0
+  m_Name: quest3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &155258
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,10 +88,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 482174}
   - {fileID: 406012}
+  - {fileID: 437166}
   m_Father: {fileID: 481260}
   m_RootOrder: 0
 --- !u!4 &406012
@@ -87,10 +103,21 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 402666}
   m_RootOrder: 1
+--- !u!4 &437166
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.640709, y: 2.560392, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 402666}
+  m_RootOrder: 2
 --- !u!4 &481260
 Transform:
   m_ObjectHideFlags: 1
@@ -98,9 +125,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 86.56634, y: -5.7544594, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 402666}
   m_Father: {fileID: 0}
@@ -114,7 +140,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 402666}
   m_RootOrder: 0
@@ -132,7 +157,7 @@ MonoBehaviour:
   questID: BowQuest
   currentState: 0
   Description: 
-  QuestItem: {fileID: 0}
+  QuestItem: 
   Inventory: {fileID: 0}
   AffectedCharacter: {fileID: 0}
   stats: {fileID: 0}
@@ -153,7 +178,7 @@ MonoBehaviour:
   questID: HeartTreeQuest
   currentState: 0
   Description: 
-  QuestItem: {fileID: 0}
+  QuestItem: 
   Inventory: {fileID: 0}
   AffectedCharacter: {fileID: 0}
   stats: {fileID: 0}
@@ -161,6 +186,24 @@ MonoBehaviour:
   multiplier: 0
   NumberOfTimes: 5
   ps: {fileID: 0}
+--- !u!114 &11423062
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74ee6280c412d914eb4e01fdcd49d1a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questID: WishboneQuest
+  currentState: 0
+  Description: find a lucky wishbone to give to the unlucky villager
+  QuestItem: Items/Wishbone.prefab
+  Inventory: {fileID: 0}
+  Player: {fileID: 0}
+  RewardItem: Items/SpearOfTheVoid 1.prefab
 --- !u!114 &11457514
 MonoBehaviour:
   m_ObjectHideFlags: 1

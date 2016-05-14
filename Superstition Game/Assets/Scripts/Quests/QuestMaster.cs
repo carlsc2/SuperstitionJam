@@ -22,7 +22,14 @@ public class QuestMaster : Singleton<QuestMaster> {
 		foreach (QuestBase qb in GetComponentsInChildren<QuestBase>()) {
 			Quests[qb.questID] = qb;
 		}
-
 	}
+
+    void OnLevelWasLoaded()
+    {
+        foreach (QuestBase qb in GetComponentsInChildren<QuestBase>())
+        {
+            qb.Player = GameObject.FindGameObjectWithTag("Player");
+        }
+    }
 
 }
