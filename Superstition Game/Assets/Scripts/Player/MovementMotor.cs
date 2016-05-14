@@ -4,16 +4,18 @@ using System.Collections;
 public class MovementMotor : MonoBehaviour {
 
     CharacterStats stats;
+    Rigidbody2D rb;
 
     void Start()
     {
         stats = GetComponent<CharacterStats>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
 	public void Move(float horizontal, float vertical)
     {
         Vector2 dir = new Vector2(horizontal, vertical).normalized * stats.speed;
-        transform.Translate(dir);
+        rb.MovePosition(rb.position + dir);
         
         //keep the player within the world boundaries
         if (transform.position.x > WorldBoundaries.maxX)

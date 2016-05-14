@@ -8,5 +8,6 @@ public class CharacterStats : MonoBehaviour {
     public int strength;
     public int defense;
     public float speed;
+    public float attackTime;
 
 }

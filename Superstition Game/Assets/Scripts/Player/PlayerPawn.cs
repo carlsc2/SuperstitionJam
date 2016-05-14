@@ -14,6 +14,9 @@ public class PlayerPawn : Pawn {
 
     public float defendModifier = 3f;
 
+    public GameObject swordHitbox;
+    public GameObject shieldHitbox;
+
     void Start()
     {
         mm = GetComponent<MovementMotor>();
@@ -35,16 +38,18 @@ public class PlayerPawn : Pawn {
 
 	public override void Attack()
     {
-        if (currentState != state.attack)
+        if (currentState != state.attack && currentState != state.defend)
         {
             currentState = state.attack;
-            Invoke("EndAttack", .5f);
+            swordHitbox.SetActive(true);
+            Invoke("EndAttack", stats.attackTime);
         }
     }
 
     void EndAttack()
     {
         currentState = state.idle;
+        swordHitbox.SetActive(false);
     }
 
     public override void Defend()
@@ -52,6 +57,7 @@ public class PlayerPawn : Pawn {
         if(currentState != state.attack && currentState != state.defend)
         {
             currentState = state.defend;
+            shieldHitbox.SetActive(true);
             stats.speed /= defendModifier;
         }
     }
@@ -61,6 +67,7 @@ public class PlayerPawn : Pawn {
         if(currentState == state.defend)
         {
             currentState = state.idle;
+            shieldHitbox.SetActive(false);
             stats.speed *= defendModifier;
         }
     }
@@ -79,10 +86,12 @@ public class PlayerPawn : Pawn {
                 if (horizontal > 0)
                 {
                     facing = direction.right;
+                    transform.localScale = Vector3.one;
                 }
                 else if (horizontal < 0)
                 {
                     facing = direction.left;
+                    transform.localScale = new Vector3(-1, 1, 1);
                 }
 
 
