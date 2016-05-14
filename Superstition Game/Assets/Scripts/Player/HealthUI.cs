@@ -5,12 +5,21 @@ using UnityEngine.UI;
 public class HealthUI : MonoBehaviour {
 
 	Slider slider;
+    [HideInInspector]
 	public CharacterStats stats;
+    
 
 	// Use this for initialization
 	void Start () 
 	{
-		//stats = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>();
+        if (transform.root.tag == "Enemy"  )
+        {
+            stats = GetComponentInParent<CharacterStats>();
+        }
+        else {
+            stats = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>();
+        }
+   
 		slider = GetComponent<Slider>();
 		slider.maxValue = stats.maxHealth;
 	}

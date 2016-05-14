@@ -68,6 +68,29 @@ public class SpriteRigController : MonoBehaviour {
         }
     }
 
+    [System.Serializable]
+    public class RigSocket {
+        public string socketLabel;
+        public Transform socketTransform;
+
+        public void AttatchToSocket(Transform objectToAttatch) {
+            AttatchToSocket(objectToAttatch, Vector3.zero);
+        }
+
+        public void AttatchToSocket(Transform objectToAttatch, Vector3 localPosOffset) {
+
+            //get object into position
+            objectToAttatch.position = socketTransform.position;
+            objectToAttatch.rotation = socketTransform.rotation;
+
+            //parent it so we can do local offsets
+            objectToAttatch.parent = socketTransform;
+
+            //adjust local position for lining up
+            objectToAttatch.localPosition += localPosOffset;
+        }
+
+    }
 
     //public SortingLayer rigSortingLayer;
 
@@ -77,15 +100,20 @@ public class SpriteRigController : MonoBehaviour {
     public Color jointColor;
     public float jointSize;
 
+    public Color socketBoneColor;
+
     public Color primaryFlashColor = Color.red;
     public Color secondaryFlashColor = Color.white;
+
+
+    public List<SpriteBoneBinding> spriteBones;
+    public List<RigSocket> sockets;
 
 
     void Awake() {
         
     }
 
-    public List<SpriteBoneBinding> spriteBones;
     // Use this for initialization
     void Start () {
 	
@@ -99,6 +127,17 @@ public class SpriteRigController : MonoBehaviour {
         }
 	}
 
+
+    public void AttachObjectToSocket(Transform objectTf, string socketName) {
+
+        //List<string> viableSockets = sockets.Select(x => x.socketLabel).ToList();
+
+        if (!sockets.Select(x => x.socketLabel).Contains(socketName)) { return; }
+
+        sockets.Where(x => x.socketLabel == socketName).ElementAt(0).AttatchToSocket(objectTf);
+
+        //viableSockets[0].AttatchToSocket(objectTf);
+    }
 
     public void ReloadBoneCosmetics() {
         foreach (SpriteBoneBinding binding in spriteBones) {
@@ -188,10 +227,16 @@ public class SpriteRigController : MonoBehaviour {
         foreach (SpriteBoneBinding binding in spriteBones) {
 
             foreach (Transform child in binding.bone.transform) {
-                if (!binding.cosmeticsList.Select(x => x.spriteRen.transform).ToList().Contains(child)) {
+                //if (!binding.cosmeticsList.Select(x => x.spriteRen.transform).ToList().Contains(child)) {
+                if (spriteBones.Select(x => x.bone.transform).Contains(child)) {
                     Gizmos.DrawLine(binding.bone.transform.position, child.position);
                 }
             }
+        }
+
+        Gizmos.color = socketBoneColor;
+        foreach (RigSocket sock in sockets) {
+            Gizmos.DrawLine(sock.socketTransform.position, sock.socketTransform.parent.position);
         }
         
         Gizmos.color = originalColor;

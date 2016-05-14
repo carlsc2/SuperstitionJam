@@ -9,23 +9,19 @@ public class spritePerspective : MonoBehaviour {
 	private Bounds maxbounds;
 
 	void Awake() {
-		spr = GetComponent<SpriteRenderer>();
 		sprc = new List<SpriteRenderer>();
+	}
+
+	void Start() {
+		update_sprites();
+	}
+
+	public void update_sprites() {
+		sprc.Clear();
+		spr = GetComponent<SpriteRenderer>();
 		foreach (SpriteRenderer sp in GetComponentsInChildren<SpriteRenderer>()) {
 			sprc.Add(sp);
 		}
-
-		/*if(spr == null) {
-			maxbounds = new Bounds();
-			foreach(SpriteRenderer sp in sprc) {
-				maxbounds.Encapsulate(sp.bounds);
-			}
-		}
-		else {
-			maxbounds = spr.bounds;
-		}*/
-
-
 	}
 
 	void LateUpdate() {
