@@ -16,7 +16,7 @@ public class Pawn : MonoBehaviour {
 
     protected virtual void Awake() {
         if (stats == null) {
-            stats.GetComponent<SpriteRigController>();
+            stats.GetComponent<CharacterStats>();
         }
     }
 

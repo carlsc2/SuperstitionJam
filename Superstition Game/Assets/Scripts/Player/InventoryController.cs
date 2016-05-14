@@ -180,4 +180,25 @@ public class InventoryController : MonoBehaviour {
     public bool HasItem(ItemBase item) {
         return itemsInInventory.Select(x => x.item).Contains(item);
     }
+
+    public bool HasItemOfId(string id) {
+        foreach (ItemSlot slot in itemsInInventory) {
+            if (slot.item.id == id) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public void RemoveFirstItemOfId(string id) {
+        foreach (ItemSlot slot in itemsInInventory) {
+            if (slot.item.id == id) {
+
+                RemoveItemFromInventory(slot.item);
+
+                break;
+            }
+        }
+    }
 }
