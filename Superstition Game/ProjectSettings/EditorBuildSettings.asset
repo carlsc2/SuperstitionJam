@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/Scenes/ForestLevel1.unity
   - enabled: 1
     path: Assets/Scenes/Plains1.unity
+  - enabled: 1
+    path: Assets/Scenes/BossLevel.unity

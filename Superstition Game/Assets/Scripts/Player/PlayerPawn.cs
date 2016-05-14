@@ -23,14 +23,14 @@ public class PlayerPawn : Pawn {
 
 	private HashSet<Transform> interactables;
 
-    
+	
 	protected override void Awake() {
 		base.Awake();
 
 		motor = GetComponent<MovementMotor>();
 		inventory = GetComponent<InventoryController>();
 		anim = GetComponent<AnimatorHandler>();
-        //audSource = GetComponent<AudioSource>();
+		//audSource = GetComponent<AudioSource>();
 
 		//sr = GetComponent<SpriteRenderer>();
 		//stats = GetComponent<CharacterStats>();
@@ -123,7 +123,7 @@ public class PlayerPawn : Pawn {
 			it.Interact(transform);
 
 			anim.Interact();
-            
+			
 		}
 	}
 
@@ -166,33 +166,33 @@ public class PlayerPawn : Pawn {
 		}
 	}
 
-    public override void Dodge() {
-        StartCoroutine(DodgeTimer(stats.dodgeTime, stats.dodgeSpeed, stats.dodgeAccel));
-    }
+	public override void Dodge() {
+		StartCoroutine(DodgeTimer(stats.dodgeTime, stats.dodgeSpeed, stats.dodgeAccel));
+	}
 
-    private IEnumerator DodgeTimer(float time, float speed, float accel) {
+	private IEnumerator DodgeTimer(float time, float speed, float accel) {
 
-        motor.isDodging = true;
-        motor.accel = accel;
-        motor.speed = speed;
-        motor.trueMoveDirec = motor.desiredMoveDirec.normalized * speed;
+		motor.isDodging = true;
+		motor.accel = accel;
+		motor.speed = speed;
+		motor.trueMoveDirec = motor.desiredMoveDirec.normalized * speed;
 
-        yield return new WaitForSeconds(time);
+		yield return new WaitForSeconds(time);
 
 
-        motor.isDodging = false;
-        motor.accel = stats.accel;
-        motor.speed = stats.walkSpeed;
+		motor.isDodging = false;
+		motor.accel = stats.accel;
+		motor.speed = stats.walkSpeed;
 
-        yield return null;
-    }
+		yield return null;
+	}
 
-    public override void KillPawn() {
+	public override void KillPawn() {
 		base.KillPawn();
 
 		//Trigger death animation on the model
 		anim.TriggerDeath();
-        
+		
 
 
 		//detatch the model from the GameObject that drives logic
