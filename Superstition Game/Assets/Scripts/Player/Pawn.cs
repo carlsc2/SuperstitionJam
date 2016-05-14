@@ -52,6 +52,8 @@ public class Pawn : MonoBehaviour {
 
     public virtual void Dodge() { }
 
+    public virtual void SelectItemFromInventory(int hotbarNumber) { }
+
     public virtual void DamagePawn(float damageAmount) {
 
         stats.ApplyDamage(damageAmount);

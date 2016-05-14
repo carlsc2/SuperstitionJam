@@ -3,11 +3,23 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
+    public static PlayerController singleton;
+
 	Pawn p;
+
+    void Awake() {
+        if (singleton == null) {
+            singleton = this;
+        }
+    }
 
 	void Start () 
 	{
-		p = GetComponent<Pawn>();
+
+        DontDestroyOnLoad(gameObject);
+
+        p = GetComponent<Pawn>();
+
 	}
 	
 	void Update () 
@@ -43,6 +55,13 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetButtonDown("Dodge")) {
             p.Dodge();
+        }
+
+        if (Input.GetButtonDown("Hotbar1")) {
+            p.SelectItemFromInventory(0);
+        }
+        if (Input.GetButtonDown("Hotbar2")) {
+            p.SelectItemFromInventory(1);
         }
 	}
 }
