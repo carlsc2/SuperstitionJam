@@ -849,7 +849,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.05, y: -2.93, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 462198}
@@ -1274,6 +1274,8 @@ MonoBehaviour:
   boneSize: 0
   jointColor: {r: 0, g: 0, b: 0, a: 0}
   jointSize: 0
+  primaryFlashColor: {r: 1, g: 0, b: 0, a: 1}
+  secondaryFlashColor: {r: 1, g: 1, b: 1, a: 1}
   spriteBones:
   - name: LowerTorsoJoint
     bone: {fileID: 11414958}
@@ -1490,9 +1492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29fb250b6dff6e40b9c844b6a8ddc9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equippedMainHandItem:
-    item: {fileID: 0}
-    hotbarSlotIndex: 0
+  equippedMainHandItem: {fileID: 0}
+  equippedOffHandItem: {fileID: 0}
   itemsInInventory: []
 --- !u!114 &11466348
 MonoBehaviour:
@@ -1598,6 +1599,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b5d2d43d8f4e3f4d8075beb70be1cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 11490258}
+  rig: {fileID: 11434548}
   defendModifier: 3
   swordHitbox: {fileID: 180564}
   shieldHitbox: {fileID: 139586}
