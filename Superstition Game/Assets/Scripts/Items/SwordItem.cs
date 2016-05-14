@@ -3,6 +3,14 @@ using System.Collections;
 
 public class SwordItem : ItemBase {
 
+    public enum AttackType {
+        Swing,
+        Stab,
+        AOE,
+    }
+
+    public AttackType weaponAttackType;
+
     public float damage;
 
     public bool canDamage = false;
@@ -35,7 +43,21 @@ public class SwordItem : ItemBase {
     public override void BeginUseItem() {
         base.BeginUseItem();
 
-        owner.GetComponent<AnimatorHandler>().Attack_Swing();
+        switch (weaponAttackType) {
+            case AttackType.Swing:
+                owner.GetComponent<AnimatorHandler>().Attack_Swing();
+                break;
+
+            case AttackType.Stab:
+                owner.GetComponent<AnimatorHandler>().Attack_Stab();
+                break;
+
+            case AttackType.AOE:
+
+                break;
+
+            default: goto case AttackType.Swing;
+        }
 
         canDamage = true;
     }

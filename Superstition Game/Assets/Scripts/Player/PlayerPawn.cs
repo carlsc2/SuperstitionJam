@@ -86,7 +86,7 @@ public class PlayerPawn : Pawn {
 			//inventory.offHandItem.BeginUseItem();
 			inventory.BeginUseItemInHand(InventoryController.Hand.Off);
 
-			stats.speed /= defendModifier;
+			stats.walkSpeed /= defendModifier;
 		}
 	}
 
@@ -98,7 +98,7 @@ public class PlayerPawn : Pawn {
 			//shieldHitbox.SetActive(false);
 			inventory.EndUseItemInHand(InventoryController.Hand.Off);
 
-			stats.speed *= defendModifier;
+			stats.walkSpeed *= defendModifier;
 		}
 	}
 
@@ -159,7 +159,28 @@ public class PlayerPawn : Pawn {
 		}
 	}
 
-	public override void KillPawn() {
+    public override void Dodge() {
+        StartCoroutine(DodgeTimer(stats.dodgeTime, stats.dodgeSpeed, stats.dodgeAccel));
+    }
+
+    private IEnumerator DodgeTimer(float time, float speed, float accel) {
+
+        motor.isDodging = true;
+        motor.accel = accel;
+        motor.speed = speed;
+        motor.trueMoveDirec = motor.desiredMoveDirec.normalized * speed;
+
+        yield return new WaitForSeconds(time);
+
+
+        motor.isDodging = false;
+        motor.accel = stats.accel;
+        motor.speed = stats.walkSpeed;
+
+        yield return null;
+    }
+
+    public override void KillPawn() {
 		base.KillPawn();
 
 		//Trigger death animation on the model

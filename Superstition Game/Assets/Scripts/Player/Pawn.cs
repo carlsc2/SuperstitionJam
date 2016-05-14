@@ -50,6 +50,8 @@ public class Pawn : MonoBehaviour {
     public virtual void Interact()
     { }
 
+    public virtual void Dodge() { }
+
     public virtual void DamagePawn(float damageAmount) {
 
         stats.ApplyDamage(damageAmount);

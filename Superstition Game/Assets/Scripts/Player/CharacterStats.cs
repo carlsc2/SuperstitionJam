@@ -7,8 +7,14 @@ public class CharacterStats : MonoBehaviour {
     public float maxHealth;
     public float strength;
     public float defense;
-    public float speed;
+    public float walkSpeed;
+    public float accel;
+
     public float attackTime;
+
+    public float dodgeTime;
+    public float dodgeAccel;
+    public float dodgeSpeed;
 
 
     public void ApplyDamage(float damageAmount) {
