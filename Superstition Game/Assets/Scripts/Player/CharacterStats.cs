@@ -10,4 +10,8 @@ public class CharacterStats : MonoBehaviour {
     public float speed;
     public float attackTime;
 
+
+    public void DamageCharacter(float damageAmount) {
+        health = (Mathf.Clamp(health - damageAmount, 0.0f, Mathf.Infinity));
+    }
 }
