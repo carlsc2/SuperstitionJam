@@ -20,14 +20,20 @@ public class InventoryController : MonoBehaviour {
         } 
     }
 
-    public ItemBase equippedMainHandItem;
-    public ItemBase equippedOffHandItem;
+    public ItemBase mainHandItem;
+    public ItemBase offHandItem;
 
     public List<ItemSlot> itemsInInventory;
 
 	// Use this for initialization
 	void Start () {
-	
+	    if (mainHandItem != null) {
+            AddItemToInventory(mainHandItem);
+        } 
+
+        if (offHandItem != null) {
+            AddItemToInventory(offHandItem);
+        }
 	}
 	
 	// Update is called once per frame
@@ -38,8 +44,14 @@ public class InventoryController : MonoBehaviour {
 //ADD TO INVENTORY
     public void AddItemToInventory(ItemBase itemToAdd) {
 
+        //assign owner b/c the check only sees if we already have this item
+        itemToAdd.owner = this;
+
+        //don't try to add unless we already have this item
+        if (itemsInInventory.Select(x => x.item).Contains(itemToAdd)) { return; }
+
         itemsInInventory.Add(new ItemSlot(itemToAdd));
-        
+
     }
 
 //REMOVE FROM INVENTORY
@@ -55,10 +67,10 @@ public class InventoryController : MonoBehaviour {
 
         //check to see if the item we want to remove is in one of the hands
          //put away first if so
-        if (equippedMainHandItem != null && equippedMainHandItem == itemToRemove) {
+        if (mainHandItem != null && mainHandItem == itemToRemove) {
             PutAwayCurrentItem(Hand.Main);
         }
-        if (equippedOffHandItem != null && equippedOffHandItem == itemToRemove) {
+        if (offHandItem != null && offHandItem == itemToRemove) {
             PutAwayCurrentItem(Hand.Off);
         }
 
@@ -74,20 +86,20 @@ public class InventoryController : MonoBehaviour {
         switch (handToPutIn) {
 
             case Hand.Main:
-                if (equippedMainHandItem != null) {
+                if (mainHandItem != null) {
                     PutAwayCurrentItem(Hand.Main);
                 }
-                equippedMainHandItem = slotWithItem.item;
+                mainHandItem = slotWithItem.item;
 
                 break;
 
 
             case Hand.Off:
 
-                if (equippedOffHandItem != null) {
+                if (offHandItem != null) {
                     PutAwayCurrentItem(Hand.Off);
                 }
-                equippedOffHandItem = slotWithItem.item;
+                offHandItem = slotWithItem.item;
 
 
                 break;
@@ -100,7 +112,7 @@ public class InventoryController : MonoBehaviour {
         switch (handToFreeUp) {
 
             case Hand.Main:
-                if (equippedMainHandItem != null) {
+                if (mainHandItem != null) {
 
                 }
 
@@ -118,15 +130,15 @@ public class InventoryController : MonoBehaviour {
         switch (handWithItem) {
 
             case Hand.Main:
-                if (equippedMainHandItem != null) {
-                    equippedMainHandItem.UseItem();
+                if (mainHandItem != null) {
+                    mainHandItem.UseItem();
                 }
 
                 break;
 
             case Hand.Off:
-                if (equippedOffHandItem != null) {
-                    equippedOffHandItem.UseItem();
+                if (offHandItem != null) {
+                    offHandItem.UseItem();
                 }
 
                 break;
