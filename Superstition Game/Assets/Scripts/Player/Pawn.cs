@@ -3,6 +3,27 @@ using System.Collections;
 
 public class Pawn : MonoBehaviour {
 
+    public CharacterStats stats;
+
+    public SpriteRigController rig;
+
+
+    protected virtual void Awake() {
+        if (stats == null) {
+            stats.GetComponent<SpriteRigController>();
+        }
+    }
+
+    protected virtual void Start() {
+
+    }
+
+    protected virtual void Update() {
+
+    }
+
+
+
     public virtual void Attack()
     { }
 
@@ -21,5 +42,9 @@ public class Pawn : MonoBehaviour {
     public virtual void Interact()
     { }
 
-    
+    public virtual void DamagePawn(float damageAmount) {
+
+        stats.ApplyDamage(damageAmount);
+        rig.StartFlashRig(2, .2f);
+    }
 }

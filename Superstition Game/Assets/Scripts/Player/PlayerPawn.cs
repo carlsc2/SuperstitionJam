@@ -9,7 +9,7 @@ public class PlayerPawn : Pawn {
 	state currentState = state.idle;
 	direction facing = direction.left;
 	MovementMotor mm;
-	CharacterStats stats;
+	//CharacterStats stats;
 
 	//SpriteRenderer sr;
 
@@ -20,20 +20,26 @@ public class PlayerPawn : Pawn {
 
 	private HashSet<Transform> interactables;
 
-	void Start()
-	{
-		mm = GetComponent<MovementMotor>();
-		//sr = GetComponent<SpriteRenderer>();
-		stats = GetComponent<CharacterStats>();
-		interactables = new HashSet<Transform>();
+    protected override void Awake() {
+        base.Awake();
 
-        swordHitbox.SetActive(false);
-        shieldHitbox.SetActive(false);
+        mm = GetComponent<MovementMotor>();
+        //sr = GetComponent<SpriteRenderer>();
+        //stats = GetComponent<CharacterStats>();
+        interactables = new HashSet<Transform>();
+    }
+
+    protected override void Start()
+	{
+        base.Start();
+
+
 	}
 
-	void Update()
+	protected override void Update()
 	{
-        
+        base.Update();
+
 		/*if (currentState == state.idle)
 			sr.color = Color.white;
 		else if (currentState == state.walk)
