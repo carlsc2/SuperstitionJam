@@ -170,23 +170,23 @@ Prefab:
       objectReference: {fileID: 357338944}
     - target: {fileID: 22499142, guid: a78ce730cd9f01c4aaed28672bd77bf9, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22499142, guid: a78ce730cd9f01c4aaed28672bd77bf9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22414482, guid: a78ce730cd9f01c4aaed28672bd77bf9, type: 2}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22414482, guid: a78ce730cd9f01c4aaed28672bd77bf9, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22414482, guid: a78ce730cd9f01c4aaed28672bd77bf9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a78ce730cd9f01c4aaed28672bd77bf9, type: 2}
@@ -463,7 +463,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 11493766, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
+    - target: {fileID: 11408058, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 357338940}
@@ -490,18 +490,6 @@ Prefab:
     - target: {fileID: 22474250, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 105774, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 128724, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11447408, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
