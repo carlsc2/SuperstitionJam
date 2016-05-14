@@ -33,7 +33,7 @@ public class movePlayerIcon : MonoBehaviour {
 		ClampToMap();
 		current_position = transform.position;
 
-		if (curloc != null &&  Input.GetButton("Submit")) {
+		if (curloc != null &&  Input.GetButton("Interact")) {
 			//enter current location
 			curloc.enter();
 		}
