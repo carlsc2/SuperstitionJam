@@ -104,13 +104,14 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401702}
-  - 114: {fileID: 11474212}
-  - 114: {fileID: 11479744}
   - 114: {fileID: 11463320}
-  - 114: {fileID: 11457548}
-  - 114: {fileID: 11425806}
   - 114: {fileID: 11439268}
+  - 114: {fileID: 11457548}
+  - 114: {fileID: 11421250}
+  - 114: {fileID: 11425806}
   - 50: {fileID: 5079550}
+  - 114: {fileID: 11409506}
+  - 114: {fileID: 11454558}
   m_Layer: 0
   m_Name: BossPawn
   m_TagString: Untagged
@@ -239,7 +240,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 458750}
   - 61: {fileID: 6195602}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: HurtTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,8 +641,8 @@ Transform:
   m_LocalPosition: {x: 6.141792, y: 0.54064226, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 456508}
   - {fileID: 438186}
+  - {fileID: 456508}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &408092
@@ -827,7 +828,7 @@ Transform:
   m_Children:
   - {fileID: 456992}
   m_Father: {fileID: 401702}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &438280
 Transform:
   m_ObjectHideFlags: 1
@@ -903,7 +904,7 @@ Transform:
   - {fileID: 482696}
   - {fileID: 458750}
   m_Father: {fileID: 401702}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &456992
 Transform:
   m_ObjectHideFlags: 1
@@ -1148,7 +1149,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -1204,10 +1205,10 @@ Animator:
   m_GameObject: {fileID: 148574}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 2b91752871fc3d54eaa7be40b63ee046, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -1225,6 +1226,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cosmeticSpriteRenderers:
   - {fileID: 21202330}
+--- !u!114 &11409506
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3589e260ed15b147bf2be620db8bff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 9503454}
 --- !u!114 &11412844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1252,6 +1265,18 @@ MonoBehaviour:
   cosmeticSpriteRenderers:
   - {fileID: 21271714}
   - {fileID: 21218696}
+--- !u!114 &11421250
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32a68df691b00d44b28b65e72525ab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &11425806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1263,7 +1288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29fb250b6dff6e40b9c844b6a8ddc9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rig: {fileID: 0}
+  rig: {fileID: 11464396}
   mainHandSocket: 
   offHandSocket: 
   mainHandItem: {fileID: 0}
@@ -1280,7 +1305,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24c0b0250e600ab4ca4634d0a0f74c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ws: {fileID: 0}
+  desiredMoveDirec: {x: 0, y: 0}
+  trueMoveDirec: {x: 0, y: 0}
+  accel: 1
 --- !u!114 &11443104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1345,6 +1372,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cosmeticSpriteRenderers:
   - {fileID: 21269942}
+--- !u!114 &11454558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b5d2d43d8f4e3f4d8075beb70be1cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPawnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  stats: {fileID: 11463320}
+  rig: {fileID: 11464396}
+  defendModifier: 3
 --- !u!114 &11456284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1422,7 +1468,7 @@ MonoBehaviour:
   maxHealth: 100
   strength: 20
   defense: 10
-  speed: 0.075
+  speed: 3
   attackTime: 0.25
 --- !u!114 &11464396
 MonoBehaviour:
@@ -1588,30 +1634,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cosmeticSpriteRenderers:
   - {fileID: 21235626}
---- !u!114 &11474212
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 117292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90b2047277fff4e478519b904bbe17b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11479744
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 117292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc0c94f4fb052b840bf37197b39cda12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats: {fileID: 0}
-  rig: {fileID: 0}
 --- !u!114 &11482256
 MonoBehaviour:
   m_ObjectHideFlags: 1
