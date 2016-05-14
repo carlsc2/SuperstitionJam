@@ -4,6 +4,11 @@ using System.Linq;
 
 public class InventoryController : MonoBehaviour {
 
+    public SpriteRigController rig;
+
+    public string mainHandSocket;
+    public string offHandSocket;
+
     public enum Hand {
         Main,
         Off,
@@ -29,10 +34,14 @@ public class InventoryController : MonoBehaviour {
 	void Start () {
 	    if (mainHandItem != null) {
             AddItemToInventory(mainHandItem);
+
+            PullOutItem(mainHandItem, Hand.Main);
         } 
 
         if (offHandItem != null) {
             AddItemToInventory(offHandItem);
+
+            PullOutItem(offHandItem, Hand.Off);
         }
 	}
 	
@@ -58,7 +67,8 @@ public class InventoryController : MonoBehaviour {
     public void RemoveItemFromInventory(ItemBase itemToRemove) {
 
         //make sure the item exists in the inventory first
-        if (!itemsInInventory.Select(x => x.item).Contains(itemToRemove)) {
+        //if (!itemsInInventory.Select(x => x.item).Contains(itemToRemove)) {
+        if (!HasItem(itemToRemove)) {
 
             Debug.LogErrorFormat(this, "Item {0} does not exist in Inventory, cannot remove", itemToRemove.name);
 
@@ -80,8 +90,9 @@ public class InventoryController : MonoBehaviour {
     }
 
 //PLACE ITEM IN HAND
-    public void PullOutItem(ItemSlot slotWithItem, Hand handToPutIn) {
-        if (slotWithItem.item == null) { return; }
+    public void PullOutItem(ItemBase item, Hand handToPutIn) {
+        if (item == null || !HasItem(item)) { return; }
+
 
         switch (handToPutIn) {
 
@@ -89,7 +100,8 @@ public class InventoryController : MonoBehaviour {
                 if (mainHandItem != null) {
                     PutAwayCurrentItem(Hand.Main);
                 }
-                mainHandItem = slotWithItem.item;
+                mainHandItem = item;
+                rig.AttachObjectToSocket(item.transform, mainHandSocket);
 
                 break;
 
@@ -99,8 +111,8 @@ public class InventoryController : MonoBehaviour {
                 if (offHandItem != null) {
                     PutAwayCurrentItem(Hand.Off);
                 }
-                offHandItem = slotWithItem.item;
-
+                offHandItem = item;
+                rig.AttachObjectToSocket(item.transform, offHandSocket);
 
                 break;
         }
@@ -143,5 +155,10 @@ public class InventoryController : MonoBehaviour {
 
                 break;
         }
+    }
+
+
+    public bool HasItem(ItemBase item) {
+        return itemsInInventory.Select(x => x.item).Contains(item);
     }
 }
