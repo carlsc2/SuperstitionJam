@@ -6,6 +6,7 @@ using System.Linq;
 using UnityEditor;
 #endif
 
+[ExecuteInEditMode]
 public class SpriteRigController : MonoBehaviour {
 
     [System.Serializable]
@@ -19,8 +20,15 @@ public class SpriteRigController : MonoBehaviour {
 
         public Vector2 offset;
 
+        [HideInInspector]
+        public float orderInLayer;
+
         public void ApplyOffsetFromWorld() {
             offset = spriteRen.transform.localPosition;
+        }
+
+        public void RefreshOrderInLayer() {
+            orderInLayer = spriteRen.sortingOrder;
         }
     }
 
@@ -48,6 +56,12 @@ public class SpriteRigController : MonoBehaviour {
                 cosSprite.ApplyOffsetFromWorld();
             }
         }
+
+        public void ApplySortingOrder() {
+            foreach (CosmeticSprite cosSprite in cosmeticsList) {
+                cosSprite.orderInLayer = cosSprite.spriteRen.sortingOrder;
+            }
+        }
     }
 
 
@@ -72,12 +86,17 @@ public class SpriteRigController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    if (!Application.isPlaying) {
+            ApplyCosmeticsOffsetsToRig();
+            ApplySortingOrderToRigCosmetics();
+        }
 	}
 
+    /*
     public void DestroyRigCosmetics() {
 
     }
+    */
 
     public void ReloadBoneCosmetics() {
         foreach (SpriteBoneBinding binding in spriteBones) {
@@ -89,6 +108,12 @@ public class SpriteRigController : MonoBehaviour {
     public void ApplyCosmeticsOffsetsToRig() {
         foreach (SpriteBoneBinding binding in spriteBones) {
             binding.ApplyWorldOffsets();
+        }
+    }
+
+    public void ApplySortingOrderToRigCosmetics() {
+        foreach (SpriteBoneBinding binding in spriteBones) {
+            binding.ApplySortingOrder();
         }
     }
 
@@ -168,8 +193,23 @@ public class SpriteRigController_Editor : Editor {
 
     void OnEnable() {
         selfScript = (SpriteRigController)target;
+        //EditorApplication.CallbackFunction callbackDel;
+        //callbackDel = selfScript.ApplySortingOrderToRigCosmetics();
     }
 
+    void OnGUI() {
+        Debug.Log("Blomasd;lkj");
+    }
+    
+    /*
+    public override void DrawPreview(Rect previewArea) {
+        base.DrawPreview(previewArea);
+    }
+    public override bool HasPreviewGUI() {
+        //return base.HasPreviewGUI();
+        return true;
+    }
+    */
     public override void OnInspectorGUI() {
         base.OnInspectorGUI();
 
