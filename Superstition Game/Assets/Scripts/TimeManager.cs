@@ -18,7 +18,7 @@ public class TimeManager : MonoBehaviour {
 		timeofday = timeofday % ticks_per_day;
 
 		if(day > days_until_fight) {
-			SceneManager.LoadScene("finalfight");
+			SceneManager.LoadScene("BossLevel");
 		}
 	}
 
