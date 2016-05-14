@@ -1490,7 +1490,7 @@ MonoBehaviour:
   maxHealth: 50
   strength: 20
   defense: 10
-  speed: 0.075
+  speed: 3
   attackTime: 0.25
 --- !u!114 &11419790
 MonoBehaviour:
@@ -1930,8 +1930,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24c0b0250e600ab4ca4634d0a0f74c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDirec: {x: 0, y: 0}
-  delayedMoveDirec: {x: 0, y: 0}
+  desiredMoveDirec: {x: 0, y: 0}
+  trueMoveDirec: {x: 0, y: 0}
   accel: 1
 --- !u!114 &11475084
 MonoBehaviour:

@@ -143,7 +143,7 @@ public class PlayerPawn : Pawn {
 				}
 
                 //ANIMATION
-                anim.SetWalkBlend(motor.delayedMoveDirec.magnitude);
+                anim.SetWalkBlend(motor.trueMoveDirec.magnitude);
 
 				if (currentState != state.walk)
 					currentState = state.walk;

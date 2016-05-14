@@ -12,14 +12,14 @@ public class PlayerController : MonoBehaviour {
 	
 	void Update () 
 	{
-		if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
-		{
+		//if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+		//{
 			p.Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-		}
-		else
-		{
-			p.Idle();
-		}
+		//}
+		//else
+		//{
+			//p.Idle();
+		//}
 
 		if(Input.GetButtonDown("Attack"))
 		{

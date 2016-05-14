@@ -13,10 +13,9 @@ public class PlayerAnimHandler : AnimatorHandler {
 	
 	}
 
-    public override void Attack() {
-        base.Attack();
+    public override void Attack_Swing() {
+        base.Attack_Swing();
 
-        anim.SetTrigger("Attack_Trig");
 
     }
 

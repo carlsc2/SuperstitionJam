@@ -7,8 +7,8 @@ public class MovementMotor : MonoBehaviour {
 	Rigidbody2D rb;
 	private WorldSize ws;
 
-    public Vector2 moveDirec;
-    public Vector2 delayedMoveDirec;
+    public Vector2 desiredMoveDirec;
+    public Vector2 trueMoveDirec;
     public float accel = 1.0f;
 
 	void Start()
@@ -20,13 +20,21 @@ public class MovementMotor : MonoBehaviour {
 
 	void Update()
 	{
-		rb.velocity = Vector3.zero;
+		//rb.velocity = Vector3.zero;
 
-        delayedMoveDirec = Vector3.MoveTowards(delayedMoveDirec, moveDirec, accel);
-	}
+        trueMoveDirec = Vector3.MoveTowards(trueMoveDirec, desiredMoveDirec, accel);
 
-	public void Move(float horizontal, float vertical)
+        rb.velocity = trueMoveDirec * stats.speed;
+
+    }
+
+    public void Move(float horizontal, float vertical)
 	{
+        desiredMoveDirec = new Vector2(horizontal, vertical).normalized;
+
+
+
+        /*
         moveDirec.x = horizontal;
         moveDirec.y = vertical;
         moveDirec.Normalize();
@@ -52,5 +60,6 @@ public class MovementMotor : MonoBehaviour {
 		{
 			transform.position = new Vector2(transform.position.x, WorldBoundaries.minY);
 		}
+        */
 	}
 }
