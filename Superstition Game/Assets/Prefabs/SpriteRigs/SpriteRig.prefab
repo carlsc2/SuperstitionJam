@@ -200,6 +200,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 421924}
+  - 114: {fileID: 11494618}
   m_Layer: 0
   m_Name: Root
   m_TagString: Untagged
@@ -1297,6 +1298,9 @@ MonoBehaviour:
       sprite: {fileID: 0}
       offset: {x: 0.21286525, y: 0.73503464}
       orderInLayer: 0
+  - name: Root
+    bone: {fileID: 11494618}
+    cosmeticsList: []
 --- !u!114 &11475530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1336,6 +1340,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cosmeticSpriteRenderers:
   - {fileID: 21236614}
+--- !u!114 &11494618
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af16960db16d724483eef32f1c8a693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cosmeticSpriteRenderers: []
 --- !u!212 &21211498
 SpriteRenderer:
   m_ObjectHideFlags: 1
