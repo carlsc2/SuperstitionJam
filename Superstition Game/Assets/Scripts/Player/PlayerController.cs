@@ -35,5 +35,10 @@ public class PlayerController : MonoBehaviour {
         {
             p.EndDefend();
         }
+
+        if(Input.GetButtonDown("Interact"))
+        {
+            p.Interact();
+        }
 	}
 }

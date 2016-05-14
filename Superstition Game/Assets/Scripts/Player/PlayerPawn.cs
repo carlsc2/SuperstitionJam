@@ -10,7 +10,7 @@ public class PlayerPawn : Pawn {
     MovementMotor mm;
     CharacterStats stats;
 
-    SpriteRenderer sr;
+    //SpriteRenderer sr;
 
     public float defendModifier = 3f;
 
@@ -20,20 +20,20 @@ public class PlayerPawn : Pawn {
     void Start()
     {
         mm = GetComponent<MovementMotor>();
-        sr = GetComponent<SpriteRenderer>();
+        //sr = GetComponent<SpriteRenderer>();
         stats = GetComponent<CharacterStats>();
     }
 
     void Update()
     {
-        if (currentState == state.idle)
+        /*if (currentState == state.idle)
             sr.color = Color.white;
         else if (currentState == state.walk)
             sr.color = Color.green;
         else if (currentState == state.attack)
             sr.color = Color.red;
         else if (currentState == state.defend)
-            sr.color = Color.blue;
+            sr.color = Color.blue;*/
     }
 
 	public override void Attack()
@@ -70,6 +70,11 @@ public class PlayerPawn : Pawn {
             shieldHitbox.SetActive(false);
             stats.speed *= defendModifier;
         }
+    }
+
+    public override void Interact()
+    {
+        //interaction stuff goes here
     }
 
     public override void Move(float horizontal, float vertical)
