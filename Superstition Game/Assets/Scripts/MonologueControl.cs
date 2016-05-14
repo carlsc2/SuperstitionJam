@@ -48,8 +48,11 @@ public class MonologueControl : MonoBehaviour, Interactable {
 	void Update () {
 		if (!is_speaking) {
 			if (is_idle) {
-				speak_words(idle_dialogue[idix]);
-				idix = (idix + 1) % idle_dialogue.Length;
+				if(idix < idle_dialogue.Length) {
+					speak_words(idle_dialogue[idix]);
+					idix = (idix + 1) % idle_dialogue.Length;
+				}
+
 			}
 			else if (is_chatting) {
 				if(cdix < chat_dialogue.Length) {
