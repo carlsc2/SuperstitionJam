@@ -9,6 +9,7 @@ public class MovementMotor : MonoBehaviour {
 
     public Vector2 moveDirec;
     public Vector2 delayedMoveDirec;
+    public float accel = 1.0f;
 
 	void Start()
 	{
@@ -21,12 +22,16 @@ public class MovementMotor : MonoBehaviour {
 	{
 		rb.velocity = Vector3.zero;
 
-        //delayedMoveDirec
+        delayedMoveDirec = Vector3.MoveTowards(delayedMoveDirec, moveDirec, accel);
 	}
 
 	public void Move(float horizontal, float vertical)
 	{
-		Vector2 dir = new Vector2(horizontal, vertical).normalized * stats.speed;
+        moveDirec.x = horizontal;
+        moveDirec.y = vertical;
+        moveDirec.Normalize();
+
+        Vector2 dir = new Vector2(horizontal, vertical).normalized * stats.speed;
 		rb.MovePosition(rb.position + dir);
 		
 		//keep the player within the world boundaries
