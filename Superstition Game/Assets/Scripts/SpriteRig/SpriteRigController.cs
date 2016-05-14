@@ -20,15 +20,16 @@ public class SpriteRigController : MonoBehaviour {
 
         public Vector2 offset;
 
-        [HideInInspector]
-        public float orderInLayer;
+        //[HideInInspector]
+        public int orderInLayer;
 
         public void ApplyOffsetFromWorld() {
             offset = spriteRen.transform.localPosition;
         }
 
         public void RefreshOrderInLayer() {
-            orderInLayer = spriteRen.sortingOrder;
+            //orderInLayer = spriteRen.sortingOrder;
+            spriteRen.sortingOrder = orderInLayer;
         }
     }
 
@@ -59,7 +60,9 @@ public class SpriteRigController : MonoBehaviour {
 
         public void ApplySortingOrder() {
             foreach (CosmeticSprite cosSprite in cosmeticsList) {
-                cosSprite.orderInLayer = cosSprite.spriteRen.sortingOrder;
+                //cosSprite.orderInLayer = cosSprite.spriteRen.sortingOrder;
+                //cosSprite.spriteRen.sortingOrder = cosSprite.odr
+                cosSprite.RefreshOrderInLayer();
             }
         }
     }
