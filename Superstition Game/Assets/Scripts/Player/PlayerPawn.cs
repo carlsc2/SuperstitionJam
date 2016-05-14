@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 public class PlayerPawn : Pawn {
 
-	enum state { idle, walk, attack, defend };
+	public enum state { idle, walk, attack, defend };
 	enum direction { left, right }
-	state currentState = state.idle;
+	public state currentState = state.idle;
 	direction facing = direction.left;
 	MovementMotor motor;
-    InventoryController inventory;
-    AnimatorHandler anim;
+	InventoryController inventory;
+	AnimatorHandler anim;
 	//CharacterStats stats;
 
 	//SpriteRenderer sr;
@@ -26,8 +26,8 @@ public class PlayerPawn : Pawn {
 		base.Awake();
 
 		motor = GetComponent<MovementMotor>();
-        inventory = GetComponent<InventoryController>();
-        anim = GetComponent<AnimatorHandler>();
+		inventory = GetComponent<InventoryController>();
+		anim = GetComponent<AnimatorHandler>();
 
 		//sr = GetComponent<SpriteRenderer>();
 		//stats = GetComponent<CharacterStats>();
@@ -61,8 +61,8 @@ public class PlayerPawn : Pawn {
 		if (currentState != state.attack && currentState != state.defend)
 		{
 			currentState = state.attack;
-            //swordHitbox.SetActive(true);
-            inventory.BeginUseItemInHand(InventoryController.Hand.Main);
+			//swordHitbox.SetActive(true);
+			inventory.BeginUseItemInHand(InventoryController.Hand.Main);
 
 			Invoke("EndAttack", stats.attackTime);
 		}
@@ -72,7 +72,7 @@ public class PlayerPawn : Pawn {
 	{
 		currentState = state.idle;
 
-        inventory.EndUseItemInHand(InventoryController.Hand.Main);
+		inventory.EndUseItemInHand(InventoryController.Hand.Main);
 
 		//swordHitbox.SetActive(false);
 	}
@@ -82,9 +82,9 @@ public class PlayerPawn : Pawn {
 		if(currentState != state.attack && currentState != state.defend)
 		{
 			currentState = state.defend;
-            //shieldHitbox.SetActive(true);
-            //inventory.offHandItem.BeginUseItem();
-            inventory.BeginUseItemInHand(InventoryController.Hand.Off);
+			//shieldHitbox.SetActive(true);
+			//inventory.offHandItem.BeginUseItem();
+			inventory.BeginUseItemInHand(InventoryController.Hand.Off);
 
 			stats.speed /= defendModifier;
 		}
@@ -95,8 +95,8 @@ public class PlayerPawn : Pawn {
 		if(currentState == state.defend)
 		{
 			currentState = state.idle;
-            //shieldHitbox.SetActive(false);
-            inventory.EndUseItemInHand(InventoryController.Hand.Off);
+			//shieldHitbox.SetActive(false);
+			inventory.EndUseItemInHand(InventoryController.Hand.Off);
 
 			stats.speed *= defendModifier;
 		}
@@ -142,8 +142,8 @@ public class PlayerPawn : Pawn {
 					transform.localScale = new Vector3(-.5f, .5f, 1);
 				}
 
-                //ANIMATION
-                anim.SetWalkBlend(motor.delayedMoveDirec.magnitude);
+				//ANIMATION
+				anim.SetWalkBlend(motor.delayedMoveDirec.magnitude);
 
 				if (currentState != state.walk)
 					currentState = state.walk;
