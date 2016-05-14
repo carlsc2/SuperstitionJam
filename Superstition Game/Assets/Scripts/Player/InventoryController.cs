@@ -32,6 +32,11 @@ public class InventoryController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+        foreach (ItemSlot slot in itemsInInventory) {
+            
+        }
+
 	    if (mainHandItem != null) {
             AddItemToInventory(mainHandItem);
 
@@ -55,6 +60,10 @@ public class InventoryController : MonoBehaviour {
 
         //assign owner b/c the check only sees if we already have this item
         itemToAdd.owner = this;
+
+        itemToAdd.transform.parent = transform;
+
+        itemToAdd.DisableItem();
 
         //don't try to add unless we already have this item
         if (itemsInInventory.Select(x => x.item).Contains(itemToAdd)) { return; }
@@ -93,6 +102,7 @@ public class InventoryController : MonoBehaviour {
     public void PullOutItem(ItemBase item, Hand handToPutIn) {
         if (item == null || !HasItem(item)) { return; }
 
+        item.EnableItem();
 
         switch (handToPutIn) {
 
@@ -100,6 +110,7 @@ public class InventoryController : MonoBehaviour {
                 if (mainHandItem != null) {
                     PutAwayCurrentItem(Hand.Main);
                 }
+
                 mainHandItem = item;
                 rig.AttachObjectToSocket(item.transform, mainHandSocket);
 
@@ -118,19 +129,27 @@ public class InventoryController : MonoBehaviour {
         }
     }
 
+
+
 //REMOVE ITEM FROM HAND, BUT KEEP IN INVENTORY
     public void PutAwayCurrentItem(Hand handToFreeUp) {
 
         switch (handToFreeUp) {
 
             case Hand.Main:
-                if (mainHandItem != null) {
+                if (mainHandItem == null) { break; }
 
-                }
-
+                mainHandItem.DisableItem();
+                mainHandItem = null;
+                
                 break;
 
+
             case Hand.Off:
+                if (offHandItem = null) { break; }
+
+                offHandItem.DisableItem();
+                offHandItem = null;
 
                 break;
         }
@@ -142,16 +161,16 @@ public class InventoryController : MonoBehaviour {
         switch (handWithItem) {
 
             case Hand.Main:
-                if (mainHandItem != null) {
-                    mainHandItem.UseItem();
-                }
+                if (mainHandItem == null) { break; }
+
+                mainHandItem.UseItem();
 
                 break;
 
             case Hand.Off:
-                if (offHandItem != null) {
-                    offHandItem.UseItem();
-                }
+                if (offHandItem == null) { break; }
+
+                offHandItem.UseItem();
 
                 break;
         }
