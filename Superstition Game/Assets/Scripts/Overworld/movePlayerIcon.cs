@@ -55,9 +55,10 @@ public class movePlayerIcon : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
-		locationIcon tmp = col.transform.root.GetComponentInChildren<locationIcon>();
+		locationIcon tmp = col.transform.GetComponentInChildren<locationIcon>();
 		if (tmp != null) {
 			curloc = tmp;
+			curloc.visit_location();
 		}
 	}
 
