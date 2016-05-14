@@ -31,7 +31,11 @@ public class ItemBase : MonoBehaviour {
 
     }
 
-    public virtual void UseItem() {
+    public virtual void BeginUseItem() {
+
+    }
+
+    public virtual void EndUseItem() {
 
     }
 

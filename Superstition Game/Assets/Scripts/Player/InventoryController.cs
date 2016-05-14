@@ -40,6 +40,7 @@ public class InventoryController : MonoBehaviour {
 	    if (mainHandItem != null) {
             AddItemToInventory(mainHandItem);
 
+            mainHandItem.EnableItem();
             PullOutItem(mainHandItem, Hand.Main);
         } 
 
@@ -102,7 +103,7 @@ public class InventoryController : MonoBehaviour {
     public void PullOutItem(ItemBase item, Hand handToPutIn) {
         if (item == null || !HasItem(item)) { return; }
 
-        item.EnableItem();
+        //item.EnableItem();
 
         switch (handToPutIn) {
 
@@ -112,6 +113,8 @@ public class InventoryController : MonoBehaviour {
                 }
 
                 mainHandItem = item;
+                item.EnableItem();
+
                 rig.AttachObjectToSocket(item.transform, mainHandSocket);
 
                 break;
@@ -123,6 +126,8 @@ public class InventoryController : MonoBehaviour {
                     PutAwayCurrentItem(Hand.Off);
                 }
                 offHandItem = item;
+
+                item.EnableItem();
                 rig.AttachObjectToSocket(item.transform, offHandSocket);
 
                 break;
@@ -156,21 +161,41 @@ public class InventoryController : MonoBehaviour {
     }
 
 //USE ITEM IN SUPPLIED HAND
-    public void UseItemInHand(Hand handWithItem) {
+    public void BeginUseItemInHand(Hand handWithItem) {
 
         switch (handWithItem) {
 
             case Hand.Main:
                 if (mainHandItem == null) { break; }
 
-                mainHandItem.UseItem();
+                mainHandItem.BeginUseItem();
 
                 break;
 
             case Hand.Off:
                 if (offHandItem == null) { break; }
 
-                offHandItem.UseItem();
+                offHandItem.BeginUseItem();
+
+                break;
+        }
+    }
+
+    public void EndUseItemInHand(Hand handWithItem) {
+
+        switch (handWithItem) {
+
+            case Hand.Main:
+                if (mainHandItem == null) { break; }
+
+                mainHandItem.EndUseItem();
+
+                break;
+
+            case Hand.Off:
+                if (offHandItem == null) { break; }
+
+                offHandItem.EndUseItem();
 
                 break;
         }
