@@ -1,19 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[CreateAssetMenu]
-public class QuestBase : ScriptableObject {
-
-    public QuestBase()
-    {
-
-    }
+public class QuestBase : MonoBehaviour {
 
     public enum State { UKNOWN, STARTED, COMPLETED, TURNED_IN };
+    public State currentState;
 
     public string Description;
 
-    virtual public void CheckConditions(){
+    virtual public void CheckConditions(string str){
         try
         {
             throw new UnityException();

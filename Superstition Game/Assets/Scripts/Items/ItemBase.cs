@@ -4,6 +4,7 @@ using System;
 
 public class ItemBase : MonoBehaviour {
 
+    public InventoryController owner;
 
     protected virtual void Awake() {
 

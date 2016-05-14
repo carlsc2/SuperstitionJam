@@ -13,6 +13,11 @@ public class MovementMotor : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
     }
 
+    void Update()
+    {
+        rb.velocity = Vector3.zero;
+    }
+
     public void Move(float horizontal, float vertical)
     {
         Vector2 dir = new Vector2(horizontal, vertical).normalized * stats.speed;

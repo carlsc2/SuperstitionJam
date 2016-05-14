@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 331f98edbd267104f92b0442853fbd54
+timeCreated: 1463209130
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - chatboxPrefab: {fileID: 199558, guid: 13931b760726bec48a7b876a98024746, type: 2}
+  - quest: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
