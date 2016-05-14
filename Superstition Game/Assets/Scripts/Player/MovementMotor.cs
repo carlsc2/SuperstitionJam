@@ -7,6 +7,9 @@ public class MovementMotor : MonoBehaviour {
 	Rigidbody2D rb;
 	private WorldSize ws;
 
+    public Vector2 moveDirec;
+    public Vector2 delayedMoveDirec;
+
 	void Start()
 	{
 		stats = GetComponent<CharacterStats>();
@@ -17,6 +20,8 @@ public class MovementMotor : MonoBehaviour {
 	void Update()
 	{
 		rb.velocity = Vector3.zero;
+
+        //delayedMoveDirec
 	}
 
 	public void Move(float horizontal, float vertical)

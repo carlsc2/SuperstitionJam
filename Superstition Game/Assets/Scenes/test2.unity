@@ -124,10 +124,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 11442422, guid: 7b1bc5d1014caf24581c3b687452f4bd, type: 2}
-      propertyPath: ws
+    - target: {fileID: 11466032, guid: 7b1bc5d1014caf24581c3b687452f4bd, type: 2}
+      propertyPath: mainHandItem
       value: 
-      objectReference: {fileID: 1798098532}
+      objectReference: {fileID: 865092785}
     - target: {fileID: 143700, guid: 7b1bc5d1014caf24581c3b687452f4bd, type: 2}
       propertyPath: m_Name
       value: player
@@ -161,6 +161,7 @@ MonoBehaviour:
   quest: {fileID: 1651774700}
   completionDialogue:
   - HOLY SHIT THX
+  QType: 0
 --- !u!1 &75228936
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
+  id: 
 --- !u!4 &388407450
 Transform:
   m_ObjectHideFlags: 0
@@ -546,6 +548,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -700,6 +703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af56b784a1ecc2342a64e914e644ea71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 0}
 --- !u!114 &832305756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,6 +753,12 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &865092785 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11479476, guid: 14455d6b7805c5a428981cba0b041fd3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1568771222}
+  m_Script: {fileID: 11500000, guid: 71ebf1a9e9664fa45822e23d48170ad2, type: 3}
 --- !u!1001 &971549520
 Prefab:
   m_ObjectHideFlags: 0
@@ -911,8 +921,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f61c127a31c93f4d872b4f31f16709f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 357338940}
-  ws: {fileID: 1798098532}
 --- !u!1 &1363125645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,12 +1050,8 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 496898, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 11474536, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
-      propertyPath: ws
-      value: 
-      objectReference: {fileID: 1798098532}
     - target: {fileID: 22413610, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1067,10 +1071,6 @@ Prefab:
     - target: {fileID: 22474250, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11436812, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
-      propertyPath: defendModifier
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
@@ -1141,6 +1141,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 074401f6d3776934ca5012d7efad714d, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1568771222
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 421716, guid: 14455d6b7805c5a428981cba0b041fd3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 421716, guid: 14455d6b7805c5a428981cba0b041fd3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 421716, guid: 14455d6b7805c5a428981cba0b041fd3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 421716, guid: 14455d6b7805c5a428981cba0b041fd3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 421716, guid: 14455d6b7805c5a428981cba0b041fd3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 421716, guid: 14455d6b7805c5a428981cba0b041fd3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 421716, guid: 14455d6b7805c5a428981cba0b041fd3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 421716, guid: 14455d6b7805c5a428981cba0b041fd3, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 14455d6b7805c5a428981cba0b041fd3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1651774699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,6 +1212,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   Description: kill dude, get mo health
+  QuestItem: {fileID: 0}
+  Inventory: {fileID: 0}
   AffectedCharacter: {fileID: 357338940}
   stats: {fileID: 0}
   statNames:
@@ -1217,8 +1261,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 2
   Description: 123
-  Player: {fileID: 357338940}
+  QuestItem: {fileID: 0}
   Inventory: {fileID: 0}
+  Player: {fileID: 357338940}
   RewardItem: {fileID: 388407449}
 --- !u!4 &1775042905
 Transform:
