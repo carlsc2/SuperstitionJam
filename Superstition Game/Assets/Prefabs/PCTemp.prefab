@@ -729,7 +729,7 @@ Transform:
   m_Children:
   - {fileID: 425524}
   m_Father: {fileID: 441052}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &405506
 Transform:
   m_ObjectHideFlags: 1
@@ -938,8 +938,8 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 487276}
-  - {fileID: 404304}
   - {fileID: 488102}
+  - {fileID: 404304}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &445732
@@ -1219,7 +1219,7 @@ Transform:
   m_Children:
   - {fileID: 407092}
   m_Father: {fileID: 441052}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!4 &490440
 Transform:
   m_ObjectHideFlags: 1
@@ -1924,7 +1924,11 @@ MonoBehaviour:
   offHandSocket: LeftHand
   mainHandItem: {fileID: 11418982}
   offHandItem: {fileID: 11461420}
-  itemsInInventory: []
+  itemsInInventory:
+  - item: {fileID: 11418982}
+    hotbarSlotIndex: 0
+  - item: {fileID: 0}
+    hotbarSlotIndex: 1
 --- !u!114 &11470806
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -18,11 +18,16 @@ public class InventoryController : MonoBehaviour {
     public class ItemSlot {
         public ItemBase item;
 
-        public int hotbarSlotIndex;
+        public int hotbarSlotIndex = -1;
 
         public ItemSlot(ItemBase item) {
             this.item = item;
         } 
+
+        public ItemSlot(ItemBase item, int hotbarSlotIndex) {
+            this.item = item;
+            this.hotbarSlotIndex = hotbarSlotIndex;
+        }
     }
 
     public ItemBase mainHandItem;
@@ -33,8 +38,12 @@ public class InventoryController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        foreach (ItemSlot slot in itemsInInventory) {
-            
+        ItemSlot[] invCopy = new ItemSlot[itemsInInventory.Count];
+        itemsInInventory.CopyTo(invCopy);
+        itemsInInventory = new List<ItemSlot>();
+
+        foreach (ItemSlot slot in invCopy) {
+            AddItemToInventory(slot.item);
         }
 
 	    if (mainHandItem != null) {
@@ -70,7 +79,16 @@ public class InventoryController : MonoBehaviour {
         //don't try to add unless we already have this item
         if (itemsInInventory.Select(x => x.item).Contains(itemToAdd)) { return; }
 
-        itemsInInventory.Add(new ItemSlot(itemToAdd));
+        int hotbarSlot = -1;
+        if (itemToAdd as SwordItem != null) { ++hotbarSlot; }
+
+        foreach (ItemSlot slot in itemsInInventory) {
+            if (slot.item as SwordItem != null) {
+                ++hotbarSlot;
+            }
+        }
+
+        itemsInInventory.Add(new ItemSlot(itemToAdd, hotbarSlot));
 
     }
 
@@ -223,6 +241,15 @@ public class InventoryController : MonoBehaviour {
 
                 RemoveItemFromInventory(slot.item);
 
+                break;
+            }
+        }
+    }
+
+    public void EquipHotbarItem(int hotbarSlotIndex, Hand equipHand = Hand.Main) {
+        foreach (ItemSlot slot in itemsInInventory) {
+            if (slot.hotbarSlotIndex == hotbarSlotIndex) {
+                PullOutItem(slot.item, equipHand);
                 break;
             }
         }
