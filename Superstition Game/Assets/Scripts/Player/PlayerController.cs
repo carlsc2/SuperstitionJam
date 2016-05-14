@@ -3,11 +3,23 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
+    public static PlayerController singleton;
+
 	Pawn p;
+
+    void Awake() {
+        if (singleton == null) {
+            singleton = this;
+        }
+    }
 
 	void Start () 
 	{
-		p = GetComponent<Pawn>();
+
+        DontDestroyOnLoad(gameObject);
+
+        p = GetComponent<Pawn>();
+
 	}
 	
 	void Update () 
