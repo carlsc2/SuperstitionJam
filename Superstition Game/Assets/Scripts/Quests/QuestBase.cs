@@ -8,13 +8,18 @@ public class QuestBase : MonoBehaviour {
 
     public string Description;
 
+    public ItemBase QuestItem;
+
+
+    public InventoryController Inventory;
+
     virtual public void CheckConditions(string str){
         try
         {
             throw new UnityException();
         }
         catch (UnityException e){
-            Debug.LogError("CheckCondition is not defined!\n");
+            Debug.LogError("CheckConditions is not defined!\n");
         }
     }
 

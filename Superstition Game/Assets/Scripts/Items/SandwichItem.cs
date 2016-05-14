@@ -9,7 +9,6 @@ public class SandwichItem : ItemBase {
             owner = col.GetComponent<InventoryController>();
             owner.AddItemToInventory(this);
             
-            // Destroy(gameObject);
         }
     }
 }

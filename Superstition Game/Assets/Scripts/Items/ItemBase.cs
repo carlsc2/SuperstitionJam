@@ -6,6 +6,8 @@ public class ItemBase : MonoBehaviour {
     [HideInInspector]
     public InventoryController owner;
 
+    public string id;
+
     protected virtual void Awake() {
 
     }

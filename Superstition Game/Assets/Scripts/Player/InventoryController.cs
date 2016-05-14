@@ -181,9 +181,9 @@ public class InventoryController : MonoBehaviour {
         return itemsInInventory.Select(x => x.item).Contains(item);
     }
 
-    public bool HasItemOfType<T>() {
+    public bool HasItemOfId(string id) {
         foreach (ItemSlot slot in itemsInInventory) {
-            if (slot.item.GetComponent<T>() != null) {
+            if (slot.item.id == id) {
                 return true;
             }
         }
@@ -191,9 +191,9 @@ public class InventoryController : MonoBehaviour {
         return false;
     }
 
-    public void RemoveFirstItemOfType<T>() {
+    public void RemoveFirstItemOfId(string id) {
         foreach (ItemSlot slot in itemsInInventory) {
-            if (slot.item.GetComponent<T>() != null) {
+            if (slot.item.id == id) {
 
                 RemoveItemFromInventory(slot.item);
 

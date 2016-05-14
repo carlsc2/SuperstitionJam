@@ -9,10 +9,8 @@ public class QuestBase_Fetch : QuestBase
 {
     public GameObject Player;
 
-    [HideInInspector]
-    public InventoryController Inventory;
-
     public ItemBase RewardItem;
+   // public ItemBase QuestItem;
 
     void Start()
     {
@@ -21,13 +19,11 @@ public class QuestBase_Fetch : QuestBase
 
     override public void GiveReward()
     {
-        if (currentState == QuestBase.State.COMPLETED)
-        {
-            Inventory.AddItemToInventory(RewardItem);
-            currentState = QuestBase.State.TURNED_IN;
-        }
+        print("GIVE ME THE THING");
+        Inventory.AddItemToInventory(RewardItem);
+        Inventory.RemoveFirstItemOfId(QuestItem.id);
+        currentState = QuestBase.State.TURNED_IN;
     }
-
 
 }
 
