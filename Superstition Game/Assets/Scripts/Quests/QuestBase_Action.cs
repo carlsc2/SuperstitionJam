@@ -40,7 +40,7 @@ public class QuestBase_Action : QuestBase
 				}
 				else if (stat.ToLower() == "speed")
 				{
-					stats.speed *= multiplier;
+					stats.walkSpeed *= multiplier;
 				}
 				else if (stat.ToLower().Replace(" ", string.Empty) == "attacktime")
 				{

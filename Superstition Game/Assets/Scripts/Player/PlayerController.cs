@@ -40,5 +40,9 @@ public class PlayerController : MonoBehaviour {
 		{
 			p.Interact();
 		}
+
+        if (Input.GetButtonDown("Dodge")) {
+            p.Dodge();
+        }
 	}
 }

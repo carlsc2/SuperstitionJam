@@ -1429,7 +1429,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
   id: 
-  damage: -2000
+  weaponAttackType: 0
+  damage: -30
   canDamage: 0
 --- !u!114 &11421392
 MonoBehaviour:
@@ -1549,6 +1550,8 @@ MonoBehaviour:
   desiredMoveDirec: {x: 0, y: 0}
   trueMoveDirec: {x: 0, y: 0}
   accel: 1
+  speed: 0
+  isDodging: 0
 --- !u!114 &11442654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1835,8 +1838,12 @@ MonoBehaviour:
   maxHealth: 100
   strength: 20
   defense: 10
-  speed: 3
+  walkSpeed: 3
+  accel: 3
   attackTime: 0.25
+  dodgeTime: 0.5
+  dodgeAccel: 0.5
+  dodgeSpeed: 5
 --- !u!114 &11490980
 MonoBehaviour:
   m_ObjectHideFlags: 1
