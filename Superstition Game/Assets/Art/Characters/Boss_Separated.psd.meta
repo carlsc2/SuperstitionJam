@@ -1,0 +1,575 @@
+fileFormatVersion: 2
+guid: e818eb1f299873e41a51fc25802d7973
+timeCreated: 1463212055
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Boss_Separated_Helmet
+    21300002: Boss_Separated_Torso
+    21300004: Boss_Separated_RightArm
+    21300006: Boss_Separated_LeftHandFront
+    21300008: Boss_Separated_LeftUpLeg
+    21300010: Boss_Separated_LeftHandBack
+    21300012: Boss_Separated_RightLeg
+    21300014: Boss_Separated_LeftLeg
+    21300016: Boss_Separated_RightHand
+    21300018: Boss_Separated_RightUpLeg
+    21300020: Boss_Separated_RightFoot
+    21300022: Boss_Separated_LeftFoot
+    21300024: Boss_Separated_LowerTorso
+    21300026: Boss_Separated_RightForearm
+    21300028: Boss_Separated_LeftArm
+    21300030: Boss_Separated_LeftForearm
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Boss_Separated_Helmet
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 774
+        width: 183
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28.5, y: 117}
+        - {x: -54.5, y: 117}
+        - {x: -63.5, y: 116}
+        - {x: -91.5, y: 20}
+        - {x: -91.5, y: -47}
+        - {x: -30.5, y: -100}
+        - {x: 14.5, y: -117}
+        - {x: 44.5, y: -117}
+        - {x: 91.5, y: -50}
+        - {x: 91.5, y: 40}
+        - {x: 86.5, y: 93}
+      - - {x: -72.5, y: 117}
+        - {x: -72.5, y: 113}
+        - {x: -71.5, y: 109}
+        - {x: -64.5, y: 109}
+        - {x: -60.5, y: 113}
+        - {x: -60.5, y: 117}
+    - name: Boss_Separated_Torso
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 719
+        width: 252
+        height: 281
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 116, y: -82.5}
+        - {x: 117, y: -73.5}
+        - {x: 123, y: -56.5}
+        - {x: 126, y: -45.5}
+        - {x: 126, y: 14.5}
+        - {x: 111, y: 85.5}
+        - {x: 92, y: 112.5}
+        - {x: 64, y: 124.5}
+        - {x: 25, y: 140.5}
+        - {x: -36, y: 140.5}
+        - {x: -106, y: 91.5}
+        - {x: -121, y: 66.5}
+        - {x: -126, y: 54.5}
+        - {x: -126, y: -20.5}
+        - {x: -120, y: -71.5}
+        - {x: -120, y: -115.5}
+        - {x: -108, y: -122.5}
+        - {x: -81, y: -131.5}
+        - {x: -39, y: -140.5}
+        - {x: 24, y: -140.5}
+        - {x: 52, y: -136.5}
+        - {x: 92, y: -124.5}
+        - {x: 109, y: -105.5}
+    - name: Boss_Separated_RightArm
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 406
+        width: 244
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 109, y: -4}
+        - {x: 122, y: 64}
+        - {x: 122, y: 82}
+        - {x: 37, y: 154}
+        - {x: 2, y: 154}
+        - {x: -1, y: 146}
+        - {x: -34, y: 154}
+        - {x: -61, y: 137}
+        - {x: -89, y: 107}
+        - {x: -96, y: 97}
+        - {x: -122, y: 38}
+        - {x: -122, y: -20}
+        - {x: -98, y: -34}
+        - {x: -118, y: -122}
+        - {x: -108, y: -143}
+        - {x: -64, y: -168}
+        - {x: -33, y: -168}
+        - {x: -21, y: -163}
+        - {x: 11, y: -132}
+        - {x: 122, y: -63}
+        - {x: 122, y: -38}
+      - - {x: 62, y: 166}
+        - {x: 62, y: 168}
+        - {x: 57, y: 168}
+        - {x: 59, y: 165}
+    - name: Boss_Separated_LeftHandFront
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 609
+        width: 103
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 47.5}
+        - {x: -29.5, y: 45.5}
+        - {x: -51.5, y: 29.5}
+        - {x: -51.5, y: -0.5}
+        - {x: -25.5, y: -47.5}
+        - {x: 33.5, y: -47.5}
+        - {x: 51.5, y: -30.5}
+        - {x: 51.5, y: 35.5}
+        - {x: 29.5, y: 47.5}
+      - - {x: -32.5, y: -30.5}
+        - {x: -29.5, y: -28.5}
+        - {x: -31.5, y: -23.5}
+        - {x: -34.5, y: -23.5}
+        - {x: -35.5, y: -26.5}
+    - name: Boss_Separated_LeftUpLeg
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 345
+        width: 193
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 33.5, y: 93.5}
+        - {x: 9.5, y: 111.5}
+        - {x: -38.5, y: 111.5}
+        - {x: -84.5, y: 91.5}
+        - {x: -96.5, y: 63.5}
+        - {x: -96.5, y: 6.5}
+        - {x: -93.5, y: -12.5}
+        - {x: -60.5, y: -68.5}
+        - {x: -13.5, y: -111.5}
+        - {x: 89.5, y: -111.5}
+        - {x: 96.5, y: -91.5}
+        - {x: 96.5, y: -16.5}
+        - {x: 47.5, y: 74.5}
+    - name: Boss_Separated_LeftHandBack
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 425
+        width: 104
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 38, y: 47.5}
+        - {x: -36, y: 47.5}
+        - {x: -52, y: 22.5}
+        - {x: -52, y: -32.5}
+        - {x: -49, y: -45.5}
+        - {x: -34, y: -47.5}
+        - {x: 35, y: -47.5}
+        - {x: 50, y: -34.5}
+        - {x: 52, y: -20.5}
+        - {x: 52, y: 39.5}
+    - name: Boss_Separated_RightLeg
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 41
+        width: 217
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0.5, y: 119}
+        - {x: -50.5, y: 113}
+        - {x: -108.5, y: -39}
+        - {x: -108.5, y: -125}
+        - {x: -100.5, y: -137}
+        - {x: -23.5, y: -137}
+        - {x: -19.5, y: -135}
+        - {x: 84.5, y: 35}
+        - {x: 105.5, y: 79}
+        - {x: 105.5, y: 119}
+      - - {x: -68.5, y: 13}
+        - {x: -65.5, y: 14}
+        - {x: -65.5, y: 17}
+        - {x: -68.5, y: 18}
+        - {x: -70.5, y: 16}
+      - - {x: 95.5, y: 36}
+        - {x: 100.5, y: 38}
+        - {x: 101.5, y: 42}
+        - {x: 98.5, y: 44}
+        - {x: 93.5, y: 39}
+      - - {x: 97.5, y: 66}
+        - {x: 97.5, y: 50}
+        - {x: 98.5, y: 48}
+        - {x: 104.5, y: 48}
+        - {x: 106.5, y: 49}
+        - {x: 108.5, y: 53}
+        - {x: 108.5, y: 62}
+        - {x: 105.5, y: 66}
+      - - {x: 105.5, y: 70}
+        - {x: 107.5, y: 68}
+        - {x: 108.5, y: 68}
+        - {x: 108.5, y: 73}
+        - {x: 106.5, y: 73}
+      - - {x: -31.5, y: 118}
+        - {x: -36.5, y: 116}
+        - {x: -36.5, y: 112}
+        - {x: -32.5, y: 107}
+        - {x: -29.5, y: 108}
+        - {x: -24.5, y: 115}
+        - {x: -24.5, y: 118}
+      - - {x: -43.5, y: 137}
+        - {x: -47.5, y: 134}
+        - {x: -47.5, y: 119}
+        - {x: -43.5, y: 117}
+        - {x: -30.5, y: 117}
+        - {x: -26.5, y: 119}
+        - {x: -26.5, y: 129}
+        - {x: -30.5, y: 137}
+      - - {x: -108.5, y: 137}
+        - {x: -108.5, y: 121}
+        - {x: -105.5, y: 121}
+        - {x: -100.5, y: 125}
+        - {x: -100.5, y: 135}
+        - {x: -102.5, y: 137}
+      - - {x: 36.5, y: 127}
+        - {x: 39.5, y: 128}
+        - {x: 39.5, y: 131}
+        - {x: 36.5, y: 132}
+        - {x: 34.5, y: 130}
+      - - {x: 24.5, y: 133}
+        - {x: 24.5, y: 130}
+        - {x: 25.5, y: 128}
+        - {x: 27.5, y: 128}
+        - {x: 30.5, y: 131}
+        - {x: 29.5, y: 134}
+        - {x: 26.5, y: 134}
+      - - {x: 14.5, y: 136}
+        - {x: 12.5, y: 135}
+        - {x: 12.5, y: 132}
+        - {x: 13.5, y: 129}
+        - {x: 22.5, y: 129}
+        - {x: 23.5, y: 131}
+        - {x: 22.5, y: 134}
+      - - {x: 6.5, y: 135}
+        - {x: 6.5, y: 137}
+        - {x: 1.5, y: 137}
+        - {x: 3.5, y: 134}
+    - name: Boss_Separated_LeftLeg
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 105
+        width: 163
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 81.5, y: 136}
+        - {x: 79.5, y: 137}
+        - {x: 28.5, y: 137}
+        - {x: -49.5, y: 95}
+        - {x: -81.5, y: 55}
+        - {x: -81.5, y: -124}
+        - {x: -52.5, y: -137}
+        - {x: -7.5, y: -137}
+        - {x: 32.5, y: -94}
+        - {x: 70.5, y: 17}
+        - {x: 81.5, y: 77}
+      - - {x: 53.5, y: -19}
+        - {x: 45.5, y: -23}
+        - {x: 38.5, y: -30}
+        - {x: 38.5, y: -42}
+        - {x: 39.5, y: -46}
+        - {x: 48.5, y: -46}
+        - {x: 52.5, y: -42}
+        - {x: 55.5, y: -33}
+        - {x: 56.5, y: -21}
+    - name: Boss_Separated_RightHand
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 198
+        width: 117
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 62.5}
+        - {x: -58.5, y: 38.5}
+        - {x: -58.5, y: -32.5}
+        - {x: -42.5, y: -62.5}
+        - {x: 34.5, y: -62.5}
+        - {x: 53.5, y: -55.5}
+        - {x: 58.5, y: -49.5}
+        - {x: 58.5, y: 22.5}
+        - {x: 32.5, y: 62.5}
+      - - {x: 17.5, y: 57.5}
+        - {x: 12.5, y: 57.5}
+        - {x: 11.5, y: 55.5}
+        - {x: 11.5, y: 53.5}
+        - {x: 17.5, y: 47.5}
+        - {x: 19.5, y: 47.5}
+        - {x: 22.5, y: 50.5}
+        - {x: 22.5, y: 53.5}
+    - name: Boss_Separated_RightUpLeg
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 46
+        width: 179
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 70.5, y: 95}
+        - {x: 53.5, y: 115}
+        - {x: -21.5, y: 115}
+        - {x: -43.5, y: 105}
+        - {x: -85.5, y: 65}
+        - {x: -89.5, y: 19}
+        - {x: -89.5, y: -72}
+        - {x: -76.5, y: -98}
+        - {x: -41.5, y: -115}
+        - {x: 41.5, y: -115}
+        - {x: 78.5, y: -81}
+        - {x: 78.5, y: -52}
+        - {x: 89.5, y: -9}
+        - {x: 89.5, y: 58}
+      - - {x: 49.5, y: -93}
+        - {x: 52.5, y: -92}
+        - {x: 52.5, y: -89}
+        - {x: 49.5, y: -88}
+        - {x: 47.5, y: -90}
+    - name: Boss_Separated_RightFoot
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 10
+        width: 131
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38.5, y: 47}
+        - {x: -50.5, y: 44}
+        - {x: -65.5, y: -3}
+        - {x: -65.5, y: -47}
+        - {x: 65.5, y: -47}
+        - {x: 65.5, y: 42}
+        - {x: 47.5, y: 47}
+    - name: Boss_Separated_LeftFoot
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 11
+        width: 154
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 44.5}
+        - {x: -77, y: 25.5}
+        - {x: -77, y: -44.5}
+        - {x: 77, y: -44.5}
+        - {x: 77, y: -2.5}
+        - {x: 20, y: 44.5}
+    - name: Boss_Separated_LowerTorso
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 402
+        width: 234
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 70, y: -141}
+        - {x: 73, y: -140}
+        - {x: 73, y: -137}
+        - {x: 70, y: -136}
+        - {x: 68, y: -138}
+      - - {x: 98, y: 1}
+        - {x: 89, y: 86}
+        - {x: 80, y: 113}
+        - {x: 57, y: 129}
+        - {x: -38, y: 129}
+        - {x: -78, y: 123}
+        - {x: -88, y: 117}
+        - {x: -108, y: 88}
+        - {x: -108, y: 43}
+        - {x: -105, y: -21}
+        - {x: -108, y: -25}
+        - {x: -108, y: -47}
+        - {x: -104, y: -63}
+        - {x: -62, y: -127}
+        - {x: -31, y: -139}
+        - {x: 27, y: -139}
+        - {x: 58, y: -132}
+        - {x: 85, y: -96}
+        - {x: 98, y: -61}
+    - name: Boss_Separated_RightForearm
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 235
+        width: 193
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 88.5, y: 38.5}
+        - {x: 88.5, y: 35.5}
+        - {x: 86.5, y: 32.5}
+        - {x: 86.5, y: 29.5}
+        - {x: 83.5, y: 45.5}
+        - {x: 68.5, y: 63.5}
+        - {x: 4.5, y: 63.5}
+        - {x: -89.5, y: -6.5}
+        - {x: -94.5, y: -21.5}
+        - {x: -94.5, y: -71.5}
+        - {x: -88.5, y: -75.5}
+        - {x: 1.5, y: -75.5}
+        - {x: 96.5, y: -30.5}
+        - {x: 96.5, y: 36.5}
+        - {x: 91.5, y: 39.5}
+    - name: Boss_Separated_LeftArm
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 694
+        width: 230
+        height: 307
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 104, y: 31.5}
+        - {x: 104, y: 88.5}
+        - {x: 91, y: 111.5}
+        - {x: 58, y: 151.5}
+        - {x: 43, y: 153.5}
+        - {x: -40, y: 153.5}
+        - {x: -100, y: 106.5}
+        - {x: -115, y: 82.5}
+        - {x: -115, y: 26.5}
+        - {x: -113, y: 4.5}
+        - {x: -104, y: -15.5}
+        - {x: -45, y: -98.5}
+        - {x: 8, y: -145.5}
+        - {x: 20, y: -153.5}
+        - {x: 61, y: -153.5}
+        - {x: 83, y: -148.5}
+        - {x: 90, y: -129.5}
+        - {x: 87, y: -72.5}
+        - {x: 89, y: -25.5}
+      - - {x: 105, y: 91.5}
+        - {x: 102, y: 91.5}
+        - {x: 98, y: 88.5}
+        - {x: 95, y: 79.5}
+        - {x: 95, y: 76.5}
+        - {x: 96, y: 74.5}
+        - {x: 103, y: 74.5}
+        - {x: 105, y: 75.5}
+        - {x: 108, y: 80.5}
+        - {x: 108, y: 90.5}
+    - name: Boss_Separated_LeftForearm
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 562
+        width: 209
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 60.5}
+        - {x: -69.5, y: 60.5}
+        - {x: -101.5, y: 41.5}
+        - {x: -104.5, y: 26.5}
+        - {x: -104.5, y: -48.5}
+        - {x: -51.5, y: -63.5}
+        - {x: 91.5, y: -63.5}
+        - {x: 101.5, y: -48.5}
+        - {x: 101.5, y: 11.5}
+        - {x: 100.5, y: 13.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
