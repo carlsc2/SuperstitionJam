@@ -32,7 +32,8 @@ public class PlayerPawn : Pawn {
     protected override void Start()
 	{
         base.Start();
-
+        swordHitbox.SetActive(false);
+        shieldHitbox.SetActive(false);
 
 	}
 
