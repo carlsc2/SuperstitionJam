@@ -112,6 +112,7 @@ GameObject:
   - 61: {fileID: 6159848}
   - 50: {fileID: 5043884}
   - 61: {fileID: 6169634}
+  - 114: {fileID: 11447408}
   m_Layer: 0
   m_Name: 'MobTemp '
   m_TagString: Enemy
@@ -1170,7 +1171,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 113338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.16, y: -3, z: 0}
+  m_LocalPosition: {x: 5, y: -3, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 444916}
@@ -1475,7 +1476,7 @@ MonoBehaviour:
       spriteRen: {fileID: 21251734}
       sprite: {fileID: 21300014, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
       offset: {x: 0.21286525, y: 0.73503464}
-      orderInLayer: 1
+      orderInLayer: 0
   - name: UpperTorsoJoint
     bone: {fileID: 11447726}
     cosmeticsList:
@@ -1483,7 +1484,7 @@ MonoBehaviour:
       spriteRen: {fileID: 21239332}
       sprite: {fileID: 21300008, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
       offset: {x: 0.21286525, y: 1.9650347}
-      orderInLayer: 2
+      orderInLayer: 0
   - name: NeckJoint
     bone: {fileID: 11406860}
     cosmeticsList:
@@ -1499,7 +1500,7 @@ MonoBehaviour:
       spriteRen: {fileID: 21242664}
       sprite: {fileID: 21300000, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
       offset: {x: 0.40286523, y: 3.3350346}
-      orderInLayer: 2
+      orderInLayer: 0
   - name: LeftUpperArmJoint
     bone: {fileID: 11415404}
     cosmeticsList:
@@ -1507,7 +1508,7 @@ MonoBehaviour:
       spriteRen: {fileID: 21200132}
       sprite: {fileID: 21300036, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
       offset: {x: 0.606, y: 1.758}
-      orderInLayer: 1
+      orderInLayer: 0
   - name: LeftForeArmJoint
     bone: {fileID: 11412538}
     cosmeticsList:
@@ -1523,7 +1524,7 @@ MonoBehaviour:
       spriteRen: {fileID: 21242956}
       sprite: {fileID: 21300032, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
       offset: {x: 1.5428653, y: 0.73503464}
-      orderInLayer: 3
+      orderInLayer: 0
   - name: RightUpperArmJoint
     bone: {fileID: 11478034}
     cosmeticsList:
@@ -1531,7 +1532,7 @@ MonoBehaviour:
       spriteRen: {fileID: 21286716}
       sprite: {fileID: 21300004, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
       offset: {x: -0.14713477, y: 1.8550346}
-      orderInLayer: 3
+      orderInLayer: 0
   - name: RightForeArmJoint
     bone: {fileID: 11414548}
     cosmeticsList:
@@ -1539,7 +1540,7 @@ MonoBehaviour:
       spriteRen: {fileID: 21221720}
       sprite: {fileID: 21300012, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
       offset: {x: -0.322, y: 0.73}
-      orderInLayer: 4
+      orderInLayer: 0
   - name: RightHandJoint
     bone: {fileID: 11441852}
     cosmeticsList:
@@ -1547,7 +1548,7 @@ MonoBehaviour:
       spriteRen: {fileID: 21222300}
       sprite: {fileID: 21300016, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
       offset: {x: -0.15713476, y: -0.13496536}
-      orderInLayer: 3
+      orderInLayer: 0
   - name: LeftUpperLegJoint
     bone: {fileID: 11402108}
     cosmeticsList:
@@ -1563,7 +1564,7 @@ MonoBehaviour:
       spriteRen: {fileID: 21267776}
       sprite: {fileID: 21300026, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
       offset: {x: 0.81286526, y: -1.7249653}
-      orderInLayer: 1
+      orderInLayer: 0
   - name: LeftFootJoint
     bone: {fileID: 11427244}
     cosmeticsList:
@@ -1571,7 +1572,7 @@ MonoBehaviour:
       spriteRen: {fileID: 21221414}
       sprite: {fileID: 21300030, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
       offset: {x: 0.93286526, y: -2.6949654}
-      orderInLayer: 2
+      orderInLayer: 0
   - name: RightUpperLegJoint
     bone: {fileID: 11405586}
     cosmeticsList:
@@ -1622,6 +1623,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cosmeticSpriteRenderers:
   - {fileID: 21242956}
+--- !u!114 &11447408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ebc85509e6feea4a8013913005eb07e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11447726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1835,7 +1847,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300036, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1895,7 +1907,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300030, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1925,7 +1937,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300012, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1955,7 +1967,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1985,7 +1997,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300008, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2045,7 +2057,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2075,7 +2087,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300032, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2135,7 +2147,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300014, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2225,7 +2237,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300026, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2345,7 +2357,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: e9b75ba38af8a7549adc822898c02b60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
