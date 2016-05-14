@@ -26,10 +26,14 @@ public class PlayerPawn : Pawn {
 		//sr = GetComponent<SpriteRenderer>();
 		stats = GetComponent<CharacterStats>();
 		interactables = new HashSet<Transform>();
+
+        swordHitbox.SetActive(false);
+        shieldHitbox.SetActive(false);
 	}
 
 	void Update()
 	{
+        
 		/*if (currentState == state.idle)
 			sr.color = Color.white;
 		else if (currentState == state.walk)
