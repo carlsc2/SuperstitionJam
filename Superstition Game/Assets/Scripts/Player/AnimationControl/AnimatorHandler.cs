@@ -15,6 +15,10 @@ public class AnimatorHandler : MonoBehaviour {
 	
 	}
 
+    public virtual void SetWalkBlend(float blendValue) {
+        anim.SetFloat("WalkBlend_Float", blendValue);
+    }
+
     public virtual void Attack() { }
 
     public virtual void GetHit() { }

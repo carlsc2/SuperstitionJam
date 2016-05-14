@@ -10,6 +10,7 @@ public class PlayerPawn : Pawn {
 	direction facing = direction.left;
 	MovementMotor motor;
     InventoryController inventory;
+    AnimatorHandler anim;
 	//CharacterStats stats;
 
 	//SpriteRenderer sr;
@@ -26,6 +27,7 @@ public class PlayerPawn : Pawn {
 
 		motor = GetComponent<MovementMotor>();
         inventory = GetComponent<InventoryController>();
+        anim = GetComponent<AnimatorHandler>();
 
 		//sr = GetComponent<SpriteRenderer>();
 		//stats = GetComponent<CharacterStats>();
@@ -140,6 +142,8 @@ public class PlayerPawn : Pawn {
 					transform.localScale = new Vector3(-.5f, .5f, 1);
 				}
 
+                //ANIMATION
+                anim.SetWalkBlend(motor.delayedMoveDirec.magnitude);
 
 				if (currentState != state.walk)
 					currentState = state.walk;

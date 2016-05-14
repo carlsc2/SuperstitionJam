@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 421716}
   - 212: {fileID: 21273866}
   - 114: {fileID: 11479476}
+  - 50: {fileID: 5099990}
   m_Layer: 0
   m_Name: VikingSword
   m_TagString: Untagged
@@ -26,7 +27,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401192}
   - 61: {fileID: 6119772}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,6 +59,23 @@ Transform:
   - {fileID: 401192}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &5099990
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118980}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &6119772
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -67,7 +85,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0.14484857, y: -0.009044535}
   serializedVersion: 2
@@ -84,7 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  damage: 20
+  id: 
+  damage: -2000
   canDamage: 0
 --- !u!212 &21273866
 SpriteRenderer:
