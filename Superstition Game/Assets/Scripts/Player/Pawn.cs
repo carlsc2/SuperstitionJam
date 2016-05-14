@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 
 public class Pawn : MonoBehaviour {
 
-    public delegate void OnDeathCallback();
-    OnDeathCallback onPawnDeath;
+    //public delegate void OnDeathCallback();
+    //OnDeathCallback onPawnDeath;
+
+    public UnityEvent OnPawnDeath;
 
     public CharacterStats stats;
 
@@ -57,7 +60,9 @@ public class Pawn : MonoBehaviour {
 
     public virtual void KillPawn() {
 
-        onPawnDeath();
+        //onPawnDeath();
+
+        OnPawnDeath.Invoke();
 
         Destroy(gameObject);
     }
