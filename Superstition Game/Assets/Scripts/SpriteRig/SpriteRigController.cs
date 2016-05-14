@@ -18,6 +18,10 @@ public class SpriteRigController : MonoBehaviour {
         public Sprite sprite;
 
         public Vector2 offset;
+
+        public void ApplyOffsetFromWorld() {
+            offset = spriteRen.transform.localPosition;
+        }
     }
 
     [System.Serializable]
@@ -36,6 +40,12 @@ public class SpriteRigController : MonoBehaviour {
             foreach (CosmeticSprite cosSprite in cosmeticsList) {
                 cosSprite.spriteRen = bone.AddCosmeticSprite(cosSprite.sprite, cosSprite.offset, cosSprite.name);
                 
+            }
+        }
+
+        public void ApplyWorldOffsets() {
+            foreach (CosmeticSprite cosSprite in cosmeticsList) {
+                cosSprite.ApplyOffsetFromWorld();
             }
         }
     }
@@ -76,6 +86,12 @@ public class SpriteRigController : MonoBehaviour {
         }
     }
 
+    public void ApplyCosmeticsOffsetsToRig() {
+        foreach (SpriteBoneBinding binding in spriteBones) {
+            binding.ApplyWorldOffsets();
+        }
+    }
+
     /*
     public void SetSortingLayer(SortingLayer layer) {
 
@@ -86,22 +102,61 @@ public class SpriteRigController : MonoBehaviour {
     }
     */
 
-        /*
+    /* 
     void OnDrawGizmos() {
-        DrawSkeleton_Gizmo();
-    }
 
-    private void DrawSkeleton_Gizmo() {
+        //Gizmos.DrawSphere(transform.position, jointSize);
+
+        //DrawSkeleton_Gizmo();
+
+        Color originalColor = Gizmos.color;
+
+        //DRAW JOINTS
+        Gizmos.color = jointColor;
+
+        Debug.Log(spriteBones[0]);
         foreach (SpriteBoneBinding binding in spriteBones) {
-            foreach (Transform child in binding.bone.transform) {
-                if (!binding.cosmeticsList.Where(x => x.spriteRen.transform).Contains(child)) {
+            Gizmos.DrawSphere(transform.position, jointSize);
+        }
 
+        //DRAW BONES
+        Gizmos.color = boneColor;
+        foreach (SpriteBoneBinding binding in spriteBones) {
+
+            foreach (Transform child in binding.bone.transform) {
+                if (!binding.cosmeticsList.Select(x => x.spriteRen.transform).ToList().Contains(child)) {
+                    Gizmos.DrawLine(binding.bone.transform.position, child.position);
                 }
             }
         }
 
+        Gizmos.color = originalColor;
     }
     */
+    private void DrawSkeleton_Gizmo() {
+
+        Color originalColor = Gizmos.color;
+
+        //DRAW JOINTS
+        Gizmos.color = jointColor;
+        foreach (SpriteBoneBinding binding in spriteBones) {
+            Gizmos.DrawSphere(binding.bone.transform.position, jointSize);
+        }
+
+        //DRAW BONES
+        Gizmos.color = boneColor;
+        foreach (SpriteBoneBinding binding in spriteBones) {
+
+            foreach (Transform child in binding.bone.transform) {
+                if (!binding.cosmeticsList.Select(x => x.spriteRen.transform).ToList().Contains(child)) {
+                    Gizmos.DrawLine(binding.bone.transform.position, child.position);
+                }
+            }
+        }
+
+        Gizmos.color = originalColor;
+
+    }    
 }
 
 #if UNITY_EDITOR
@@ -125,10 +180,15 @@ public class SpriteRigController_Editor : Editor {
         }
         */
 
-        if (GUILayout.Button("Update Rig Cosmetics")) {
-            UpdateCosmeticRig();
-        }
+        EditorGUILayout.BeginHorizontal();
+            if (GUILayout.Button("Update Rig Cosmetics")) {
+                UpdateCosmeticRig();
+            }
         
+            if (GUILayout.Button("Apply World Offsets to Cosmetics")) {
+                selfScript.ApplyCosmeticsOffsetsToRig();
+            }
+        EditorGUILayout.EndHorizontal();
     }
 
     private void UpdateCosmeticRig() {
