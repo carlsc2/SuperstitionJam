@@ -31,7 +31,7 @@ GameObject:
   - 114: {fileID: 11479246}
   - 114: {fileID: 11491420}
   - 61: {fileID: 6194764}
-  - 50: {fileID: 5026100}
+  - 50: {fileID: 5052326}
   m_Layer: 0
   m_Name: PCTemp
   m_TagString: Player
@@ -51,7 +51,7 @@ GameObject:
   - 61: {fileID: 6133010}
   m_Layer: 0
   m_Name: Sword
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ Transform:
   - {fileID: 439086}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5026100
+--- !u!50 &5052326
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
@@ -134,7 +134,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
