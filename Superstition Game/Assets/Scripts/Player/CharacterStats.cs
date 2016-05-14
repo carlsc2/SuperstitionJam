@@ -12,6 +12,8 @@ public class CharacterStats : MonoBehaviour {
 
 
     public void DamageCharacter(float damageAmount) {
-        //health = (Mathf.Clamp(health - damageAmount, 0.0f, Mathf.Infinity));
+        health = (Mathf.Clamp(health - damageAmount, 0.0f, Mathf.Infinity));
+
+
     }
 }
