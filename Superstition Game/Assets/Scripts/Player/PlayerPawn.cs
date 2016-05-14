@@ -185,6 +185,12 @@ public class PlayerPawn : Pawn {
         yield return null;
     }
 
+    public override void SelectItemFromInventory(int hotbarNumber) {
+
+        inventory.EquipHotbarItem(hotbarNumber);
+
+    }
+
     public override void KillPawn() {
 		base.KillPawn();
 

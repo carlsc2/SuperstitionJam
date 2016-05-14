@@ -44,5 +44,12 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonDown("Dodge")) {
             p.Dodge();
         }
+
+        if (Input.GetButtonDown("Hotbar1")) {
+            p.SelectItemFromInventory(0);
+        }
+        if (Input.GetButtonDown("Hotbar2")) {
+            p.SelectItemFromInventory(1);
+        }
 	}
 }
