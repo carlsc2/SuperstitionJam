@@ -11,10 +11,18 @@ public class movePlayerIcon : MonoBehaviour {
 	private locationIcon curloc; //current location
 
 	private static Vector2 current_position;
+	private bool first_set = false;
 
 	void Awake() {
 		playerIcon = transform as RectTransform;
-		playerIcon.position = current_position;
+		if (!first_set) {
+			first_set = true;
+			current_position = playerIcon.position;
+		}
+		else {
+			playerIcon.position = current_position;
+		}
+		
 		RectTransform canvas = playerIcon;
 		while (canvas.parent != null && canvas.parent is RectTransform) {
 			canvas = canvas.parent as RectTransform;
