@@ -59,7 +59,7 @@ public class MonologueControl : MonoBehaviour, Interactable {
 				else {
 					is_chatting = false;
 					idix = 0;
-                    cdix = 0;
+					cdix = 0;
 					is_idle = true;
 				}
 				
