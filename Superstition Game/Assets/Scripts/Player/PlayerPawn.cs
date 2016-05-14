@@ -112,6 +112,8 @@ public class PlayerPawn : Pawn {
 		float min_dist = Mathf.Infinity;
 		Vector3 current_pos = transform.position;
 		foreach (Transform t in interactables) {
+            if (t == null) { continue; }
+
 			float dist = Vector3.Distance(t.position, current_pos);
 			if (dist < min_dist) {
 				nearest = t;

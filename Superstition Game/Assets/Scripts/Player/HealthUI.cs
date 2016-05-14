@@ -17,7 +17,8 @@ public class HealthUI : MonoBehaviour {
             stats = GetComponentInParent<CharacterStats>();
         }
         else {
-            stats = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>();
+            stats = PlayerController.singleton.GetComponent<CharacterStats>();
+            //stats = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>();
         }
    
 		slider = GetComponent<Slider>();
