@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -76,6 +77,9 @@ public class SpriteRigController : MonoBehaviour {
     public Color jointColor;
     public float jointSize;
 
+    public Color primaryFlashColor = Color.red;
+    public Color secondaryFlashColor = Color.white;
+
 
     void Awake() {
         
@@ -95,11 +99,6 @@ public class SpriteRigController : MonoBehaviour {
         }
 	}
 
-    /*
-    public void DestroyRigCosmetics() {
-
-    }
-    */
 
     public void ReloadBoneCosmetics() {
         foreach (SpriteBoneBinding binding in spriteBones) {
@@ -134,48 +133,40 @@ public class SpriteRigController : MonoBehaviour {
         return retList.ToArray();
     }
 
-    /*
-    public void SetSortingLayer(SortingLayer layer) {
-
-        foreach (SpriteBoneBinding binding in spriteBones) {
-            binding.spriteRen.sortingLayerName = layer.name;
-        }
-
+//FLASH ALL SPRITES ON RIG
+    public void StartFlashRig(int numFlashes, float timePerFlash) {
+        StartCoroutine(FlashRig(numFlashes, timePerFlash, primaryFlashColor, secondaryFlashColor));
     }
-    */
 
-    /* 
-    void OnDrawGizmos() {
+    IEnumerator FlashRig(int numFlashes, float timePerFlash, Color upFlashColor, Color downFlashColor) {
+        SpriteRenderer[] cosmeticRenderers = GetCosmeticSpriteRenderers();
 
-        //Gizmos.DrawSphere(transform.position, jointSize);
-
-        //DrawSkeleton_Gizmo();
-
-        Color originalColor = Gizmos.color;
-
-        //DRAW JOINTS
-        Gizmos.color = jointColor;
-
-        Debug.Log(spriteBones[0]);
-        foreach (SpriteBoneBinding binding in spriteBones) {
-            Gizmos.DrawSphere(transform.position, jointSize);
-        }
-
-        //DRAW BONES
-        Gizmos.color = boneColor;
-        foreach (SpriteBoneBinding binding in spriteBones) {
-
-            foreach (Transform child in binding.bone.transform) {
-                if (!binding.cosmeticsList.Select(x => x.spriteRen.transform).ToList().Contains(child)) {
-                    Gizmos.DrawLine(binding.bone.transform.position, child.position);
-                }
+        while (numFlashes > 0) {
+            foreach (SpriteRenderer spriteRen in cosmeticRenderers) {
+                spriteRen.color = upFlashColor;
             }
+
+            yield return new WaitForSeconds(timePerFlash / 2.0f);
+
+            foreach (SpriteRenderer spriteRen in cosmeticRenderers) {
+                spriteRen.color = downFlashColor;
+            }
+
+            yield return new WaitForSeconds(timePerFlash / 2.0f);
+
+            numFlashes -= 1;
         }
 
-        Gizmos.color = originalColor;
-    }
-    */
+        //make sure we set the color back to the original
+        foreach (SpriteRenderer spriteRen in cosmeticRenderers) {
+            spriteRen.color = Color.white;
+        }
 
+        yield return null;
+    }
+
+
+    //GIZMOS
     void OnDrawGizmos() {
         DrawSkeleton_Gizmo();
     }
@@ -206,8 +197,13 @@ public class SpriteRigController : MonoBehaviour {
         Gizmos.color = originalColor;
         
 
-    }    
+    }
+
+
+
 }
+
+
 
 #if UNITY_EDITOR
 [CanEditMultipleObjects]
