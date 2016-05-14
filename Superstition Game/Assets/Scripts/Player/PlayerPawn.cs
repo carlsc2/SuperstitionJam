@@ -117,6 +117,8 @@ public class PlayerPawn : Pawn {
 		}
 		if(nearest != null) {
 			nearest.GetComponentInChildren<Interactable>().Interact(transform);
+
+            anim.Interact();
 		}
 	}
 
