@@ -44,6 +44,7 @@ public class Pawn : MonoBehaviour {
 
     public virtual void DamagePawn(float damageAmount) {
 
+        stats.ApplyDamage(damageAmount);
         rig.StartFlashRig(2, .2f);
     }
 }

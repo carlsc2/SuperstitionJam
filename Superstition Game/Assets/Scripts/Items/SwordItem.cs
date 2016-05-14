@@ -13,13 +13,20 @@ public class SwordItem : ItemBase {
         if (!canDamage) { return; }
 
         //only deal damage if the other thing can deal damage
-        if (other.gameObject.GetComponent<CharacterStats>() == null) { return; }
+        if (other.gameObject.GetComponent<CharacterStats>() == null
+            || other.gameObject.GetComponent<Pawn>() == null) { return; }
 
         //WE'RE GOOD TO GO
 
-        CharacterStats otherStats = other.GetComponent<CharacterStats>();
+        Pawn otherPawn = other.GetComponent<Pawn>();
 
-        otherStats.DamageCharacter(damage);
+        float strengthMultiplier = 1.0f;
+        CharacterStats ownerStats = owner.GetComponent<CharacterStats>();
+        if (ownerStats != null) {
+            strengthMultiplier = ownerStats.strength;
+        }
+
+        otherPawn.DamagePawn(damage * strengthMultiplier);
 
     }
 
