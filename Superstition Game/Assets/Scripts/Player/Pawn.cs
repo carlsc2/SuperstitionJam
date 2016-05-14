@@ -7,6 +7,8 @@ public class Pawn : MonoBehaviour {
     //public delegate void OnDeathCallback();
     //OnDeathCallback onPawnDeath;
 
+    //public PlayerController owningController;
+
     public UnityEvent OnPawnDeath;
 
     public CharacterStats stats;
@@ -64,6 +66,6 @@ public class Pawn : MonoBehaviour {
 
         OnPawnDeath.Invoke();
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

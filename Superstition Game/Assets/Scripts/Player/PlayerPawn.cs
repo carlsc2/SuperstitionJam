@@ -159,7 +159,21 @@ public class PlayerPawn : Pawn {
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D col) {
+    public override void KillPawn() {
+        base.KillPawn();
+
+        //Trigger death animation on the model
+        anim.TriggerDeath();
+
+        //detatch the model from the GameObject that drives logic
+        rig.transform.parent = null;
+
+        //Destroy this gameobject
+        Destroy(gameObject);
+
+    }
+
+    void OnTriggerEnter2D(Collider2D col) {
 		//update interaction list
 		Interactable tmp = col.transform.root.GetComponentInChildren<Interactable>();
 		if(tmp != null) {

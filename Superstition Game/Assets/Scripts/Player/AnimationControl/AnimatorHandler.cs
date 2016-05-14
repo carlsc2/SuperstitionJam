@@ -28,7 +28,14 @@ public class AnimatorHandler : MonoBehaviour {
         anim.SetTrigger("Attack_Stab_Trig");
     }
 
-    public virtual void GetHit() { }
+    public virtual void GetHit() {
+        anim.SetTrigger("GetHit_Trig");
+    }
+
+    public virtual void TriggerDeath() {
+        anim.SetTrigger("IsDead_Trig");
+        GetHit();
+    }
 
 
 }
