@@ -18,6 +18,7 @@ public class AIController : MonoBehaviour {
     {
         if (!player)
             return;
+
         Vector3 towardPlayer = player.transform.position - transform.position;
 
         float horizontal = 0;
@@ -35,11 +36,20 @@ public class AIController : MonoBehaviour {
             else if (towardPlayer.y < -1)
                 vertical = -1;
 
+            horizontal *= Random.Range(0f, 1);
+            vertical *= Random.Range(0f, 1);
+
+            //if (Random.Range(0, 100) > 80)
+            //   horizontal *= 0;
+            //if (Random.Range(0, 100) > 80)
+            //    vertical *= 0;
             p.Move(horizontal, vertical);
         }
         else
         {
-            p.Attack();
+            int rand = Random.Range(0, 100);
+            if(rand < 1)
+                p.Attack();
         }
 	}
 }
