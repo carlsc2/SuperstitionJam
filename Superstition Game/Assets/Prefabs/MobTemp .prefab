@@ -1450,6 +1450,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b5d2d43d8f4e3f4d8075beb70be1cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 11419758}
+  rig: {fileID: 11441616}
   defendModifier: 3
   swordHitbox: {fileID: 128724}
   shieldHitbox: {fileID: 105774}
@@ -1468,6 +1470,8 @@ MonoBehaviour:
   boneSize: 0
   jointColor: {r: 0, g: 0, b: 0, a: 0}
   jointSize: 0
+  primaryFlashColor: {r: 1, g: 0, b: 0, a: 1}
+  secondaryFlashColor: {r: 1, g: 1, b: 1, a: 1}
   spriteBones:
   - name: LowerTorsoJoint
     bone: {fileID: 11401658}
@@ -1821,7 +1825,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af56b784a1ecc2342a64e914e644ea71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11419758}
 --- !u!212 &21200132
 SpriteRenderer:
   m_ObjectHideFlags: 1
