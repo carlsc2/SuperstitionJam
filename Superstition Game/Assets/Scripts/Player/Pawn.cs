@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Pawn : MonoBehaviour {
 
+    public delegate void OnDeathCallback();
+    OnDeathCallback onPawnDeath;
+
     public CharacterStats stats;
 
     public SpriteRigController rig;
@@ -53,6 +56,9 @@ public class Pawn : MonoBehaviour {
     }
 
     public virtual void KillPawn() {
+
+        onPawnDeath();
+
         Destroy(gameObject);
     }
 }
