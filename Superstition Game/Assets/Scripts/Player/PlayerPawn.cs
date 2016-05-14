@@ -11,6 +11,7 @@ public class PlayerPawn : Pawn {
 	MovementMotor motor;
 	InventoryController inventory;
 	AnimatorHandler anim;
+
 	//CharacterStats stats;
 
 	//SpriteRenderer sr;
@@ -22,12 +23,14 @@ public class PlayerPawn : Pawn {
 
 	private HashSet<Transform> interactables;
 
+    
 	protected override void Awake() {
 		base.Awake();
 
 		motor = GetComponent<MovementMotor>();
 		inventory = GetComponent<InventoryController>();
 		anim = GetComponent<AnimatorHandler>();
+        //audSource = GetComponent<AudioSource>();
 
 		//sr = GetComponent<SpriteRenderer>();
 		//stats = GetComponent<CharacterStats>();
@@ -187,6 +190,8 @@ public class PlayerPawn : Pawn {
 
 		//Trigger death animation on the model
 		anim.TriggerDeath();
+        
+
 
 		//detatch the model from the GameObject that drives logic
 		rig.transform.parent = null;

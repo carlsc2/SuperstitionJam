@@ -7,7 +7,7 @@ public class PlaySoundOnce : StateMachineBehaviour {
 
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        AudioSource emitter = animator.transform.root.GetComponent<AudioSource>();
+        AudioSource emitter = animator.transform.GetComponent<AudioSource>();
         if (emitter == null) { return; }
 
         emitter.PlayOneShot(clip);
