@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 public class PlayerPawn : Pawn {
@@ -142,4 +143,5 @@ public class PlayerPawn : Pawn {
 		//update interaction list
 		interactables.Remove(col.transform.root);
 	}
+    
 }
