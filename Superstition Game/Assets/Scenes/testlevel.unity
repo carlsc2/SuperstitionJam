@@ -249,7 +249,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1735027567
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0e439421b442e0740ba45152d8f56de4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -267,7 +267,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &405492205
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +356,7 @@ RectTransform:
   - {fileID: 846720956}
   - {fileID: 107376175}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -508,7 +508,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!114 &779032325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,7 +520,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3847af5df8e624e8648a46c2babd7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idle_dialogue:
+  - fuck you
+  - you cock sucker
+  - suck my dick
+  chat_dialogue: []
   chatbox: {fileID: 846720956}
+  is_speaking: 0
 --- !u!1 &846720955
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,7 +691,49 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
+--- !u!1001 &1325563525
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 422950, guid: 7b2c1471380f10949a3e48326c9aa541, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 422950, guid: 7b2c1471380f10949a3e48326c9aa541, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 422950, guid: 7b2c1471380f10949a3e48326c9aa541, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422950, guid: 7b2c1471380f10949a3e48326c9aa541, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422950, guid: 7b2c1471380f10949a3e48326c9aa541, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422950, guid: 7b2c1471380f10949a3e48326c9aa541, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422950, guid: 7b2c1471380f10949a3e48326c9aa541, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 422950, guid: 7b2c1471380f10949a3e48326c9aa541, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7b2c1471380f10949a3e48326c9aa541, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1690550163
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +879,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1735027567
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d85ca5e4edddd2e4c9c8372c8b7fb357, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -849,4 +897,4 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3

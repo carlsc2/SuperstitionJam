@@ -3,8 +3,14 @@ using UnityEngine.UI;
 using System.Collections;
 
 
+
 public class MonologueControl : MonoBehaviour {
 
+	public string[] idle_dialogue;
+	private int idix = 0;
+
+	public string[] chat_dialogue;
+	private int cdix = 0;
 
 	public RectTransform chatbox;
 	private RectTransform canvas;
@@ -13,6 +19,8 @@ public class MonologueControl : MonoBehaviour {
 	private float chat_height_offset;
 
 	private IEnumerator chatroutine;
+
+	public bool is_speaking = false;
 
 	void Awake() {
 		canvas = chatbox;
@@ -26,7 +34,10 @@ public class MonologueControl : MonoBehaviour {
 	}
 
 	void Update () {
-		
+		if (!is_speaking) {
+			speak_words(idle_dialogue[idix]);
+			idix = (idix + 1) % idle_dialogue.Length;
+		}
 		
 	}
 
@@ -43,12 +54,13 @@ public class MonologueControl : MonoBehaviour {
 
 		txt.text = words;
 
-		float duration = 3 + words.Length/7f;
+		float duration = 1.5f + words.Length/7f;
 
 		float start_time = Time.time;
 
 		//make chat box visible
 		chatbox.gameObject.SetActive(true);
+		is_speaking = true;
 
 		while(Time.time < duration + start_time) {
 
@@ -67,6 +79,7 @@ public class MonologueControl : MonoBehaviour {
 
 		//hide chat box
 		chatbox.gameObject.SetActive(false);
+		is_speaking = false;
 
 
 
