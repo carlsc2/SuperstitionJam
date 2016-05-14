@@ -12,12 +12,6 @@ public class CharacterStats : MonoBehaviour {
 
 
     public void ApplyDamage(float damageAmount) {
-
-
         health = (Mathf.Clamp(health - (defense - damageAmount), 0.0f, Mathf.Infinity));
-
-        if (health <= 0.0f) {
-            Destroy(gameObject);
-        }
     }
 }

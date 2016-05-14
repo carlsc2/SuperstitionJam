@@ -9,10 +9,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 495170}
   - 212: {fileID: 21272808}
-  - 114: {fileID: 11403318}
   - 114: {fileID: 11408600}
   - 58: {fileID: 5883568}
   - 58: {fileID: 5800578}
+  - 114: {fileID: 11498568}
+  - 114: {fileID: 11496672}
   m_Layer: 0
   m_Name: testman
   m_TagString: Untagged
@@ -27,9 +28,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.8, y: -2.46, z: 0}
+  m_LocalPosition: {x: 8.118617, y: -4.1952167, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -61,28 +61,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.28
---- !u!114 &11403318
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3847af5df8e624e8648a46c2babd7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idle_dialogue:
-  - fuck you
-  - you cock sucker
-  - suck my dick
-  chat_dialogue:
-  - oh hey
-  - how's it going?
-  is_speaking: 0
-  is_chatting: 0
-  is_idle: 1
-  chatboxPrefab: {fileID: 199558, guid: 13931b760726bec48a7b876a98024746, type: 2}
 --- !u!114 &11408600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,6 +72,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ebc85509e6feea4a8013913005eb07e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11496672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3847af5df8e624e8648a46c2babd7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle_dialogue: []
+  chat_dialogue: []
+  is_speaking: 0
+  is_chatting: 0
+  is_idle: 1
+  chatboxPrefab: {fileID: 0}
+--- !u!114 &11498568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151902}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331f98edbd267104f92b0442853fbd54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle_dialogue:
+  - QQQQQQQQQQQ
+  chat_dialogue:
+  - QQQ___QQQ
+  is_speaking: 0
+  is_chatting: 0
+  is_idle: 1
+  chatboxPrefab: {fileID: 199558, guid: 13931b760726bec48a7b876a98024746, type: 2}
+  quest: {fileID: 0}
+  completionDialogue:
+  - HOLY SHIT THX
 --- !u!212 &21272808
 SpriteRenderer:
   m_ObjectHideFlags: 1
