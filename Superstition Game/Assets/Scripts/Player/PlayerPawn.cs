@@ -9,6 +9,7 @@ public class PlayerPawn : Pawn {
 	state currentState = state.idle;
 	direction facing = direction.left;
 	MovementMotor motor;
+    InventoryController inventory;
 	//CharacterStats stats;
 
 	//SpriteRenderer sr;
@@ -24,6 +25,8 @@ public class PlayerPawn : Pawn {
 		base.Awake();
 
 		motor = GetComponent<MovementMotor>();
+        inventory = GetComponent<InventoryController>();
+
 		//sr = GetComponent<SpriteRenderer>();
 		//stats = GetComponent<CharacterStats>();
 		interactables = new HashSet<Transform>();
@@ -56,7 +59,9 @@ public class PlayerPawn : Pawn {
 		if (currentState != state.attack && currentState != state.defend)
 		{
 			currentState = state.attack;
-			//swordHitbox.SetActive(true);
+            //swordHitbox.SetActive(true);
+            inventory.BeginUseItemInHand(InventoryController.Hand.Main);
+
 			Invoke("EndAttack", stats.attackTime);
 		}
 	}
@@ -64,6 +69,9 @@ public class PlayerPawn : Pawn {
 	void EndAttack()
 	{
 		currentState = state.idle;
+
+        inventory.EndUseItemInHand(InventoryController.Hand.Main);
+
 		//swordHitbox.SetActive(false);
 	}
 
@@ -72,7 +80,10 @@ public class PlayerPawn : Pawn {
 		if(currentState != state.attack && currentState != state.defend)
 		{
 			currentState = state.defend;
-			//shieldHitbox.SetActive(true);
+            //shieldHitbox.SetActive(true);
+            //inventory.offHandItem.BeginUseItem();
+            inventory.BeginUseItemInHand(InventoryController.Hand.Off);
+
 			stats.speed /= defendModifier;
 		}
 	}
@@ -82,7 +93,9 @@ public class PlayerPawn : Pawn {
 		if(currentState == state.defend)
 		{
 			currentState = state.idle;
-			//shieldHitbox.SetActive(false);
+            //shieldHitbox.SetActive(false);
+            inventory.EndUseItemInHand(InventoryController.Hand.Off);
+
 			stats.speed *= defendModifier;
 		}
 	}
