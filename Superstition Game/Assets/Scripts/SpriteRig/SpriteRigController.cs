@@ -72,6 +72,7 @@ public class SpriteRigController : MonoBehaviour {
     public class RigSocket {
         public string socketLabel;
         public Transform socketTransform;
+        public SpriteRigBoneHandler rigBone;
 
         public void AttatchToSocket(Transform objectToAttatch) {
             AttatchToSocket(objectToAttatch, Vector3.zero);
@@ -88,6 +89,10 @@ public class SpriteRigController : MonoBehaviour {
 
             //adjust local position for lining up
             objectToAttatch.localPosition += localPosOffset;
+
+            if (objectToAttatch.GetComponentInChildren<SpriteRenderer>() != null) {
+                objectToAttatch.GetComponentInChildren<SpriteRenderer>().sortingOrder = rigBone.cosmeticSpriteRenderers[0].sortingOrder - 1;
+            }
         }
 
     }
@@ -205,6 +210,7 @@ public class SpriteRigController : MonoBehaviour {
     }
 
 
+#if UNITY_EDITOR
     //GIZMOS
     void OnDrawGizmos() {
         DrawSkeleton_Gizmo();
@@ -243,7 +249,7 @@ public class SpriteRigController : MonoBehaviour {
         
 
     }
-
+#endif
 
 
 }

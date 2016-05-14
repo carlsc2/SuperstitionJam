@@ -1667,8 +1667,10 @@ MonoBehaviour:
   sockets:
   - socketLabel: LeftHand
     socketTransform: {fileID: 406064}
+    rigBone: {fileID: 11413006}
   - socketLabel: RightHand
     socketTransform: {fileID: 495220}
+    rigBone: {fileID: 11487624}
 --- !u!114 &11448716
 MonoBehaviour:
   m_ObjectHideFlags: 1

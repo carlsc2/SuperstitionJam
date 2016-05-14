@@ -1657,7 +1657,7 @@ MonoBehaviour:
   boneSize: 1
   jointColor: {r: 1, g: 0.9724138, b: 0, a: 1}
   jointSize: 0.1
-  socketBoneColor: {r: 0, g: 0, b: 0, a: 0}
+  socketBoneColor: {r: 1, g: 0, b: 0.84827614, a: 1}
   primaryFlashColor: {r: 1, g: 0, b: 0, a: 1}
   secondaryFlashColor: {r: 1, g: 1, b: 1, a: 1}
   spriteBones:
@@ -1795,8 +1795,10 @@ MonoBehaviour:
   sockets:
   - socketLabel: LeftHand
     socketTransform: {fileID: 421228}
+    rigBone: {fileID: 11414756}
   - socketLabel: RightHand
     socketTransform: {fileID: 419192}
+    rigBone: {fileID: 11496410}
 --- !u!114 &11468034
 MonoBehaviour:
   m_ObjectHideFlags: 1
