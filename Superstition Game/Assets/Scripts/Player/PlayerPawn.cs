@@ -91,12 +91,12 @@ public class PlayerPawn : Pawn {
                 if (horizontal > 0)
                 {
                     facing = direction.right;
-                    transform.localScale = Vector3.one;
+                    transform.localScale = new Vector3(.3f, .3f, 1);
                 }
                 else if (horizontal < 0)
                 {
                     facing = direction.left;
-                    transform.localScale = new Vector3(-1, 1, 1);
+                    transform.localScale = new Vector3(-.3f, .3f, 1);
                 }
 
 

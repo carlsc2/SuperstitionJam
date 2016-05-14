@@ -158,10 +158,17 @@ public class SpriteRigController : MonoBehaviour {
         Gizmos.color = originalColor;
     }
     */
-    private void DrawSkeleton_Gizmo() {
 
+    void OnDrawGizmos() {
+        DrawSkeleton_Gizmo();
+    }
+
+    private void DrawSkeleton_Gizmo() {
+        
         Color originalColor = Gizmos.color;
 
+
+        
         //DRAW JOINTS
         Gizmos.color = jointColor;
         foreach (SpriteBoneBinding binding in spriteBones) {
@@ -178,8 +185,9 @@ public class SpriteRigController : MonoBehaviour {
                 }
             }
         }
-
+        
         Gizmos.color = originalColor;
+        
 
     }    
 }
