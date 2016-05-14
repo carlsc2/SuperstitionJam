@@ -17,26 +17,31 @@ public class Sword : MonoBehaviour {
             if (otherStats.health <= 0)
                 Destroy(other.gameObject);
             else
-                StartCoroutine(Flash(other.gameObject));
+            {
+                other.GetComponent<PlayerPawn>().StartCoroutine(Flash(other.gameObject));
+            }
         }
     }
 
     IEnumerator Flash(GameObject other)
     {
-        SpriteRenderer sr = other.GetComponent<SpriteRenderer>();
+        SpriteRenderer[] renderers = other.GetComponentsInChildren<SpriteRenderer>();
 
-        for (int i = 2; i != 0; i--)
+        for (int i = 0; i < 2; i++)
         {
-            if (sr)
+            foreach (SpriteRenderer sr in renderers)
             {
                 sr.color = Color.red;
-                yield return new WaitForSeconds(.1f);
             }
-            if (sr)
+            yield return new WaitForSeconds(.1f);
+
+            foreach (SpriteRenderer sr in renderers)
             {
                 sr.color = Color.white;
-                yield return new WaitForSeconds(.1f);
             }
+            yield return new WaitForSeconds(.1f);
+            
         }
+       
     }
 }
