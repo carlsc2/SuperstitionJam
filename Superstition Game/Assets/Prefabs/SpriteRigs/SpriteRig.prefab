@@ -1164,10 +1164,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfffd572e52ff894f8940996f0320be3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boneColor: {r: 0, g: 0, b: 0, a: 0}
-  boneSize: 0
-  jointColor: {r: 0, g: 0, b: 0, a: 0}
-  jointSize: 0
+  boneColor: {r: 0, g: 1, b: 0.9586208, a: 1}
+  boneSize: 1
+  jointColor: {r: 1, g: 0.9724138, b: 0, a: 1}
+  jointSize: 0.1
   spriteBones:
   - name: LowerTorsoJoint
     bone: {fileID: 11440630}
@@ -1175,112 +1175,128 @@ MonoBehaviour:
     - name: LowerTorsoSprite
       spriteRen: {fileID: 21226358}
       sprite: {fileID: 0}
-      offset: {x: 0, y: 0}
+      offset: {x: 0.21286525, y: 0.73503464}
+      orderInLayer: 0
   - name: UpperTorsoJoint
     bone: {fileID: 11418032}
     cosmeticsList:
     - name: UpperTorsoSprite
       spriteRen: {fileID: 21211498}
       sprite: {fileID: 0}
-      offset: {x: 0, y: 0}
+      offset: {x: 0.21286525, y: 0.73503464}
+      orderInLayer: 0
   - name: NeckJoint
     bone: {fileID: 11449532}
     cosmeticsList:
     - name: NeckSprite
       spriteRen: {fileID: 21247480}
       sprite: {fileID: 0}
-      offset: {x: 0, y: 0}
+      offset: {x: 0.21286525, y: 0.73503464}
+      orderInLayer: 0
   - name: HeadJoint
     bone: {fileID: 11413700}
     cosmeticsList:
     - name: HeadSprite
       spriteRen: {fileID: 21263352}
       sprite: {fileID: 0}
-      offset: {x: 0, y: 0}
+      offset: {x: 0.21286525, y: 0.73503464}
+      orderInLayer: 0
   - name: LeftUpperArmJoint
     bone: {fileID: 11475530}
     cosmeticsList:
     - name: LeftUpperArmSprite
       spriteRen: {fileID: 21287516}
       sprite: {fileID: 0}
-      offset: {x: 0, y: 0}
+      offset: {x: 0.21286525, y: 0.73503464}
+      orderInLayer: 0
   - name: LeftForeArmJoint
     bone: {fileID: 11426760}
     cosmeticsList:
     - name: LeftForeArmSprite
       spriteRen: {fileID: 21223096}
       sprite: {fileID: 0}
-      offset: {x: 0, y: 0}
+      offset: {x: 0.21286525, y: 0.73503464}
+      orderInLayer: 0
   - name: LeftHandJoint
     bone: {fileID: 11461308}
     cosmeticsList:
     - name: LeftHandSprite
       spriteRen: {fileID: 21212736}
       sprite: {fileID: 0}
-      offset: {x: 0, y: 0}
+      offset: {x: 0.21286525, y: 0.73503464}
+      orderInLayer: 0
   - name: RightUpperArmJoint
     bone: {fileID: 11435010}
     cosmeticsList:
     - name: RightUpperArmSprite
       spriteRen: {fileID: 21218058}
       sprite: {fileID: 0}
-      offset: {x: 0, y: 0}
+      offset: {x: 0.21286525, y: 0.73503464}
+      orderInLayer: 0
   - name: RightForeArmJoint
     bone: {fileID: 11444896}
     cosmeticsList:
     - name: RightForeArmSprite
       spriteRen: {fileID: 21299556}
       sprite: {fileID: 0}
-      offset: {x: 0, y: 0}
+      offset: {x: 0.21286525, y: 0.73503464}
+      orderInLayer: 0
   - name: RightHandJoint
     bone: {fileID: 11477602}
     cosmeticsList:
     - name: RightHandSprite
       spriteRen: {fileID: 21232366}
       sprite: {fileID: 0}
-      offset: {x: 0, y: 0}
+      offset: {x: 0.21286525, y: 0.73503464}
+      orderInLayer: 0
   - name: LeftUpperLegJoint
     bone: {fileID: 11437242}
     cosmeticsList:
     - name: LeftUpperLegSprite
       spriteRen: {fileID: 21243032}
       sprite: {fileID: 0}
-      offset: {x: 0, y: 0}
+      offset: {x: 0.21286525, y: 0.73503464}
+      orderInLayer: 0
   - name: LeftLowerLegJoint
     bone: {fileID: 11439014}
     cosmeticsList:
     - name: LeftLowerLegSprite
       spriteRen: {fileID: 21292252}
       sprite: {fileID: 0}
-      offset: {x: 0, y: 0}
+      offset: {x: 0.21286525, y: 0.73503464}
+      orderInLayer: 0
   - name: LeftFootJoint
     bone: {fileID: 11418972}
     cosmeticsList:
     - name: LeftFootSprite
       spriteRen: {fileID: 21273364}
       sprite: {fileID: 0}
-      offset: {x: 0, y: 0}
+      offset: {x: 0.21286525, y: 0.73503464}
+      orderInLayer: 0
   - name: RightUpperLegJoint
     bone: {fileID: 11400012}
     cosmeticsList:
     - name: RightUpperLegSprite
       spriteRen: {fileID: 21243212}
       sprite: {fileID: 0}
-      offset: {x: 0, y: 0}
+      offset: {x: 0.21286525, y: 0.73503464}
+      orderInLayer: 0
   - name: RightLowerLegJoint
     bone: {fileID: 11488558}
     cosmeticsList:
     - name: RightLowerLegSprite
       spriteRen: {fileID: 21236614}
       sprite: {fileID: 0}
-      offset: {x: 0, y: 0}
+      offset: {x: 0.21286525, y: 0.73503464}
+      orderInLayer: 0
   - name: RightFootJoint
     bone: {fileID: 11407090}
     cosmeticsList:
     - name: RightFootSprite
       spriteRen: {fileID: 21272174}
       sprite: {fileID: 0}
-      offset: {x: 0, y: 0}
+      offset: {x: 0.21286525, y: 0.73503464}
+      orderInLayer: 0
 --- !u!114 &11475530
 MonoBehaviour:
   m_ObjectHideFlags: 1
