@@ -45,4 +45,8 @@ public class AnimatorHandler : MonoBehaviour {
         anim.SetBool("Block_Bool", false);
     }
 
+    public virtual void Interact() {
+        anim.SetTrigger("Use_Trig");
+    }
+
 }
