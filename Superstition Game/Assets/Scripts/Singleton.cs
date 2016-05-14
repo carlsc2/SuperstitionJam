@@ -12,6 +12,8 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour {
 
 	private static object _lock = new object();
 
+	public static string prefab_name;
+
 	public static T Instance
 	{
 		get
@@ -35,8 +37,9 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour {
 					}
 
 					if (_instance == null) {
-						GameObject singleton = new GameObject();
-						_instance = singleton.AddComponent<T>();
+						//GameObject singleton = new GameObject();
+						GameObject singleton = Instantiate(Resources.Load(prefab_name)) as GameObject;
+						_instance = singleton.GetComponent<T>();
 						singleton.name = "(singleton) " + typeof(T).ToString();
 
 						DontDestroyOnLoad(singleton);
