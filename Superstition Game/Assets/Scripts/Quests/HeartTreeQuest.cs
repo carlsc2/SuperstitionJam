@@ -12,7 +12,7 @@ public class HeartTreeQuest : QuestBase_Action {
 
 	*/
 
-	public ParticleEmitter pe;
+	public ParticleSystem ps;
 
 	public override void CheckConditions(string str) {
 
@@ -33,7 +33,7 @@ public class HeartTreeQuest : QuestBase_Action {
 
 		if (currentState == State.COMPLETED) {
 			GiveReward();
-			pe.Emit();
+			ps.Play();
 		}
 	}
 }
