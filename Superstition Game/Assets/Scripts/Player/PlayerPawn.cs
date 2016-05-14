@@ -20,26 +20,26 @@ public class PlayerPawn : Pawn {
 
 	private HashSet<Transform> interactables;
 
-    protected override void Awake() {
-        base.Awake();
+	protected override void Awake() {
+		base.Awake();
 
-        mm = GetComponent<MovementMotor>();
-        //sr = GetComponent<SpriteRenderer>();
-        //stats = GetComponent<CharacterStats>();
-        interactables = new HashSet<Transform>();
-    }
+		mm = GetComponent<MovementMotor>();
+		//sr = GetComponent<SpriteRenderer>();
+		//stats = GetComponent<CharacterStats>();
+		interactables = new HashSet<Transform>();
+	}
 
-    protected override void Start()
+	protected override void Start()
 	{
-        base.Start();
-        swordHitbox.SetActive(false);
-        shieldHitbox.SetActive(false);
+		base.Start();
+		swordHitbox.SetActive(false);
+		shieldHitbox.SetActive(false);
 
 	}
 
 	protected override void Update()
 	{
-        base.Update();
+		base.Update();
 
 		/*if (currentState == state.idle)
 			sr.color = Color.white;
@@ -154,5 +154,5 @@ public class PlayerPawn : Pawn {
 		//update interaction list
 		interactables.Remove(col.transform.root);
 	}
-    
+	
 }
