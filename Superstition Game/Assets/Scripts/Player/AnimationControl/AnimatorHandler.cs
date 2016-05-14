@@ -42,7 +42,7 @@ public class AnimatorHandler : MonoBehaviour {
     }
 
     public virtual void LowerShield() {
-        anim.SetBool("BlockBool", false);
+        anim.SetBool("Block_Bool", false);
     }
 
 }
