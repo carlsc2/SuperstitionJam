@@ -11,7 +11,7 @@ public class movePlayerIcon : MonoBehaviour {
 	private locationIcon curloc; //current location
 
 	private static Vector2 current_position;
-	private bool first_set = false;
+	private static bool first_set = false;
 
 	void Awake() {
 		playerIcon = transform as RectTransform;
@@ -22,12 +22,7 @@ public class movePlayerIcon : MonoBehaviour {
 		else {
 			playerIcon.position = current_position;
 		}
-		
-		RectTransform canvas = playerIcon;
-		while (canvas.parent != null && canvas.parent is RectTransform) {
-			canvas = canvas.parent as RectTransform;
-		}
-		moveArea = canvas;
+		moveArea = GameObject.FindGameObjectWithTag("Canvas").transform as RectTransform;
 	}
 
 	void Update() {
