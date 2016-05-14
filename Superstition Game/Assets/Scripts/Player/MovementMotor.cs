@@ -13,7 +13,7 @@ public class MovementMotor : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
     }
 
-	public void Move(float horizontal, float vertical)
+    public void Move(float horizontal, float vertical)
     {
         Vector2 dir = new Vector2(horizontal, vertical).normalized * stats.speed;
         rb.MovePosition(rb.position + dir);

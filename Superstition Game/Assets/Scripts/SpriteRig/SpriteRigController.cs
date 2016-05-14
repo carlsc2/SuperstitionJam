@@ -120,6 +120,20 @@ public class SpriteRigController : MonoBehaviour {
         }
     }
 
+    public SpriteRenderer[] GetCosmeticSpriteRenderers() {
+        List<SpriteRenderer> retList = new List<SpriteRenderer>();
+
+        foreach (SpriteBoneBinding binding in spriteBones) {
+            foreach (CosmeticSprite cosSprite in binding.cosmeticsList) {
+                if (cosSprite.spriteRen != null) {
+                    retList.Add(cosSprite.spriteRen);
+                }
+            }
+        }
+
+        return retList.ToArray();
+    }
+
     /*
     public void SetSortingLayer(SortingLayer layer) {
 
