@@ -1,8 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public class spritePerspective : MonoBehaviour {
@@ -11,24 +8,20 @@ public class spritePerspective : MonoBehaviour {
 	private List<SpriteRenderer> sprc;
 	private Bounds maxbounds;
 
-	void Start() {
-		spr = GetComponent<SpriteRenderer>();
+	void Awake() {
 		sprc = new List<SpriteRenderer>();
+	}
+
+	void Start() {
+		update_sprites();
+	}
+
+	public void update_sprites() {
+		sprc.Clear();
+		spr = GetComponent<SpriteRenderer>();
 		foreach (SpriteRenderer sp in GetComponentsInChildren<SpriteRenderer>()) {
 			sprc.Add(sp);
 		}
-
-		/*if(spr == null) {
-			maxbounds = new Bounds();
-			foreach(SpriteRenderer sp in sprc) {
-				maxbounds.Encapsulate(sp.bounds);
-			}
-		}
-		else {
-			maxbounds = spr.bounds;
-		}*/
-
-
 	}
 
 	void LateUpdate() {

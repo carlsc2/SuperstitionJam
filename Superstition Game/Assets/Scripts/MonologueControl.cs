@@ -39,7 +39,7 @@ public class MonologueControl : MonoBehaviour, Interactable {
 
 	}
 
-	public void Interact(Transform t) {
+	virtual public void Interact(Transform t) {
 		is_chatting = true;
 		is_idle = false;
 		is_speaking = false;
@@ -59,6 +59,7 @@ public class MonologueControl : MonoBehaviour, Interactable {
 				else {
 					is_chatting = false;
 					idix = 0;
+                    cdix = 0;
 					is_idle = true;
 				}
 				

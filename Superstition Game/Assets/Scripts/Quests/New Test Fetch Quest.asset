@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbbdf3d33b572e848a8018f17dfefbf3, type: 3}
   m_Name: New Test Fetch Quest
   m_EditorClassIdentifier: 
-  Description: 
+  Description: fetch me more compile erors!
   RewardItem: {fileID: 0}
