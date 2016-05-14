@@ -32,9 +32,15 @@ public class InventoryController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+        foreach (ItemSlot slot in itemsInInventory) {
+            
+        }
+
 	    if (mainHandItem != null) {
             AddItemToInventory(mainHandItem);
 
+            mainHandItem.EnableItem();
             PullOutItem(mainHandItem, Hand.Main);
         } 
 
@@ -55,6 +61,10 @@ public class InventoryController : MonoBehaviour {
 
         //assign owner b/c the check only sees if we already have this item
         itemToAdd.owner = this;
+
+        itemToAdd.transform.parent = transform;
+
+        itemToAdd.DisableItem();
 
         //don't try to add unless we already have this item
         if (itemsInInventory.Select(x => x.item).Contains(itemToAdd)) { return; }
@@ -93,6 +103,7 @@ public class InventoryController : MonoBehaviour {
     public void PullOutItem(ItemBase item, Hand handToPutIn) {
         if (item == null || !HasItem(item)) { return; }
 
+        //item.EnableItem();
 
         switch (handToPutIn) {
 
@@ -100,7 +111,10 @@ public class InventoryController : MonoBehaviour {
                 if (mainHandItem != null) {
                     PutAwayCurrentItem(Hand.Main);
                 }
+
                 mainHandItem = item;
+                item.EnableItem();
+
                 rig.AttachObjectToSocket(item.transform, mainHandSocket);
 
                 break;
@@ -112,11 +126,15 @@ public class InventoryController : MonoBehaviour {
                     PutAwayCurrentItem(Hand.Off);
                 }
                 offHandItem = item;
+
+                item.EnableItem();
                 rig.AttachObjectToSocket(item.transform, offHandSocket);
 
                 break;
         }
     }
+
+
 
 //REMOVE ITEM FROM HAND, BUT KEEP IN INVENTORY
     public void PutAwayCurrentItem(Hand handToFreeUp) {
@@ -124,34 +142,60 @@ public class InventoryController : MonoBehaviour {
         switch (handToFreeUp) {
 
             case Hand.Main:
-                if (mainHandItem != null) {
+                if (mainHandItem == null) { break; }
 
-                }
-
+                mainHandItem.DisableItem();
+                mainHandItem = null;
+                
                 break;
 
+
             case Hand.Off:
+                if (offHandItem = null) { break; }
+
+                offHandItem.DisableItem();
+                offHandItem = null;
 
                 break;
         }
     }
 
 //USE ITEM IN SUPPLIED HAND
-    public void UseItemInHand(Hand handWithItem) {
+    public void BeginUseItemInHand(Hand handWithItem) {
 
         switch (handWithItem) {
 
             case Hand.Main:
-                if (mainHandItem != null) {
-                    mainHandItem.UseItem();
-                }
+                if (mainHandItem == null) { break; }
+
+                mainHandItem.BeginUseItem();
 
                 break;
 
             case Hand.Off:
-                if (offHandItem != null) {
-                    offHandItem.UseItem();
-                }
+                if (offHandItem == null) { break; }
+
+                offHandItem.BeginUseItem();
+
+                break;
+        }
+    }
+
+    public void EndUseItemInHand(Hand handWithItem) {
+
+        switch (handWithItem) {
+
+            case Hand.Main:
+                if (mainHandItem == null) { break; }
+
+                mainHandItem.EndUseItem();
+
+                break;
+
+            case Hand.Off:
+                if (offHandItem == null) { break; }
+
+                offHandItem.EndUseItem();
 
                 break;
         }
@@ -160,5 +204,26 @@ public class InventoryController : MonoBehaviour {
 
     public bool HasItem(ItemBase item) {
         return itemsInInventory.Select(x => x.item).Contains(item);
+    }
+
+    public bool HasItemOfId(string id) {
+        foreach (ItemSlot slot in itemsInInventory) {
+            if (slot.item.id == id) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public void RemoveFirstItemOfId(string id) {
+        foreach (ItemSlot slot in itemsInInventory) {
+            if (slot.item.id == id) {
+
+                RemoveItemFromInventory(slot.item);
+
+                break;
+            }
+        }
     }
 }

@@ -6,6 +6,8 @@ public class ItemBase : MonoBehaviour {
     [HideInInspector]
     public InventoryController owner;
 
+    public string id;
+
     protected virtual void Awake() {
 
     }
@@ -29,7 +31,11 @@ public class ItemBase : MonoBehaviour {
 
     }
 
-    public virtual void UseItem() {
+    public virtual void BeginUseItem() {
+
+    }
+
+    public virtual void EndUseItem() {
 
     }
 

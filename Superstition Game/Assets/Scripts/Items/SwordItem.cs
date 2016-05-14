@@ -31,5 +31,18 @@ public class SwordItem : ItemBase {
     }
 
 
-	
+    public override void BeginUseItem() {
+        base.BeginUseItem();
+
+        owner.GetComponent<AnimatorHandler>().Attack();
+
+        canDamage = true;
+    }
+
+    public override void EndUseItem() {
+        base.EndUseItem();
+
+        canDamage = false;
+    }
+
 }

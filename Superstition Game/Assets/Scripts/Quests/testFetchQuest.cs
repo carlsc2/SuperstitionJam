@@ -5,27 +5,13 @@ public class testFetchQuest : QuestBase_Fetch{
 
     override public void CheckConditions(string str)
     {
-        if (currentState == State.UKNOWN)
+        if (currentState != State.TURNED_IN)
         {
-            if (str == "talk")
+            if (str == "givereward")
             {
-                currentState = State.STARTED;
-            }
-        }
-
-        if (currentState == State.STARTED)
-        {
-            if (str == "pickup")
-            {
-                   currentState = State.COMPLETED;
-            }
-        }
-
-        if (currentState == State.COMPLETED)
-        {
-            if (str == "talk")
-            {
-                GiveReward();
+                
+                    GiveReward();
+                
             }
         }
     }

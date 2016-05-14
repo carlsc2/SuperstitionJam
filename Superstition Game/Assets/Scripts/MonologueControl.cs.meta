@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: bc3847af5df8e624e8648a46c2babd7b
-timeCreated: 1463180758
-licenseType: Free
+timeCreated: 1463219556
+licenseType: Pro
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - chatboxPrefab: {fileID: 199558, guid: 13931b760726bec48a7b876a98024746, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
