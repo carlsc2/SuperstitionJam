@@ -1408,6 +1408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
   id: BossSword
+  weaponAttackType: 0
   damage: -20
   canDamage: 0
 --- !u!114 &11412844
@@ -1480,6 +1481,8 @@ MonoBehaviour:
   desiredMoveDirec: {x: 0, y: 0}
   trueMoveDirec: {x: 0, y: 0}
   accel: 1
+  speed: 0
+  isDodging: 0
 --- !u!114 &11443104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1562,6 +1565,7 @@ MonoBehaviour:
       PublicKeyToken=null
   stats: {fileID: 11463320}
   rig: {fileID: 11464396}
+  currentState: 0
   defendModifier: 3
 --- !u!114 &11456284
 MonoBehaviour:
@@ -1640,8 +1644,12 @@ MonoBehaviour:
   maxHealth: 100
   strength: 20
   defense: 10
-  speed: 3
+  walkSpeed: 3
+  accel: 1
   attackTime: 0.25
+  dodgeTime: 0
+  dodgeAccel: 0
+  dodgeSpeed: 0
 --- !u!114 &11464396
 MonoBehaviour:
   m_ObjectHideFlags: 1

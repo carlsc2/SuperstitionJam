@@ -1490,8 +1490,12 @@ MonoBehaviour:
   maxHealth: 50
   strength: 20
   defense: 10
-  speed: 3
+  walkSpeed: 3
+  accel: 1
   attackTime: 0.25
+  dodgeTime: 0
+  dodgeAccel: 0
+  dodgeSpeed: 0
 --- !u!114 &11419790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1549,6 +1553,7 @@ MonoBehaviour:
       PublicKeyToken=null
   stats: {fileID: 11419758}
   rig: {fileID: 11438150}
+  currentState: 0
   defendModifier: 1
 --- !u!114 &11438150
 MonoBehaviour:
@@ -1935,6 +1940,8 @@ MonoBehaviour:
   desiredMoveDirec: {x: 0, y: 0}
   trueMoveDirec: {x: 0, y: 0}
   accel: 1
+  speed: 0
+  isDodging: 0
 --- !u!114 &11475084
 MonoBehaviour:
   m_ObjectHideFlags: 1
