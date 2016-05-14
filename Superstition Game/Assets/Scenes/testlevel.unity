@@ -327,6 +327,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 158589788}
   - 212: {fileID: 158589787}
+  - 114: {fileID: 158589789}
   m_Layer: 0
   m_Name: BG_GrassFloor1
   m_TagString: Untagged
@@ -377,6 +378,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &158589789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 158589786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c861463df0d0d49a8c4c563ec9162d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numScreens: 2
 --- !u!1 &405492205
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,7 +758,7 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 143700, guid: 7b1bc5d1014caf24581c3b687452f4bd, type: 2}
   m_PrefabInternal: {fileID: 1032150815}
---- !u!58 &930178513
+--- !u!58 &930178509
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -756,9 +769,23 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.48, y: 0.54}
+  m_Offset: {x: 0.86, y: -2.55}
   serializedVersion: 2
-  m_Radius: 3.5
+  m_Radius: 0.5
+--- !u!58 &930178517
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 930178506}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.2, y: -2.55}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1001 &970187503
 Prefab:
   m_ObjectHideFlags: 0
@@ -840,7 +867,20 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11442422, guid: 7b1bc5d1014caf24581c3b687452f4bd, type: 2}
+      propertyPath: ws
+      value: 
+      objectReference: {fileID: 158589789}
+    - target: {fileID: 6194764, guid: 7b1bc5d1014caf24581c3b687452f4bd, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6128608, guid: 7b1bc5d1014caf24581c3b687452f4bd, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6194764, guid: 7b1bc5d1014caf24581c3b687452f4bd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7b1bc5d1014caf24581c3b687452f4bd, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1194638967
