@@ -1,0 +1,525 @@
+fileFormatVersion: 2
+guid: e9b75ba38af8a7549adc822898c02b60
+timeCreated: 1463183237
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: MainCharHelmet
+    21300002: MainCharNeck
+    21300004: MainCharRightArmBack
+    21300006: MainCharSeparate_10
+    21300008: MainCharTorsoUpperFront
+    21300010: MainCharLeftForearm
+    21300012: MainCharRightForearm
+    21300014: MainCharTorsoLower
+    21300016: MainCharRightHand
+    21300018: MainCharSeparate_18
+    21300020: MainCharLeftUpLeg
+    21300022: MainCharSeparate_20
+    21300024: MainCharRightCalf
+    21300026: MainCharLeftCalf
+    21300028: MainCharRightFoot
+    21300030: MainCharLeftFoot
+    21300032: MainCharLeftHand
+    21300034: MainCharTorsoUpperBack
+    21300036: MainCharLeftArm
+    21300038: MainCharRightArmFront
+    21300040: MainCharRightUpLeg
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 395, y: 606, z: 470, w: 230}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: MainCharHelmet
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 832
+        width: 128
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 64, y: 47.5}
+        - {x: 43, y: 70.5}
+        - {x: -42, y: 70.5}
+        - {x: -61, y: 61.5}
+        - {x: -64, y: 34.5}
+        - {x: -64, y: -16.5}
+        - {x: -48, y: -53.5}
+        - {x: 9, y: -70.5}
+        - {x: 64, y: -70.5}
+    - name: MainCharNeck
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 791
+        width: 78
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 42.5}
+        - {x: -39, y: 2.5}
+        - {x: -39, y: -28.5}
+        - {x: -14, y: -41.5}
+        - {x: -10, y: -42.5}
+        - {x: 38, y: -42.5}
+        - {x: 39, y: -32.5}
+        - {x: 39, y: 39.5}
+        - {x: 35, y: 42.5}
+    - name: MainCharRightArmBack
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 616
+        width: 112
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 82}
+        - {x: -56, y: 58}
+        - {x: -56, y: -82}
+        - {x: 0, y: -82}
+        - {x: 56, y: -30}
+        - {x: 56, y: 78}
+        - {x: 33, y: 82}
+      - - {x: -46, y: 51}
+        - {x: -44, y: 49}
+        - {x: -41, y: 50}
+        - {x: -41, y: 53}
+        - {x: -43, y: 55}
+        - {x: -46, y: 54}
+      - - {x: -29, y: 79}
+        - {x: -32, y: 76}
+        - {x: -32, y: 74}
+        - {x: -30, y: 72}
+        - {x: -26, y: 72}
+        - {x: -24, y: 76}
+        - {x: -24, y: 78}
+        - {x: -26, y: 79}
+    - name: MainCharTorsoUpperFront
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 606
+        width: 158
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 79, y: 33.5}
+        - {x: 61, y: 89.5}
+        - {x: 28, y: 92.5}
+        - {x: -51, y: 92.5}
+        - {x: -79, y: 59.5}
+        - {x: -79, y: -78.5}
+        - {x: -78, y: -91.5}
+        - {x: -67, y: -92.5}
+        - {x: 57, y: -92.5}
+        - {x: 63, y: -85.5}
+        - {x: 71, y: -72.5}
+        - {x: 79, y: -52.5}
+    - name: MainCharLeftForearm
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 560
+        width: 118
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -59, y: 26}
+        - {x: -59, y: -10}
+        - {x: -12, y: -42}
+        - {x: 55, y: -42}
+        - {x: 55, y: 7}
+        - {x: 53, y: 18}
+        - {x: -7, y: 42}
+        - {x: -43, y: 42}
+        - {x: -53, y: 35}
+      - - {x: 53, y: -9}
+        - {x: 53, y: -17}
+        - {x: 57, y: -21}
+        - {x: 59, y: -20}
+        - {x: 59, y: -13}
+        - {x: 56, y: -8}
+    - name: MainCharRightForearm
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 427
+        width: 82
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18, y: 67.5}
+        - {x: -30, y: 67.5}
+        - {x: -41, y: 64.5}
+        - {x: -41, y: 33.5}
+        - {x: -10, y: -67.5}
+        - {x: 41, y: -67.5}
+        - {x: 41, y: 15.5}
+        - {x: 38, y: 51.5}
+    - name: MainCharTorsoLower
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 460
+        width: 137
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -64.5, y: 66}
+        - {x: -68.5, y: 62}
+        - {x: -68.5, y: -66}
+        - {x: 61.5, y: -66}
+        - {x: 68.5, y: -63}
+        - {x: 68.5, y: 42}
+        - {x: 50.5, y: 66}
+    - name: MainCharRightHand
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 336
+        width: 64
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 34.5}
+        - {x: -32, y: 2.5}
+        - {x: -32, y: -20.5}
+        - {x: -9, y: -34.5}
+        - {x: 28, y: -34.5}
+        - {x: 32, y: -7.5}
+        - {x: 32, y: 31.5}
+        - {x: 23, y: 34.5}
+    - name: MainCharLeftUpLeg
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 332
+        width: 104
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -44, y: 88}
+        - {x: -52, y: 70}
+        - {x: -52, y: 26}
+        - {x: -12, y: -88}
+        - {x: 45, y: -88}
+        - {x: 52, y: -87}
+        - {x: 52, y: -12}
+        - {x: 37, y: 63}
+        - {x: 25, y: 88}
+    - name: MainCharRightCalf
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 99
+        width: 120
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 85.5}
+        - {x: -33, y: 79.5}
+        - {x: -60, y: -28.5}
+        - {x: -60, y: -92.5}
+        - {x: -39, y: -100.5}
+        - {x: 12, y: -100.5}
+        - {x: 60, y: 43.5}
+        - {x: 60, y: 85.5}
+      - - {x: 8, y: 91.5}
+        - {x: 10, y: 91.5}
+        - {x: 16, y: 93.5}
+        - {x: 16, y: 96.5}
+        - {x: 10, y: 100.5}
+        - {x: -4, y: 100.5}
+        - {x: -12, y: 93.5}
+        - {x: -12, y: 90.5}
+        - {x: -11, y: 88.5}
+        - {x: -4, y: 88.5}
+        - {x: 5, y: 91.5}
+        - {x: 7, y: 93.5}
+        - {x: 6, y: 95.5}
+      - - {x: 22, y: 88.5}
+        - {x: 28, y: 88.5}
+        - {x: 33, y: 90.5}
+        - {x: 33, y: 93.5}
+        - {x: 32, y: 95.5}
+        - {x: 28, y: 95.5}
+        - {x: 22, y: 92.5}
+    - name: MainCharLeftCalf
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 101
+        width: 88
+        height: 188
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 44, y: -35}
+        - {x: 44, y: 94}
+        - {x: -41, y: 94}
+        - {x: -44, y: 87}
+        - {x: -44, y: -90}
+        - {x: -42, y: -89}
+        - {x: -37, y: -85}
+        - {x: -37, y: -83}
+        - {x: -35, y: -93}
+        - {x: -32, y: -94}
+        - {x: -24, y: -94}
+        - {x: -21, y: -91}
+        - {x: -9, y: -94}
+        - {x: 39, y: -94}
+    - name: MainCharRightFoot
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 40
+        width: 96
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 29.5}
+        - {x: -5, y: 28.5}
+        - {x: -7, y: 24.5}
+        - {x: -6, y: 26.5}
+        - {x: -6, y: 29.5}
+        - {x: -45, y: 29.5}
+        - {x: -48, y: 21.5}
+        - {x: -48, y: -26.5}
+        - {x: -45, y: -27.5}
+        - {x: -23, y: -29.5}
+        - {x: 48, y: -29.5}
+        - {x: 48, y: -2.5}
+        - {x: 16, y: 28.5}
+    - name: MainCharLeftFoot
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 42
+        width: 104
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40, y: 29}
+        - {x: -52, y: 25}
+        - {x: -52, y: -29}
+        - {x: 47, y: -29}
+        - {x: 52, y: -25}
+        - {x: 52, y: -2}
+        - {x: 14, y: 29}
+    - name: MainCharLeftHand
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 559
+        width: 66
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 36}
+        - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: -18, y: -35}
+        - {x: 28, y: -35}
+        - {x: 28, y: 30}
+        - {x: 27, y: 36}
+    - name: MainCharTorsoUpperBack
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 859
+        width: 131
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 54.5, y: -16.5}
+        - {x: 43.5, y: -0.5}
+        - {x: 7.5, y: 19.5}
+        - {x: -3.5, y: 20.5}
+        - {x: -46.5, y: 20.5}
+        - {x: -65.5, y: -3.5}
+        - {x: -65.5, y: -25.5}
+        - {x: -13.5, y: -25.5}
+        - {x: -14.5, y: -22.5}
+        - {x: 4.5, y: -25.5}
+        - {x: 54.5, y: -25.5}
+    - name: MainCharLeftArm
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 668
+        width: 88
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -44, y: 1}
+        - {x: 5, y: -85}
+        - {x: 42, y: -85}
+        - {x: 44, y: -83}
+        - {x: 44, y: 74}
+        - {x: 41, y: 88}
+        - {x: -42, y: 88}
+        - {x: -44, y: 85}
+      - - {x: -21, y: -62}
+        - {x: -18, y: -61}
+        - {x: -18, y: -58}
+        - {x: -21, y: -57}
+        - {x: -23, y: -59}
+      - - {x: -22, y: -41}
+        - {x: -15, y: -50}
+        - {x: -12, y: -49}
+        - {x: -12, y: -45}
+        - {x: -17, y: -37}
+        - {x: -22, y: -39}
+      - - {x: -21, y: -38}
+        - {x: -18, y: -37}
+        - {x: -18, y: -34}
+        - {x: -21, y: -33}
+        - {x: -23, y: -35}
+      - - {x: -22, y: -17}
+        - {x: -19, y: -16}
+        - {x: -19, y: -13}
+        - {x: -22, y: -12}
+        - {x: -24, y: -14}
+    - name: MainCharRightArmFront
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 616
+        width: 113
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 68}
+        - {x: -56.5, y: 29}
+        - {x: -56.5, y: -82}
+        - {x: 3.5, y: -82}
+        - {x: 56.5, y: -1}
+        - {x: 56.5, y: 59}
+        - {x: 26.5, y: 68}
+      - - {x: -1.5, y: -63}
+        - {x: -3.5, y: -66}
+        - {x: -2.5, y: -69}
+        - {x: 3.5, y: -69}
+        - {x: 5.5, y: -67}
+        - {x: 5.5, y: -63}
+      - - {x: -47.5, y: 35}
+        - {x: -45.5, y: 33}
+        - {x: -42.5, y: 34}
+        - {x: -42.5, y: 37}
+        - {x: -44.5, y: 39}
+        - {x: -47.5, y: 38}
+      - - {x: -30.5, y: 63}
+        - {x: -33.5, y: 60}
+        - {x: -33.5, y: 58}
+        - {x: -31.5, y: 56}
+        - {x: -27.5, y: 56}
+        - {x: -25.5, y: 60}
+        - {x: -25.5, y: 62}
+        - {x: -27.5, y: 63}
+    - name: MainCharRightUpLeg
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 313
+        width: 95
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27.5, y: -95}
+        - {x: -28.5, y: -98}
+        - {x: -22.5, y: -104}
+        - {x: -14.5, y: -104}
+        - {x: -14.5, y: -101}
+        - {x: -23.5, y: -95}
+      - - {x: -41.5, y: 102}
+        - {x: -47.5, y: 95}
+        - {x: -47.5, y: -72}
+        - {x: -46.5, y: -87}
+        - {x: -27.5, y: -104}
+        - {x: 34.5, y: -104}
+        - {x: 46.5, y: -96}
+        - {x: 46.5, y: 93}
+        - {x: 33.5, y: 102}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
