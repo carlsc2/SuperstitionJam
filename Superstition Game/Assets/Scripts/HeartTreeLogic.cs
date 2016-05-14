@@ -18,6 +18,7 @@ public class HeartTreeLogic : MonoBehaviour {
 			player = col.transform.root.GetComponent<PlayerPawn>();
 			player_in_range = true;
 			htq.AffectedCharacter = player.transform.root.gameObject;
+			htq.ps = GetComponentInChildren<ParticleSystem>();
 		}
 	}
 
@@ -32,6 +33,7 @@ public class HeartTreeLogic : MonoBehaviour {
 			if(!toggle && player.currentState == PlayerPawn.state.attack) {
 				boops++;
 				htq.CheckConditions("dance");
+				
 				toggle = true;
 			}
 			else if(toggle && player.currentState != PlayerPawn.state.attack) {
