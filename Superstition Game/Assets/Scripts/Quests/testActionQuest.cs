@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class testFetchQuest : QuestBase_Fetch{
+public class testActionQuest : QuestBase_Action {
 
     override public void CheckConditions(string str)
     {
@@ -15,9 +15,13 @@ public class testFetchQuest : QuestBase_Fetch{
 
         if (currentState == State.STARTED)
         {
-            if (str == "pickup")
+            if (str == "killed")
             {
-                   currentState = State.COMPLETED;
+                NumberOfTimes--;
+                if (NumberOfTimes == 0)
+                {
+                    currentState = State.COMPLETED;
+                }
             }
         }
 
