@@ -180,6 +180,9 @@ public class SpriteRigController_Editor : Editor {
         }
         */
 
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+
         EditorGUILayout.BeginHorizontal();
             if (GUILayout.Button("Update Rig Cosmetics")) {
                 UpdateCosmeticRig();
