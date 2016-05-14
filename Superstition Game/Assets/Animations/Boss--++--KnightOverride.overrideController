@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Boss--++--KnightOverride
+  m_Controller: {fileID: 9100000, guid: 10241afccf32b0c4eaa9739b178493ad, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 6020b452978bd42459d2dba7d5b483c9, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 93b083f7c490848499c3f7073c90fc29, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 962cda15f2a022e499affbe2c5c3b430, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7afe6857902787b4eb97846862c19487, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ad2c8a47eea6c074bb774d9c6e4487a9, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1eaa7ddca611b7744aba3fe29cacc6cc, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0f71f0ff14ad29d47b1e6724a9ca3129, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0f71f0ff14ad29d47b1e6724a9ca3129, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fef17bdeaaff57c459ba4df34bd9b2cb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ec69c2355d8228347839aaa941bf42b9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 51fa10d0f2ab28543aa1e7dddb010f86, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: de68216fabb65624789910da97f0755b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 8f1857285d7a5fc48ab479ea335f4abe, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0faf8c954a2c12643af8296d9686dbb6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 39603ba28f7c8614a9e36875ffef4c71, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: df318f0f49cec4246845bb052220532c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 750cf9c5598f20749a58440990f4a884, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 750cf9c5598f20749a58440990f4a884, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0faf8c954a2c12643af8296d9686dbb6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0faf8c954a2c12643af8296d9686dbb6, type: 2}
