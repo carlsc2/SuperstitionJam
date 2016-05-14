@@ -14,7 +14,8 @@ public class SwordItem : ItemBase {
 
         //only deal damage if the other thing can deal damage
         if (other.gameObject.GetComponent<CharacterStats>() == null
-            || other.gameObject.GetComponent<Pawn>() == null) { return; }
+            || other.gameObject.GetComponent<Pawn>() == null
+            || other.gameObject == owner.gameObject) { return; }
 
         //WE'RE GOOD TO GO
 
