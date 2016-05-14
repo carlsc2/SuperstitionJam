@@ -37,13 +37,14 @@ public class SpriteRigBoneHandler : MonoBehaviour {
         SpriteRenderer newRen = newSprite.AddComponent<SpriteRenderer>();
         cosmeticSpriteRenderers.Add(newRen);
 
+        //make sure we assign the parent first
         newRen.transform.parent = gameObject.transform;
         newRen.transform.SetAsFirstSibling();
 
         if (sprite != null) {
             newRen.sprite = sprite;
         }
-        newRen.transform.position += (Vector3) offset;
+        newRen.transform.localPosition = (Vector3) offset;
         newRen.gameObject.name = name;
 
         return newRen;
