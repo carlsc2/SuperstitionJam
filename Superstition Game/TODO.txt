@@ -1,0 +1,12 @@
+- revamp quest system
+- revamp combat system
+- make everything mobile friendly
+- add more audio
+- add parallax to background
+
+
+- revamp inventory
+	- make it so that if anything dies, it drops its inventory
+	- need inventory interface
+
+- ditch the paper aesthetic
