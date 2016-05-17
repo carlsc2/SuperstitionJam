@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 
+[DisallowMultipleComponent]
 public class InventoryController : MonoBehaviour {
 
-    public SpriteRigController rig;
+    public GameObject[] startingItemsInInventory;
 
-    public string mainHandSocket;
-    public string offHandSocket;
+    //public SpriteRigController rig;
 
+    //public string mainHandSocket;
+    //public string offHandSocket;
+    
     public enum Hand {
-        Main,
-        Off,
+        Main = 0,
+        Off = 1,
+        None = 2,
     }
+    
 
     [System.Serializable]
     public class ItemSlot {
@@ -30,18 +35,38 @@ public class InventoryController : MonoBehaviour {
         }
     }
 
-    public ItemBase mainHandItem;
-    public ItemBase offHandItem;
+    //public ItemBase mainHandItem;
+    //public ItemBase offHandItem;
 
     public List<ItemSlot> itemsInInventory;
 
-	// Use this for initialization
-	void Start () {
 
+    public ItemBase CreateAndAddToInventory(GameObject itemToAdd, Pawn owningPawn) {
+        ItemBase itemComp = itemToAdd.GetComponent<ItemBase>();
+
+        if (itemComp == null) { return null; }
+
+        GameObject newGo = (GameObject)GameObject.Instantiate(itemToAdd, transform.position, Quaternion.identity);
+
+        newGo.transform.SetParent(transform, false);
+        AddItemToInventory(newGo.GetComponent<ItemBase>(), owningPawn);
+
+        //need to return the new object's component b/c it's not a prefab
+        return newGo.GetComponent<ItemBase>();
+
+    }
+
+	// Use this for initialization
+	void Awake () {
+
+
+        /*
         ItemSlot[] invCopy = new ItemSlot[itemsInInventory.Count];
         itemsInInventory.CopyTo(invCopy);
         itemsInInventory = new List<ItemSlot>();
+        */
 
+        /*
         foreach (ItemSlot slot in invCopy) {
             AddItemToInventory(slot.item);
         }
@@ -59,18 +84,26 @@ public class InventoryController : MonoBehaviour {
             offHandItem.EnableItem();
             PullOutItem(offHandItem, Hand.Off);
         }
+        */
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public void Init(Pawn owningPawn) {
+        itemsInInventory = new List<ItemSlot>();
 
-//ADD TO INVENTORY
-    public void AddItemToInventory(ItemBase itemToAdd) {
+        foreach (GameObject go in startingItemsInInventory) {
+            CreateAndAddToInventory(go, owningPawn);
+        }
+
+    }
+
+
+    //ADD TO INVENTORY
+    public void AddItemToInventory(ItemBase itemToAdd, Pawn owningPawn) {
+
+        if (itemToAdd == null) { return; }
 
         //assign owner b/c the check only sees if we already have this item
-        itemToAdd.owner = this;
+        itemToAdd.owner = owningPawn;
 
         itemToAdd.transform.parent = transform;
 
@@ -103,7 +136,7 @@ public class InventoryController : MonoBehaviour {
 
             return;
         }
-
+        /*
         //check to see if the item we want to remove is in one of the hands
          //put away first if so
         if (mainHandItem != null && mainHandItem == itemToRemove) {
@@ -112,12 +145,12 @@ public class InventoryController : MonoBehaviour {
         if (offHandItem != null && offHandItem == itemToRemove) {
             PutAwayCurrentItem(Hand.Off);
         }
-
+        */
         //now we can safely remove the item
         itemsInInventory.Remove(itemsInInventory.First(x => x.item == itemToRemove));
 
     }
-
+    /*
 //PLACE ITEM IN HAND
     public void PullOutItem(ItemBase item, Hand handToPutIn) {
         if (item == null || !HasItem(item)) { return; }
@@ -152,8 +185,6 @@ public class InventoryController : MonoBehaviour {
                 break;
         }
     }
-
-
 
 //REMOVE ITEM FROM HAND, BUT KEEP IN INVENTORY
     public void PutAwayCurrentItem(Hand handToFreeUp) {
@@ -219,7 +250,7 @@ public class InventoryController : MonoBehaviour {
                 break;
         }
     }
-
+    */
 
     public bool HasItem(ItemBase item) {
         return itemsInInventory.Select(x => x.item).Contains(item);
@@ -245,7 +276,7 @@ public class InventoryController : MonoBehaviour {
             }
         }
     }
-
+    /*
     public void EquipHotbarItem(int hotbarSlotIndex, Hand equipHand = Hand.Main) {
         foreach (ItemSlot slot in itemsInInventory) {
             if (slot.hotbarSlotIndex == hotbarSlotIndex) {
@@ -254,4 +285,5 @@ public class InventoryController : MonoBehaviour {
             }
         }
     }
+    */
 }

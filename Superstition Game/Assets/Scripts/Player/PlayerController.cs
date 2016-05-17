@@ -1,24 +1,63 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(InventoryController))]
 public class PlayerController : MonoBehaviour {
 
-    CharacterPawn p;
+    private InventoryController inventory;
 
-    void Start () 
+    [Header("Prefabs")]
+    public GameObject PlayerPrefab;
+    public GameObject startingMainHandWeapon;
+    public GameObject startingOffHandWeapon;
+
+    [Space]
+    public CharacterPawn possessedPawn;
+
+    void Awake () 
     {
+        possessedPawn = GetComponent<CharacterPawn>();
+        if (possessedPawn == null) {
+            GameObject playerIntance = (GameObject)GameObject.Instantiate(PlayerPrefab, transform.position, Quaternion.identity);
+            possessedPawn = playerIntance.GetComponent<CharacterPawn>();
+        }
 
-        
 
-        p = GetComponent<CharacterPawn>();
+        inventory = GetComponent<InventoryController>();
+
+        if (possessedPawn == null) { Debug.LogError("Controller does not possess pawn", this); }
+
+        inventory.Init(possessedPawn);
+
+        if (startingMainHandWeapon != null) {
+            ItemBase createdItem = inventory.CreateAndAddToInventory(startingMainHandWeapon, possessedPawn);
+            if (createdItem != null) {
+                EquipItem(createdItem, CharacterPawn.Hand.Main);
+            }
+        }
+        if (startingOffHandWeapon != null) {
+            ItemBase createdItem = inventory.CreateAndAddToInventory(startingOffHandWeapon, possessedPawn);
+            if (createdItem != null) {
+                EquipItem(createdItem, CharacterPawn.Hand.Off);
+            }
+        }
+
 
     }
     
-    void Update () 
+    void Update() {
+
+
+        HandleInput();
+    }
+
+    private void HandleInput () 
     {
+        if (possessedPawn == null) { return; }
+
         //if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
         //{
-            p.Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            possessedPawn.Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         //}
         //else
         //{
@@ -27,33 +66,42 @@ public class PlayerController : MonoBehaviour {
 
         if(Input.GetButtonDown("Attack"))
         {
-            p.Attack();
+            possessedPawn.Attack();
         }
 
         if(Input.GetButtonDown("Defend"))
         {
-            p.Defend();
+            possessedPawn.Defend();
         }
 
         if (Input.GetButtonUp("Defend"))
         {
-            p.EndDefend();
+            possessedPawn.EndDefend();
         }
 
         if(Input.GetButtonDown("Interact"))
         {
-            p.Interact();
+            possessedPawn.Interact();
         }
 
         if (Input.GetButtonDown("Dodge")) {
-            p.Dodge();
+            possessedPawn.Dodge();
         }
 
         if (Input.GetButtonDown("Hotbar1")) {
-            p.SelectItemFromInventory(0);
+            possessedPawn.SelectItemFromInventory(0);
         }
         if (Input.GetButtonDown("Hotbar2")) {
-            p.SelectItemFromInventory(1);
+            possessedPawn.SelectItemFromInventory(1);
         }
     }
+
+    public void EquipItem(ItemBase item, CharacterPawn.Hand hand) {
+        possessedPawn.PullOutItem(item, hand);
+    }
+
+    public void UnequipItem(ItemBase item, CharacterPawn.Hand hand) {
+        possessedPawn.PutAwayCurrentItem(hand);
+    }
+
 }
