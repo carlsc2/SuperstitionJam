@@ -3,6 +3,11 @@ using System.Collections;
 
 public class CharacterStats : MonoBehaviour {
 
+    public enum Hand {
+        Main = 0,
+        Off = 1,
+    }
+
     public float health;
     public float maxHealth;
     public float strength;
@@ -16,8 +21,9 @@ public class CharacterStats : MonoBehaviour {
     public float dodgeAccel;
     public float dodgeSpeed;
 
-
     public void ApplyDamage(float damageAmount) {
         health = (Mathf.Clamp(health - (defense - damageAmount), 0.0f, Mathf.Infinity));
     }
+
+
 }

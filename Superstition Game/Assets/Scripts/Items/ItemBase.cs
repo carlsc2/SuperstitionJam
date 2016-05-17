@@ -4,7 +4,8 @@ using System;
 
 public class ItemBase : MonoBehaviour {
     [HideInInspector]
-    public InventoryController owner;
+    //public InventoryController owner;
+    public Pawn owner;
 
     public string id;
 

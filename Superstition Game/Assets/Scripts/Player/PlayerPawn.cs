@@ -69,7 +69,8 @@ public class PlayerPawn : CharacterPawn {
         {
             currentState = state.attack;
             //swordHitbox.SetActive(true);
-            inventory.BeginUseItemInHand(InventoryController.Hand.Main);
+            //stats.BeginUseItemInHand(CharacterStats.Hand.Main);
+            BeginUseItemInHand(Hand.Main);
 
             Invoke("EndAttack", stats.attackTime);
         }
@@ -79,7 +80,8 @@ public class PlayerPawn : CharacterPawn {
     {
         currentState = state.idle;
 
-        inventory.EndUseItemInHand(InventoryController.Hand.Main);
+        //stats.EndUseItemInHand(CharacterStats.Hand.Main);
+        EndUseItemInHand(Hand.Main);
 
         //swordHitbox.SetActive(false);
     }
@@ -90,8 +92,8 @@ public class PlayerPawn : CharacterPawn {
         {
             currentState = state.defend;
             //shieldHitbox.SetActive(true);
-            //inventory.offHandItem.BeginUseItem();
-            inventory.BeginUseItemInHand(InventoryController.Hand.Off);
+            //stats.BeginUseItemInHand(CharacterStats.Hand.Off);
+            BeginUseItemInHand(Hand.Off);
 
             stats.walkSpeed /= defendModifier;
         }
@@ -103,7 +105,8 @@ public class PlayerPawn : CharacterPawn {
         {
             currentState = state.idle;
             //shieldHitbox.SetActive(false);
-            inventory.EndUseItemInHand(InventoryController.Hand.Off);
+            //stats.EndUseItemInHand(CharacterStats.Hand.Off);
+            EndUseItemInHand(Hand.Off);
 
             stats.walkSpeed *= defendModifier;
         }
@@ -193,7 +196,7 @@ public class PlayerPawn : CharacterPawn {
 
     public override void SelectItemFromInventory(int hotbarNumber) {
 
-        inventory.EquipHotbarItem(hotbarNumber);
+        //inventory.EquipHotbarItem(hotbarNumber);
 
     }
 

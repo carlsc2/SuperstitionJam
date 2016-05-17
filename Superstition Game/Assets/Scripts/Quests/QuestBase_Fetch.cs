@@ -27,7 +27,7 @@ public class QuestBase_Fetch : QuestBase
         GameObject reward = Resources.Load(RewardItem) as GameObject;
         reward = (GameObject) GameObject.Instantiate(reward, Vector3.zero, Quaternion.identity);
         reward.GetComponentInChildren<SpriteRenderer>().enabled = false;
-        Inventory.AddItemToInventory(reward.GetComponent<ItemBase>());
+        //Inventory.AddItemToInventory(reward.GetComponent<ItemBase>());
         Inventory.RemoveFirstItemOfId(QuestItem);
         currentState = QuestBase.State.TURNED_IN;
     }
