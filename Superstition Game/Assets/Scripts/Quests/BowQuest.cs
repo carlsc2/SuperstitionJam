@@ -5,7 +5,7 @@ public class BowQuest : QuestBase_Action {
 
 	public override void CheckConditions(string str) {
 
-		if (currentState == State.UKNOWN) {
+		/*if (currentState == State.UKNOWN) {
 			if (str == "talk") {
 				currentState = State.STARTED;
 			}
@@ -19,6 +19,6 @@ public class BowQuest : QuestBase_Action {
 
 		if (currentState == State.COMPLETED) {
 			GiveReward();
-		}
+		}*/
 	}
 }

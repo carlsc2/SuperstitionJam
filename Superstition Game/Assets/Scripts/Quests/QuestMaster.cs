@@ -24,12 +24,12 @@ public class QuestMaster : Singleton<QuestMaster> {
         }
     }
 
-    void OnLevelWasLoaded()
+    /*void OnLevelWasLoaded()
     {
         foreach (QuestBase qb in GetComponentsInChildren<QuestBase>())
         {
             qb.Player = GameObject.FindGameObjectWithTag("Player");
         }
-    }
+    }*/
 
 }

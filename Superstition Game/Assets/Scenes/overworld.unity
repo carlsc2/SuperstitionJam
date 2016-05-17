@@ -814,6 +814,112 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532906971}
+--- !u!1001 &615941206
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11418732, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: dialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418732, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: QuestReward.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418732, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: QuestStates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418732, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: NPC_Dialogues.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418732, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: dialogues.pairs.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418732, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: dialogues.Array.data[0].dialogue_strings.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418732, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: NPC_Dialogues.Array.data[0].dialogue_strings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418732, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: NPC_Dialogues.Array.data[1].dialogue_strings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418732, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: NPC_Dialogues.Array.data[2].dialogue_strings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481260, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481260, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481260, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481260, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481260, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481260, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481260, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481260, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418732, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: QuestStates.Array.data[0]
+      value: state1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418732, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: NPC_Dialogues.Array.data[0].NPC_ID
+      value: NPC1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418732, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: NPC_Dialogues.Array.data[1].NPC_ID
+      value: doctr
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418732, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: NPC_Dialogues.Array.data[2].NPC_ID
+      value: NPC1_1_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418732, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: QuestStates.Array.data[1]
+      value: state1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418732, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: NPC_Dialogues.Array.data[0].dialogue_strings.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418732, guid: 899746196d09ca148878e170d964e650, type: 2}
+      propertyPath: QuestStates.Array.data[2]
+      value: state1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 899746196d09ca148878e170d964e650, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &787281937
 GameObject:
   m_ObjectHideFlags: 0

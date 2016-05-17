@@ -8,7 +8,7 @@ using UnityEditor;
 
 public class QuestBase_Action : QuestBase
 {
-	public GameObject AffectedCharacter;
+	/*public GameObject AffectedCharacter;
 
 	[HideInInspector]
 	public CharacterStats stats;
@@ -55,7 +55,7 @@ public class QuestBase_Action : QuestBase
 
 			currentState = QuestBase.State.TURNED_IN;
 		}
-	}
+	}*/
 	
 }
 

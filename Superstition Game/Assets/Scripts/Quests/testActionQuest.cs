@@ -5,7 +5,7 @@ public class testActionQuest : QuestBase_Action {
 
     override public void CheckConditions(string str)
     {
-        if (currentState == State.UKNOWN)
+        /*if (currentState == State.UKNOWN)
         {
             if (str == "talk")
             {
@@ -31,7 +31,7 @@ public class testActionQuest : QuestBase_Action {
             {
                 GiveReward();
             }
-        }
+        }*/
     }
 
 }

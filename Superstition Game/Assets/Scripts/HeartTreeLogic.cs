@@ -17,7 +17,7 @@ public class HeartTreeLogic : MonoBehaviour {
 		if(col.transform.root.tag == "Player") {
 			player = col.transform.root.GetComponent<PlayerPawn>();
 			player_in_range = true;
-			htq.AffectedCharacter = player.transform.root.gameObject;
+			//htq.AffectedCharacter = player.transform.root.gameObject;
 			htq.ps = GetComponentInChildren<ParticleSystem>();
 		}
 	}
