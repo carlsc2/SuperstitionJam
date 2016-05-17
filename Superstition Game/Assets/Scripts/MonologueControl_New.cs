@@ -61,15 +61,12 @@ public class MonologueControl_New : MonoBehaviour, Interactable
         chat_dialogue = default_chat_dialogue;
 
         foreach(QuestBase quest in quests){
-            if (quest.currentState != QuestBase.State.TURNED_IN)
+            string quest_dialogue = quest.getDialogue(NPI_ID);
+            if (quest_dialogue != null && quest_dialogue != "")
             {
-                string quest_dialogue = quest.getDialogue(NPI_ID);
-                if (quest_dialogue != null && quest_dialogue != "")
-                {
-                    char[] delim = {'\n'};
-                    chat_dialogue = quest_dialogue.Split(delim);
-                    break;
-                }
+                char[] delim = {'\n'};
+                chat_dialogue = quest_dialogue.Split(delim);
+                break;
             }
         }
 
