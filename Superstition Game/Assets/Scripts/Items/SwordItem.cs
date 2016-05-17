@@ -22,12 +22,12 @@ public class SwordItem : ItemBase {
 
         //only deal damage if the other thing can deal damage
         if (other.transform.root.GetComponent<CharacterStats>() == null
-            || other.transform.root.GetComponent<Pawn>() == null
+            || other.transform.root.GetComponent<CharacterPawn>() == null
             || other.transform.root.gameObject == owner.gameObject) { return; }
 
         //WE'RE GOOD TO GO
 
-        Pawn otherPawn = other.transform.root.GetComponent<Pawn>();
+        CharacterPawn otherPawn = other.transform.root.GetComponent<CharacterPawn>();
 
         float strengthMultiplier = 1.0f;
         CharacterStats ownerStats = owner.GetComponent<CharacterStats>();

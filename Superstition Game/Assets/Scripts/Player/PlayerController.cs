@@ -3,14 +3,14 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-    Pawn p;
+    CharacterPawn p;
 
     void Start () 
     {
 
         
 
-        p = GetComponent<Pawn>();
+        p = GetComponent<CharacterPawn>();
 
     }
     

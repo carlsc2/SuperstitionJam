@@ -4,13 +4,13 @@ using System.Collections;
 public class AIController : MonoBehaviour {
 
 	private Transform player;
-	Pawn p;
+	CharacterPawn p;
 	public float chase_distance = 10f;
 
 	// Use this for initialization
 	void Start () 
 	{
-		p = GetComponent<Pawn>();
+		p = GetComponent<CharacterPawn>();
 		player = GameObject.FindGameObjectWithTag("Player").transform;
 	}
 	

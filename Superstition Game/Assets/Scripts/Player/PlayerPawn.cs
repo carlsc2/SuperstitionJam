@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlayerPawn : Pawn {
+public class PlayerPawn : CharacterPawn {
 
     public enum state { idle, walk, attack, defend };
     enum direction { left, right }
