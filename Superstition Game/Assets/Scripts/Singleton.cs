@@ -12,7 +12,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour {
 
 	private static object _lock = new object();
 
-	public static string prefab_name;
+	public static string prefab_name = "QuestMaster";
 
 	public static T Instance
 	{

@@ -11,6 +11,8 @@ public class TimeManager : MonoBehaviour {
 
 	public static int days_until_fight = 12;
 
+	public static bool fight_time = false;
+
 
 	public static void pass_time(int ticks) {
 		timeofday = timeofday + ticks;
@@ -18,7 +20,9 @@ public class TimeManager : MonoBehaviour {
 		timeofday = timeofday % ticks_per_day;
 
 		if(day > days_until_fight) {
+			fight_time = true;
 			SceneManager.LoadScene("BossLevel");
+			
 		}
 	}
 

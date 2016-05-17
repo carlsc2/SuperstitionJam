@@ -10,8 +10,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/overworld.unity
   - enabled: 1
-    path: Assets/Scenes/testlevel.unity
-  - enabled: 1
     path: Assets/Scenes/VillageLevel1.unity
   - enabled: 1
     path: Assets/Scenes/ForestLevel1.unity
@@ -21,3 +19,9 @@ EditorBuildSettings:
     path: Assets/Scenes/BossLevel.unity
   - enabled: 1
     path: Assets/Scenes/ForestLevel2.unity
+  - enabled: 1
+    path: Assets/Scenes/Plains2.unity
+  - enabled: 1
+    path: Assets/Scenes/VillageLevel2.unity
+  - enabled: 1
+    path: Assets/Scenes/ForestLevel3.unity

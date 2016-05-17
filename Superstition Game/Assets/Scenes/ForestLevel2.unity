@@ -3650,6 +3650,7 @@ GameObject:
   - 60: {fileID: 1488014361}
   - 58: {fileID: 1488014360}
   - 114: {fileID: 1488014362}
+  - 114: {fileID: 1488014363}
   m_Layer: 0
   m_Name: BowInTheStone_Intact
   m_TagString: Untagged
@@ -3800,6 +3801,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixedsprite: {fileID: 21300000, guid: 367b77593bb441148ab6154421b11a1d, type: 3}
   brokensprite: {fileID: 21300000, guid: 00ec1f4f925337c4cb2d014758b1106f, type: 3}
+--- !u!114 &1488014363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1488014357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ebc85509e6feea4a8013913005eb07e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1491088466
 Prefab:
   m_ObjectHideFlags: 0
@@ -3809,7 +3821,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 441052, guid: 7b1bc5d1014caf24581c3b687452f4bd, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.435382
+      value: 4.93
       objectReference: {fileID: 0}
     - target: {fileID: 441052, guid: 7b1bc5d1014caf24581c3b687452f4bd, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3937,7 +3949,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 471164, guid: 76adcccc87fdcab4ab626e831bec356b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.2285643
+      value: 2.65
       objectReference: {fileID: 0}
     - target: {fileID: 471164, guid: 76adcccc87fdcab4ab626e831bec356b, type: 2}
       propertyPath: m_LocalPosition.y

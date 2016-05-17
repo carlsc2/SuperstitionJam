@@ -12,7 +12,13 @@ public class QuestBase_Fetch : QuestBase
 
     void Start()
     {
-        Inventory = Player.GetComponent<InventoryController>();
+        if (Player) {
+            Inventory = Player.GetComponent<InventoryController>();
+        }
+        else {
+            Inventory = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<InventoryController>();
+        }
+        
     }
 
     override public void GiveReward()
