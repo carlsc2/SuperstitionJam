@@ -5,7 +5,7 @@ public class WishboneQuest : QuestBase_Fetch
 {
     override public void CheckConditions(string str)
     {
-        if (currentState != State.TURNED_IN)
+        /*if (currentState != State.TURNED_IN)
         {
             if (str == "givereward")
             {
@@ -13,6 +13,6 @@ public class WishboneQuest : QuestBase_Fetch
                 GiveReward();
 
             }
-        }
+        }*/
     }
 }

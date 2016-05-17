@@ -1,4 +1,10 @@
 - revamp quest system
+	- quest log
+	
+	
+	- sequence of states
+		- each state requires an action
+
 - revamp combat system
 - make everything mobile friendly
 - add more audio

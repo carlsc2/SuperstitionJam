@@ -8,7 +8,7 @@ using UnityEditor;
 public class QuestBase_Fetch : QuestBase
 {
   
-    public string RewardItem;
+    /*public string RewardItem;
 
     void Start()
     {
@@ -30,7 +30,7 @@ public class QuestBase_Fetch : QuestBase
         Inventory.AddItemToInventory(reward.GetComponent<ItemBase>());
         Inventory.RemoveFirstItemOfId(QuestItem);
         currentState = QuestBase.State.TURNED_IN;
-    }
+    }*/
 
 }
 

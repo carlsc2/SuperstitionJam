@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class MonologueControl_Quest : MonologueControl {
-	public string questID;
+	/*public string questID;
 	private QuestBase quest;
 
 	public string[] completionDialogue;
@@ -60,7 +60,7 @@ public class MonologueControl_Quest : MonologueControl {
 
 					quest.CheckConditions("givereward");
 				}
-			}*/
+			}*//*
 		}
-	}
+	}*/
 }

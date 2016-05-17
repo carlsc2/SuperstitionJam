@@ -14,7 +14,7 @@ public class HeartTreeQuest : QuestBase_Action {
 
 	public ParticleSystem ps;
 
-	public override void CheckConditions(string str) {
+	/*public override void CheckConditions(string str) {
 
 		if (currentState == State.UKNOWN) {
 			if (str == "talk") {
@@ -35,5 +35,5 @@ public class HeartTreeQuest : QuestBase_Action {
 			GiveReward();
 			ps.Play();
 		}
-	}
+	}*/
 }
