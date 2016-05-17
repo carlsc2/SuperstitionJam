@@ -59,7 +59,7 @@ public class CharacterPawn : Pawn {
         stats.ApplyDamage(damageAmount);
         rig.StartFlashRig(2, .2f);
 
-        if (stats.health <= 0.0f) {
+        if (stats.data[CharacterStats.StatType.Health] <= 0.0f) {
             KillPawn();
         }
     }

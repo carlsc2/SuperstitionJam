@@ -22,12 +22,12 @@ public class HealthUI : MonoBehaviour {
 		}
    
 		slider = GetComponent<Slider>();
-		slider.maxValue = stats.maxHealth;
+		slider.maxValue = stats.data[CharacterStats.StatType.MaxHealth];
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		slider.value = stats.health;
+		slider.value = stats.data[CharacterStats.StatType.Health];
 	}
 }

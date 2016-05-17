@@ -32,7 +32,7 @@ public class SwordItem : ItemBase {
         float strengthMultiplier = 1.0f;
         CharacterStats ownerStats = owner.GetComponent<CharacterStats>();
         if (ownerStats != null) {
-            strengthMultiplier = ownerStats.strength;
+            strengthMultiplier = ownerStats.data[CharacterStats.StatType.Strength];
         }
 
         otherPawn.DamagePawn(damage * strengthMultiplier);
