@@ -54,6 +54,10 @@ public class ItemBase : MonoBehaviour {
     }
 
     public virtual void BeginUseItem() {
+        if (owner == null) {
+            Debug.LogWarningFormat(this, "[{0}] Has No Owner. Cannot Perform BeginUseItem()", gameObject.name);
+            return; }
+
         if (canInteruptUse && usingItemCoroutine != null) {
             StopCoroutine(usingItemCoroutine);
         }

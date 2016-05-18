@@ -264,7 +264,7 @@ public class CharacterPawn : Pawn {
             BeginUseItemInHand(Hand.Main);
         }
 
-        Debug.Log("Begin Attack");
+        //Debug.Log("Begin Attack");
     }
 
     void EndAttack() {
@@ -274,7 +274,7 @@ public class CharacterPawn : Pawn {
         EndUseItemInHand(Hand.Main);
 
 
-        Debug.Log("End Attack");
+        //Debug.Log("End Attack");
         //swordHitbox.SetActive(false);
     }
 

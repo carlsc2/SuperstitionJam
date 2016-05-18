@@ -30,14 +30,14 @@ public class AIController : CharacterPawnController {
 
             //if none can be found, do nothing
             if (!FindTarget()) { return; }
-            else { Debug.Log(Vector3.Distance(targetTf.position, possessedPawn.transform.position)); }
+            //else { Debug.Log(Vector3.Distance(targetTf.position, possessedPawn.transform.position)); }
         }
 
 
 		if(Vector2.Distance(targetTf.position, possessedPawn.transform.position) < chase_distance) {
 			Vector3 towardPlayer = targetTf.position - possessedPawn.transform.position;
 
-            Debug.Log("chase after");
+            //Debug.Log("chase after");
 
 			if (towardPlayer.magnitude > 5) {
 				Move();

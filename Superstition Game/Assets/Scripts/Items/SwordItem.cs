@@ -17,6 +17,9 @@ public class SwordItem : ItemBase {
 
     void OnTriggerEnter2D(Collider2D other) {
 
+        //connection to owner is not set, do not proceed
+        if (owner == null) { return; }
+
         //don't proceed unless we can damage
         if (!canDamage) { return; }
 
