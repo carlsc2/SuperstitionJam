@@ -126,8 +126,6 @@ public class CharacterPawn : Pawn {
     protected override void OnDestroy() {
         base.OnDestroy();
 
-        //unlink from controller when destoyed
-        owningController.possessedPawn = null;
     }
 
     //ITEM USAGE

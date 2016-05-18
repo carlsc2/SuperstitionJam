@@ -18,6 +18,13 @@ public class Pawn : MonoBehaviour {
 	}
 
     protected virtual void OnDestroy() {
+        //unhook when Pawn gets destroyed
+        DisconnectPawnFromController();
+    }
 
+    public virtual void DisconnectPawnFromController() {
+        if (owningController == null) { return; }
+
+        owningController.possessedPawn = null;
     }
 }
