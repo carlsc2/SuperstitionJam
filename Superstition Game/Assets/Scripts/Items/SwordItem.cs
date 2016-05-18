@@ -20,10 +20,10 @@ public class SwordItem : ItemBase {
         //don't proceed unless we can damage
         if (!canDamage) { return; }
 
-        //only deal damage if the other thing can deal damage
-        if (other.transform.root.GetComponent<CharacterStats>() == null
-            || other.transform.root.GetComponent<CharacterPawn>() == null
-            || other.transform.root.gameObject == owner.gameObject) { return; }
+        //Damage Filter
+        if (other.transform.root.GetComponent<CharacterStats>() == null         // Other doesn't have a CharacterStats
+            || other.transform.root.GetComponent<CharacterPawn>() == null       // Other does not derive from Pawn
+            || other.transform.root.gameObject == owner.gameObject) { return; } // Other is the Owner of this Item
 
         //WE'RE GOOD TO GO
 
@@ -66,6 +66,8 @@ public class SwordItem : ItemBase {
         base.EndUseItem();
 
         canDamage = false;
+
+        //owner
     }
 
 }

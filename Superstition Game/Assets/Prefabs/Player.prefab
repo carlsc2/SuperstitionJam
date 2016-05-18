@@ -1701,16 +1701,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bee737fd7511a4d4e924e80e8342034c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
-  strength: 20
-  defense: 10
-  walkSpeed: 3
-  accel: 3
-  attackTime: 0.25
-  dodgeTime: 0.5
-  dodgeAccel: 0.5
-  dodgeSpeed: 5
+  statsList:
+  - name: Health
+    type: 0
+    value: 20
+  - name: MaxHealth
+    type: 1
+    value: 20
+  - name: Strength
+    type: 2
+    value: 0
+  - name: Defense
+    type: 3
+    value: 0
+  - name: MaxSpeed
+    type: 4
+    value: 1
+  - name: Acceleration
+    type: 5
+    value: 0
+  - name: DodgeTime
+    type: 6
+    value: 0
+  - name: DodgeAcceleration
+    type: 7
+    value: 0
+  - name: DodgeMaxSpeed
+    type: 8
+    value: 0
 --- !u!114 &11490980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1735,6 +1753,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b5d2d43d8f4e3f4d8075beb70be1cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  owningController: {fileID: 0}
+  currentState: 0
+  defendModifier: 30000
   OnPawnDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -1746,8 +1767,6 @@ MonoBehaviour:
   offHandSocket: LeftHand
   mainHandItem: {fileID: 0}
   offHandItem: {fileID: 0}
-  currentState: 0
-  defendModifier: 30000
 --- !u!114 &11493968
 MonoBehaviour:
   m_ObjectHideFlags: 1

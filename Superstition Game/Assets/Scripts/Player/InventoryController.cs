@@ -41,7 +41,7 @@ public class InventoryController : MonoBehaviour {
     public List<ItemSlot> itemsInInventory;
 
 
-    public ItemBase CreateAndAddToInventory(GameObject itemToAdd, Pawn owningPawn) {
+    public ItemBase CreateAndAddToInventory(GameObject itemToAdd, CharacterPawn owningPawn) {
         ItemBase itemComp = itemToAdd.GetComponent<ItemBase>();
 
         if (itemComp == null) { return null; }
@@ -87,7 +87,7 @@ public class InventoryController : MonoBehaviour {
         */
 	}
 	
-    public void Init(Pawn owningPawn) {
+    public void Init(CharacterPawn owningPawn) {
         itemsInInventory = new List<ItemSlot>();
 
         foreach (GameObject go in startingItemsInInventory) {
@@ -98,7 +98,7 @@ public class InventoryController : MonoBehaviour {
 
 
     //ADD TO INVENTORY
-    public void AddItemToInventory(ItemBase itemToAdd, Pawn owningPawn) {
+    public void AddItemToInventory(ItemBase itemToAdd, CharacterPawn owningPawn) {
 
         if (itemToAdd == null) { return; }
 
