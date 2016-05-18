@@ -1719,7 +1719,7 @@ MonoBehaviour:
     value: 1
   - name: Acceleration
     type: 5
-    value: 0
+    value: 1
   - name: DodgeTime
     type: 6
     value: 0

@@ -123,7 +123,14 @@ public class CharacterPawn : Pawn {
         HandleAnimation();
     }
 
-//ITEM USAGE
+    protected override void OnDestroy() {
+        base.OnDestroy();
+
+        //unlink from controller when destoyed
+        owningController.possessedPawn = null;
+    }
+
+    //ITEM USAGE
 
     //USE ITEM IN SUPPLIED HAND
     public void BeginUseItemInHand(Hand handWithItem) {

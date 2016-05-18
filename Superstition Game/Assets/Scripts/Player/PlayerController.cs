@@ -2,51 +2,18 @@
 using System.Collections;
 
 [RequireComponent(typeof(InventoryController))]
-public class PlayerController : MonoBehaviour {
+public class PlayerController : CharacterPawnController {
 
-    private InventoryController inventory;
 
-    [Header("Prefabs")]
-    public GameObject PlayerPrefab;
-    public GameObject startingMainHandWeapon;
-    public GameObject startingOffHandWeapon;
 
-    [Space]
-    public CharacterPawn possessedPawn;
-
-    void Awake () 
+    protected override void Awake () 
     {
-        possessedPawn = GetComponent<CharacterPawn>();
-        if (possessedPawn == null) {
-            GameObject playerIntance = (GameObject)GameObject.Instantiate(PlayerPrefab, transform.position, Quaternion.identity);
-            possessedPawn = playerIntance.GetComponent<CharacterPawn>();
-        }
-
-
-        inventory = GetComponent<InventoryController>();
-
-        if (possessedPawn == null) { Debug.LogError("Controller does not possess pawn", this); }
-
-        inventory.Init(possessedPawn);
-
-        if (startingMainHandWeapon != null) {
-            ItemBase createdItem = inventory.CreateAndAddToInventory(startingMainHandWeapon, possessedPawn);
-            if (createdItem != null) {
-                EquipItem(createdItem, CharacterPawn.Hand.Main);
-            }
-        }
-        if (startingOffHandWeapon != null) {
-            ItemBase createdItem = inventory.CreateAndAddToInventory(startingOffHandWeapon, possessedPawn);
-            if (createdItem != null) {
-                EquipItem(createdItem, CharacterPawn.Hand.Off);
-            }
-        }
-
+        base.Awake();
 
     }
     
-    void Update() {
-
+    protected override void Update() {
+        base.Update();
 
         HandleInput();
     }
@@ -96,12 +63,6 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    public void EquipItem(ItemBase item, CharacterPawn.Hand hand) {
-        possessedPawn.PullOutItem(item, hand);
-    }
 
-    public void UnequipItem(ItemBase item, CharacterPawn.Hand hand) {
-        possessedPawn.PutAwayCurrentItem(hand);
-    }
 
 }

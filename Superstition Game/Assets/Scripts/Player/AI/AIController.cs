@@ -1,26 +1,43 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AIController : MonoBehaviour {
+[RequireComponent(typeof(InventoryController))]
+public class AIController : CharacterPawnController {
 
-	private Transform player;
-	CharacterPawn p;
+	public Transform targetTf;
+	//CharacterPawn possessedPawn;
 	public float chase_distance = 10f;
 
-	// Use this for initialization
-	void Start () 
-	{
-		p = GetComponent<CharacterPawn>();
-		player = GameObject.FindGameObjectWithTag("Player").transform;
+    protected override void Awake() {
+        base.Awake();
+    }
+
+    // Use this for initialization
+    protected override void Start () {
+        base.Start();
+        
+		//possessedPawn = GetComponent<CharacterPawn>();
+		//targetTf = GameObject.FindGameObjectWithTag("Player").transform;
 	}
 	
 	// Update is called once per frame
-	void Update () 
-	{
-		if (!player)
-			return;
-		if(Vector3.Distance(player.position,transform.position) < chase_distance) {
-			Vector3 towardPlayer = player.position - transform.position;
+	protected override void Update () {
+        base.Update();
+
+        if (possessedPawn == null) { return; }
+
+		if (!targetTf) {//if we don't have a target, try to find one
+
+            //if none can be found, do nothing
+            if (!FindTarget()) { return; }
+            else { Debug.Log(Vector3.Distance(targetTf.position, possessedPawn.transform.position)); }
+        }
+
+
+		if(Vector2.Distance(targetTf.position, possessedPawn.transform.position) < chase_distance) {
+			Vector3 towardPlayer = targetTf.position - possessedPawn.transform.position;
+
+            Debug.Log("chase after");
 
 			if (towardPlayer.magnitude > 5) {
 				Move();
@@ -28,7 +45,7 @@ public class AIController : MonoBehaviour {
 			else {
 				int rand = Random.Range(0, 100);
 				if (rand < 1)
-					p.Attack();
+					possessedPawn.Attack();
 				if (rand > 80) {
 					Move();
 				}
@@ -37,9 +54,20 @@ public class AIController : MonoBehaviour {
 		
 	}
 
+//FIND TARGET PROTOCOL
+    protected virtual bool FindTarget() {
+        if (PlayerTracker_Singleton.Instance == null) { return false; }
+        if (PlayerTracker_Singleton.Instance.player == null) { return false; }
+
+        //return false;
+
+        targetTf = PlayerTracker_Singleton.Instance.player.transform;
+        return true;
+    }
+
 	void Move()
 	{
-		Vector3 towardPlayer = player.position - transform.position;
+		Vector3 towardPlayer = targetTf.position - transform.position;
 
 		float horizontal = 0;
 		float vertical = 0;
@@ -61,6 +89,6 @@ public class AIController : MonoBehaviour {
 		//   horizontal *= 0;
 		//if (Random.Range(0, 100) > 80)
 		//    vertical *= 0;
-		p.Move(horizontal, vertical);
+		possessedPawn.Move(horizontal, vertical);
 	}
 }
