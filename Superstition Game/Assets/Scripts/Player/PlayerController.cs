@@ -10,6 +10,8 @@ public class PlayerController : CharacterPawnController {
     {
         base.Awake();
 
+        DontDestroyOnLoad(this.gameObject);
+
     }
     
     protected override void Update() {
