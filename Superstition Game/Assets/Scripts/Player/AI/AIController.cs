@@ -8,18 +8,7 @@ public class AIController : CharacterPawnController {
 	//CharacterPawn possessedPawn;
 	public float chase_distance = 10f;
 
-    protected override void Awake() {
-        base.Awake();
-    }
 
-    // Use this for initialization
-    protected override void Start () {
-        base.Start();
-        
-		//possessedPawn = GetComponent<CharacterPawn>();
-		//targetTf = GameObject.FindGameObjectWithTag("Player").transform;
-	}
-	
 	// Update is called once per frame
 	protected override void Update () {
         base.Update();
@@ -30,7 +19,6 @@ public class AIController : CharacterPawnController {
 
             //if none can be found, do nothing
             if (!FindTarget()) { return; }
-            //else { Debug.Log(Vector3.Distance(targetTf.position, possessedPawn.transform.position)); }
         }
 
 
@@ -47,7 +35,10 @@ public class AIController : CharacterPawnController {
 				if (rand < 1)
 					possessedPawn.Attack();
 				if (rand > 80) {
-					Move();
+
+         //TODO: Make AI Pawn use Movement Motor
+                    Move();
+                    //possessedPawn.GetComponent<MovementMotor>().desiredPos = targetTf.position;
 				}
 			}
 		}
@@ -91,4 +82,5 @@ public class AIController : CharacterPawnController {
 		//    vertical *= 0;
 		possessedPawn.Move(horizontal, vertical);
 	}
+    
 }

@@ -38,6 +38,10 @@ public class PlayerController : CharacterPawnController {
             possessedPawn.Attack();
         }
 
+        if (Input.GetButtonUp("Attack")) {
+            possessedPawn.EndAttack();
+        }
+
         if(Input.GetButtonDown("Defend"))
         {
             possessedPawn.Defend();

@@ -3,6 +3,9 @@ using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(MovementMotor))]
+[RequireComponent(typeof(AnimatorHandler))]
+[RequireComponent(typeof(CharacterStats))]
 public class CharacterPawn : Pawn {
     /*
     [System.Serializable]
@@ -40,6 +43,9 @@ public class CharacterPawn : Pawn {
 
     protected HashSet<Transform> interactables;
 
+    protected CharacterStats stats;
+
+
     protected Vector3 oscale;
 
 
@@ -68,7 +74,6 @@ public class CharacterPawn : Pawn {
 
     public UnityEvent OnPawnDeath;
 
-    public CharacterStats stats;
 
 
     [Space]
@@ -80,7 +85,7 @@ public class CharacterPawn : Pawn {
     public ItemBase mainHandItem;
     public ItemBase offHandItem;
 
-    private Coroutine usingItemCoroutine = null;
+    //private Coroutine usingItemCoroutine = null;
     //timer countdown funcitonality for EndUseItem()
 
 
@@ -100,9 +105,8 @@ public class CharacterPawn : Pawn {
 
 //INITIALIZATION
     protected override void Awake() {
-        if (stats == null) {
-            stats = GetComponent<CharacterStats>();
-        }
+
+        stats = GetComponent<CharacterStats>();
 
         motor = GetComponent<MovementMotor>();
         //inventory = GetComponent<InventoryController>();
@@ -111,6 +115,9 @@ public class CharacterPawn : Pawn {
 
         interactables = new HashSet<Transform>();
         oscale = transform.localScale;
+
+        motor.moveSpeed = stats.data[CharacterStats.StatType.MaxSpeed];
+        motor.accel = stats.data[CharacterStats.StatType.Acceleration];
     }
 
     protected override void Start() {
@@ -267,7 +274,7 @@ public class CharacterPawn : Pawn {
         //Debug.Log("Begin Attack");
     }
 
-    void EndAttack() {
+    public virtual void EndAttack() {
         currentState = PlayerPawnState.Idle;
 
         //stats.EndUseItemInHand(CharacterStats.Hand.Main);
@@ -289,25 +296,29 @@ public class CharacterPawn : Pawn {
     }
 
     public virtual void EndDefend() {
-        if (currentState == PlayerPawnState.Defend) {
-            currentState = PlayerPawnState.Idle;
+        //if (currentState == PlayerPawnState.Defend) {
+            //currentState = PlayerPawnState.Idle;
             //stats.EndUseItemInHand(CharacterStats.Hand.Off);
             EndUseItemInHand(Hand.Off);
 
+            Debug.Log("end use item from character pawn");
+
             stats.data[CharacterStats.StatType.MaxSpeed] *= defendModifier;
-        }
+        //}
     }
 
 
     public virtual void Move(float horizontal, float vertical) {
         //if (currentState != PlayerPawnState.Attack) {
-            /*
-            if (currentState == PlayerPawnState.Defend) {
-                motor.Move(horizontal, vertical);
-            }
-            */
-           // else {
-                motor.Move(horizontal, vertical);
+        /*
+        if (currentState == PlayerPawnState.Defend) {
+            motor.Move(horizontal, vertical);
+        }
+        */
+        // else {
+        //motor.Move(horizontal, vertical);
+        //motor.desiredDirec(horizontal, vertical);
+        motor.InputDirec(new Vector2(horizontal, vertical));
                 if (horizontal > 0) {
                     currentFace = Direction.Right;
                     transform.localScale = new Vector3(oscale.x, oscale.y, oscale.z);
@@ -358,15 +369,15 @@ public class CharacterPawn : Pawn {
 
         motor.isDodging = true;
         motor.accel = accel;
-        motor.speed = speed;
-        motor.trueMoveDirec = motor.desiredMoveDirec.normalized * speed;
+        motor.moveSpeed = speed;
+        motor.trueDirec = motor.desiredDirec.normalized * speed;
 
         yield return new WaitForSeconds(time);
 
 
         motor.isDodging = false;
         motor.accel = stats.data[CharacterStats.StatType.Acceleration];
-        motor.speed = stats.data[CharacterStats.StatType.MaxSpeed];
+        motor.moveSpeed = stats.data[CharacterStats.StatType.MaxSpeed];
 
         yield return null;
     }
@@ -413,7 +424,7 @@ public class CharacterPawn : Pawn {
     }
 
     protected void HandleAnimation() {
-        anim.SetWalkBlend(motor.trueMoveDirec.magnitude);
+        anim.SetWalkBlend(motor.trueDirec.magnitude);
 
     }
 }

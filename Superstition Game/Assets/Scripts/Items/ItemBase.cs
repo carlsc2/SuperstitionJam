@@ -1,15 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
 
 public class ItemBase : MonoBehaviour {
     [HideInInspector]
-    //public InventoryController owner;
     public CharacterPawn owner;
+
+    public enum UsageType {
+        Timed,
+        Toggle,
+        
+    }
+
+    [SerializeField]
+    private UsageType itemUsageType;
+
 
     public string id;
 
     public bool canInteruptUse = false;
+
+    public bool isUsingItem;
 
     public float useTime;
     private Coroutine usingItemCoroutine = null;
@@ -22,9 +32,8 @@ public class ItemBase : MonoBehaviour {
             yield return null;
         }
 
-
-        Debug.Log("end use", this);
-        EndUseItem();
+        //Debug.Log("end use", this);
+        EndUseItemInternal();
 
         yield break;
     }
@@ -58,6 +67,21 @@ public class ItemBase : MonoBehaviour {
             Debug.LogWarningFormat(this, "[{0}] Has No Owner. Cannot Perform BeginUseItem()", gameObject.name);
             return; }
 
+        isUsingItem = true;
+
+        switch (itemUsageType) {
+            case UsageType.Timed:
+                BeginTimedUseItem();
+                break;
+
+            case UsageType.Toggle:
+
+                break;
+        }
+
+    }
+
+    protected virtual void BeginTimedUseItem() {
         if (canInteruptUse && usingItemCoroutine != null) {
             StopCoroutine(usingItemCoroutine);
         }
@@ -65,11 +89,35 @@ public class ItemBase : MonoBehaviour {
         usingItemCoroutine = StartCoroutine(UseItemTimer(useTime));
     }
 
+    protected virtual void BeginToggleUseItem() {
+        
+    }
+
     public virtual void EndUseItem() {
+
+        Debug.Log("end Use Item");
+        
+        switch(itemUsageType) {
+            case UsageType.Timed:
+                //owner.EndUseItemByInstance(this);
+                break;
+
+            case UsageType.Toggle:
+                EndUseItemInternal();
+                break;
+        }
+        
+
+        //owner.EndUseItemInHand();
+    }
+
+    protected virtual void EndUseItemInternal() {
         if (owner == null) { return; }
 
+        isUsingItem = false;
+
+
         owner.EndUseItemByInstance(this);
-        //owner.EndUseItemInHand()
     }
 
     public virtual void EnableItem() {

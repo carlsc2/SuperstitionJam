@@ -1,19 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(MovementMotor))]
 public class AnimatorHandler : MonoBehaviour {
 
     public Animator anim;
+    public MovementMotor motor;
+
+    protected virtual void Awake() {
+
+    }
 
 	// Use this for initialization
-	void Start () {
+	protected virtual void Start () {
 	
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	protected virtual void Update () {
 	
 	}
+    /*
+    public void SetBool(string parameter, bool value) {
+        anim.SetBool(parameter, value);
+    }
+    */
 
     public virtual void SetWalkBlend(float blendValue) {
         anim.SetFloat("WalkBlend_Float", blendValue);

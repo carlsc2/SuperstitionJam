@@ -1,108 +1,99 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("Scripts/Engine/Motor")]
+[RequireComponent(typeof(Rigidbody2D))]
 public class MovementMotor : MonoBehaviour {
 
-	CharacterStats stats;
-	Rigidbody2D rb;
-	private WorldSize ws;
+    Transform tf;
+    Rigidbody2D rigbod;
 
-	public Vector2 desiredMoveDirec;
-	public Vector2 trueMoveDirec;
-	public float accel = 1.0f;
+    public Vector3 desiredDirec;
+    public Vector3 trueDirec;
 
-	public float speed;
+    public float moveSpeed;
+    public float accel;
+    //public AnimationCurve accelCurve;
 
-	public bool isDodging = false;
+    public bool isDodging = false;
 
-	void Start()
-	{
-		stats = GetComponent<CharacterStats>();
-		rb = GetComponent<Rigidbody2D>();
-		ws = FindObjectOfType<WorldSize>();
+    //properties to quickly access endpoint data of direction vectors
+    public Vector3 desiredPoint {
+        get {
+            return tf.position + desiredDirec;
+        }
+    }
+    public Vector3 truePoint {
+        get {
+            return tf.position + trueDirec;
+        }
+    }
 
-		speed = stats.data[CharacterStats.StatType.MaxSpeed];
-	}
+    public Vector3 desiredPointNormalized {
+        get {
+            return tf.position + desiredDirec.normalized;
+        }
+    }
+    public Vector3 truePointNormalized {
+        get {
+            return tf.position + trueDirec.normalized;
+        }
+    }
+    /*
+    [Header("Speed")]
+    public float maxDesiredDirecMag = 2.0f;
+    */
+    //public float moveSpeedModifier = 1.0f;
 
-	void Update()
-	{
-		//rb.velocity = Vector3.zero;
+    //public float redirectSpeed = 0.5f;
 
-		ActuallyMove();
+    protected virtual void Awake() {
+        tf = GetComponent<Transform>();
+        rigbod = GetComponent<Rigidbody2D>();
+    }
 
-	}
+    // Use this for initialization
+    protected virtual void Start() {
 
-	private void ActuallyMove() {
-		//if (!isDodging) {
-			trueMoveDirec = Vector3.MoveTowards(trueMoveDirec, desiredMoveDirec, accel);
-		//}
+    }
 
-		//Vector3 appliedMoveDirec = trueMoveDirec * speed;
+    // Update is called once per frame
+    protected virtual void Update() {
+        HandleMovement();
 
+        Debug.DrawRay(tf.position, desiredDirec, Color.red);
+        Debug.DrawRay(tf.position, trueDirec, Color.blue);
 
-		/*
-		//keep the player within the world boundaries
-		if (transform.position.x + appliedMoveDirec.x > WorldBoundaries.maxX + WorldBoundaries.width * (ws.numScreens - 1)) {
-			//transform.position = new Vector2(WorldBoundaries.maxX + WorldBoundaries.width * (ws.numScreens - 1), transform.position.y);
+        //ApplyMovementFixed();
+    }
 
-			//adjust the applied direction against the boundary
-			appliedMoveDirec.x += (WorldBoundaries.maxX + WorldBoundaries.width * (ws.numScreens - 1)) - (transform.position.x + appliedMoveDirec.x);
-		}
-		else if (transform.position.x + appliedMoveDirec.x < WorldBoundaries.minX) {
-			//transform.position = new Vector2(WorldBoundaries.minX, transform.position.y);
+    protected virtual void FixedUpdate() {
+        ApplyMovementFixed();
+    }
 
-			appliedMoveDirec.x += WorldBoundaries.minX - (transform.position.x + appliedMoveDirec.x);
-		}
+    //HANDLE ANY MODIFICATIONS THE MOTOR HAS TO MAKE TO MOVEMENT
+    protected virtual void HandleMovement() {
 
-		if (transform.position.y + appliedMoveDirec.y > WorldBoundaries.maxY) {
-			//transform.position = new Vector2(transform.position.x, WorldBoundaries.maxY);
+        trueDirec = Vector3.MoveTowards(tf.position + trueDirec, tf.position + desiredDirec, accel * Time.deltaTime) - tf.position;
 
-			appliedMoveDirec.y += WorldBoundaries.maxY - (transform.position.y + appliedMoveDirec.y);
+    }
 
-		}
-		else if (transform.position.y + appliedMoveDirec.y < WorldBoundaries.minY) {
-			//transform.position = new Vector2(transform.position.x, WorldBoundaries.minY);
-			appliedMoveDirec.y += WorldBoundaries.minY 
-		}
-		*/
-		rb.velocity = trueMoveDirec * speed; //appliedMoveDirec;
-	}
+    //APPLY THE MOVEMENT TO THE RIGID BODY
+    protected virtual void ApplyMovementFixed() {//only do in FixedUpdate()
 
-	public void Move(float horizontal, float vertical)
-	{
-
-		if (isDodging) { return; }
-
-		desiredMoveDirec = new Vector2(horizontal, vertical).normalized;
+        rigbod.velocity = new Vector3(trueDirec.x * moveSpeed,
+                                      trueDirec.y * moveSpeed);
 
 
+    }
 
-		/*
-		moveDirec.x = horizontal;
-		moveDirec.y = vertical;
-		moveDirec.Normalize();
+    public virtual void InputDirec(Vector3 direc) {
+        //desiredDirec = Vector3.ClampMagnitude(direc, maxDesiredDirecMag);
+        desiredDirec = direc.normalized;
+    }
 
-		Vector2 dir = new Vector2(horizontal, vertical).normalized * stats.speed;
-		rb.MovePosition(rb.position + dir);
-		
-		//keep the player within the world boundaries
-		if (transform.position.x > WorldBoundaries.maxX + WorldBoundaries.width * (ws.numScreens - 1))
-		{
-			transform.position = new Vector2(WorldBoundaries.maxX + WorldBoundaries.width * (ws.numScreens - 1), transform.position.y);
-		}
-		else if (transform.position.x < WorldBoundaries.minX)
-		{
-			transform.position = new Vector2(WorldBoundaries.minX, transform.position.y);
-		}
-
-		if (transform.position.y > WorldBoundaries.maxY)
-		{
-			transform.position = new Vector2(transform.position.x, WorldBoundaries.maxY);
-		}
-		else if (transform.position.y < WorldBoundaries.minY)
-		{
-			transform.position = new Vector2(transform.position.x, WorldBoundaries.minY);
-		}
-		*/
-	}
+    public virtual void InputPos(Vector3 pos) {
+        InputDirec(pos - tf.position);
+    }
 }
