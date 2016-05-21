@@ -17,12 +17,12 @@ public class movePlayerIcon : MonoBehaviour {
 		playerIcon = transform as RectTransform;
 		if (!first_set) {
 			first_set = true;
-			current_position = playerIcon.position;
+			current_position = playerIcon.localPosition;
 		}
 		else {
-			playerIcon.position = current_position;
+			playerIcon.localPosition = current_position;
 		}
-		moveArea = GameObject.FindGameObjectWithTag("Canvas").transform as RectTransform;
+		moveArea = transform.parent as RectTransform; //assumes parent is map
 	}
 
 	void Update() {
@@ -31,7 +31,7 @@ public class movePlayerIcon : MonoBehaviour {
 		TimeManager.pass_time((int)moveVec.sqrMagnitude);//elapse time based on distance moved
 		transform.Translate(moveVec * speed);
 		ClampToMap();
-		current_position = transform.position;
+		current_position = transform.localPosition;
 
 		if (curloc != null &&  Input.GetButton("Interact")) {
 			//enter current location

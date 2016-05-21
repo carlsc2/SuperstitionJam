@@ -16,3 +16,11 @@
 	- need inventory interface
 
 - ditch the paper aesthetic
+
+- overworld
+	- add area-specific random events
+	- make UI-friendly
+
+- monetization
+	- opt-in / opt-out of ads
+	- provide in-game reward for watching ads
