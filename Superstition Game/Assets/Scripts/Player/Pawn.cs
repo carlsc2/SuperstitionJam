@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Pawn : MonoBehaviour {
 
-    public PlayerController owningController;
+    public CharacterPawnController owningController;
 
     protected virtual void Awake() { }
 
@@ -16,4 +16,15 @@ public class Pawn : MonoBehaviour {
 	protected virtual void Update () {
 	
 	}
+
+    protected virtual void OnDestroy() {
+        //unhook when Pawn gets destroyed
+        DisconnectPawnFromController();
+    }
+
+    public virtual void DisconnectPawnFromController() {
+        if (owningController == null) { return; }
+
+        owningController.possessedPawn = null;
+    }
 }
